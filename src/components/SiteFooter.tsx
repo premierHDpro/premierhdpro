@@ -2,12 +2,19 @@ import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const services = [
-  { to: "/services/warehouse-maintenance", label: "Warehouse Maintenance" },
-  { to: "/services/concrete-floor-repair", label: "Concrete Floor Repair" },
-  { to: "/services/dock-door-repair", label: "Door & Dock Repair" },
-  { to: "/services/industrial-hvac", label: "Industrial HVAC" },
-  { to: "/services/commercial-renovations", label: "Renovations & Buildouts" },
-  { to: "/services/safety-barriers", label: "Safety Barriers & Bollards" },
+  { to: "/warehouse-maintenance-services-georgia", label: "Warehouse Maintenance" },
+  { to: "/concrete-floor-repair-atlanta", label: "Concrete Floor Repair" },
+  { to: "/dock-door-repair-atlanta", label: "Door & Dock Repair" },
+  { to: "/industrial-hvac-repair-georgia", label: "Industrial HVAC" },
+  { to: "/commercial-renovations-atlanta", label: "Renovations & Buildouts" },
+  { to: "/warehouse-safety-installation-atlanta", label: "Safety Barriers & Bollards" },
+] as const;
+
+const locations = [
+  { to: "/locations/locust-grove", label: "Locust Grove, GA" },
+  { to: "/locations/mcdonough", label: "McDonough, GA" },
+  { to: "/locations/atlanta", label: "Atlanta, GA" },
+  { to: "/locations/henry-county", label: "Henry County, GA" },
 ] as const;
 
 export function SiteFooter() {
@@ -29,7 +36,7 @@ export function SiteFooter() {
               <span>info@premierhdpro.com</span>
             </a>
             <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4" /> McDonough, GA — Serving Metro Atlanta
+              <MapPin className="h-4 w-4" /> Locust Grove, GA — Serving Metro Atlanta
             </div>
           </div>
         </div>
@@ -46,10 +53,12 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <div className="mb-4 text-sm font-bold uppercase tracking-wider">Company</div>
+          <div className="mb-4 text-sm font-bold uppercase tracking-wider">Service Areas</div>
           <ul className="space-y-2 text-sm text-primary-foreground/70">
-            <li><Link to="/locations/atlanta" className="hover:text-safety">Atlanta, GA</Link></li>
-            <li><Link to="/blog" className="hover:text-safety">Insights & Blog</Link></li>
+            {locations.map((l) => (
+              <li key={l.to}><Link to={l.to} className="hover:text-safety">{l.label}</Link></li>
+            ))}
+            <li className="pt-2"><Link to="/blog" className="hover:text-safety">Insights & Blog</Link></li>
             <li><Link to="/contact" className="hover:text-safety">Request a Quote</Link></li>
           </ul>
         </div>
