@@ -209,7 +209,7 @@ export const posts: Post[] = [
       { h: "Step 5: Pick a contractor who works in active facilities" },
       { p: "PM work in a 24/7 distribution center looks nothing like PM work in an empty building. You need a contractor experienced with phased access, off-hours work, and clean handoffs back to operations. That's exactly what Premier HD Pro does across Metro Atlanta." },
     ],
-  },,
+  },
   {
     "slug": "signs-warehouse-floor-needs-concrete-repair",
     "title": "Signs Your Warehouse Floor Needs Concrete Repair",
