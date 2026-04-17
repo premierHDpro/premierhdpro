@@ -19,50 +19,50 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "warehouse-maintenance",
-    to: "/services/warehouse-maintenance",
+    to: "/warehouse-maintenance-services-georgia",
     title: "Warehouse Maintenance Services",
     short:
-      "Ongoing facility maintenance programs that keep distribution centers running and reduce reactive repair costs.",
+      "Ongoing repairs, preventative maintenance, and facility support to keep operations running.",
     icon: Wrench,
   },
   {
     slug: "concrete-floor-repair",
-    to: "/services/concrete-floor-repair",
+    to: "/concrete-floor-repair-atlanta",
     title: "Concrete Floor Repair & Upgrades",
     short:
-      "Crack repair, joint repair, spalling, and resurfacing for warehouse floors built to handle forklift traffic.",
+      "Fix cracking, spalling, uneven floors, and upgrade to polished concrete solutions.",
     icon: Hammer,
   },
   {
     slug: "dock-door-repair",
-    to: "/services/dock-door-repair",
+    to: "/dock-door-repair-atlanta",
     title: "Commercial Door & Dock Repair",
     short:
-      "Dock doors, levelers, seals, and entry systems repaired fast to keep your loading dock fully operational.",
+      "Repair dock doors, levelers, and entry systems to keep logistics moving.",
     icon: DoorOpen,
   },
   {
     slug: "industrial-hvac",
-    to: "/services/industrial-hvac",
+    to: "/industrial-hvac-repair-georgia",
     title: "Industrial HVAC & Mechanical",
     short:
-      "Repairs, replacements, and upgrades for HVAC systems serving large warehouse and industrial spaces.",
+      "Diagnose and repair HVAC issues in large industrial environments.",
     icon: Wind,
   },
   {
     slug: "commercial-renovations",
-    to: "/services/commercial-renovations",
+    to: "/commercial-renovations-atlanta",
     title: "Commercial Renovations & Buildouts",
     short:
-      "Office buildouts, restrooms, and phased renovations executed in active facilities without shutting you down.",
+      "Office buildouts, bathroom renovations, and phased facility upgrades.",
     icon: Building2,
   },
   {
     slug: "safety-barriers",
-    to: "/services/safety-barriers",
-    title: "Safety Barriers, Bollards & Protection",
+    to: "/warehouse-safety-installation-atlanta",
+    title: "Safety Barriers & Facility Protection",
     short:
-      "Bollards, guardrails, column protectors, and rack guards to protect equipment, people, and infrastructure.",
+      "Bollards, guardrails, and safety systems to protect people and equipment.",
     icon: Shield,
   },
 ];

@@ -9,22 +9,45 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WarehouseSafetyInstallationAtlantaRouteImport } from './routes/warehouse-safety-installation-atlanta'
+import { Route as WarehouseMaintenanceServicesGeorgiaRouteImport } from './routes/warehouse-maintenance-services-georgia'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as IndustrialHvacRepairGeorgiaRouteImport } from './routes/industrial-hvac-repair-georgia'
+import { Route as DockDoorRepairAtlantaRouteImport } from './routes/dock-door-repair-atlanta'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ConcreteFloorRepairAtlantaRouteImport } from './routes/concrete-floor-repair-atlanta'
+import { Route as CommercialRenovationsAtlantaRouteImport } from './routes/commercial-renovations-atlanta'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesWarehouseMaintenanceRouteImport } from './routes/services.warehouse-maintenance'
-import { Route as ServicesSafetyBarriersRouteImport } from './routes/services.safety-barriers'
-import { Route as ServicesIndustrialHvacRouteImport } from './routes/services.industrial-hvac'
-import { Route as ServicesDockDoorRepairRouteImport } from './routes/services.dock-door-repair'
-import { Route as ServicesConcreteFloorRepairRouteImport } from './routes/services.concrete-floor-repair'
-import { Route as ServicesCommercialRenovationsRouteImport } from './routes/services.commercial-renovations'
 import { Route as LocationsAtlantaRouteImport } from './routes/locations.atlanta'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const WarehouseSafetyInstallationAtlantaRoute =
+  WarehouseSafetyInstallationAtlantaRouteImport.update({
+    id: '/warehouse-safety-installation-atlanta',
+    path: '/warehouse-safety-installation-atlanta',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WarehouseMaintenanceServicesGeorgiaRoute =
+  WarehouseMaintenanceServicesGeorgiaRouteImport.update({
+    id: '/warehouse-maintenance-services-georgia',
+    path: '/warehouse-maintenance-services-georgia',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustrialHvacRepairGeorgiaRoute =
+  IndustrialHvacRepairGeorgiaRouteImport.update({
+    id: '/industrial-hvac-repair-georgia',
+    path: '/industrial-hvac-repair-georgia',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DockDoorRepairAtlantaRoute = DockDoorRepairAtlantaRouteImport.update({
+  id: '/dock-door-repair-atlanta',
+  path: '/dock-door-repair-atlanta',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -32,6 +55,18 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConcreteFloorRepairAtlantaRoute =
+  ConcreteFloorRepairAtlantaRouteImport.update({
+    id: '/concrete-floor-repair-atlanta',
+    path: '/concrete-floor-repair-atlanta',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CommercialRenovationsAtlantaRoute =
+  CommercialRenovationsAtlantaRouteImport.update({
+    id: '/commercial-renovations-atlanta',
+    path: '/commercial-renovations-atlanta',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
@@ -42,39 +77,6 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesWarehouseMaintenanceRoute =
-  ServicesWarehouseMaintenanceRouteImport.update({
-    id: '/warehouse-maintenance',
-    path: '/warehouse-maintenance',
-    getParentRoute: () => ServicesRoute,
-  } as any)
-const ServicesSafetyBarriersRoute = ServicesSafetyBarriersRouteImport.update({
-  id: '/safety-barriers',
-  path: '/safety-barriers',
-  getParentRoute: () => ServicesRoute,
-} as any)
-const ServicesIndustrialHvacRoute = ServicesIndustrialHvacRouteImport.update({
-  id: '/industrial-hvac',
-  path: '/industrial-hvac',
-  getParentRoute: () => ServicesRoute,
-} as any)
-const ServicesDockDoorRepairRoute = ServicesDockDoorRepairRouteImport.update({
-  id: '/dock-door-repair',
-  path: '/dock-door-repair',
-  getParentRoute: () => ServicesRoute,
-} as any)
-const ServicesConcreteFloorRepairRoute =
-  ServicesConcreteFloorRepairRouteImport.update({
-    id: '/concrete-floor-repair',
-    path: '/concrete-floor-repair',
-    getParentRoute: () => ServicesRoute,
-  } as any)
-const ServicesCommercialRenovationsRoute =
-  ServicesCommercialRenovationsRouteImport.update({
-    id: '/commercial-renovations',
-    path: '/commercial-renovations',
-    getParentRoute: () => ServicesRoute,
-  } as any)
 const LocationsAtlantaRoute = LocationsAtlantaRouteImport.update({
   id: '/locations/atlanta',
   path: '/locations/atlanta',
@@ -89,101 +91,121 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
+  '/commercial-renovations-atlanta': typeof CommercialRenovationsAtlantaRoute
+  '/concrete-floor-repair-atlanta': typeof ConcreteFloorRepairAtlantaRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRouteWithChildren
+  '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
+  '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
+  '/services': typeof ServicesRoute
+  '/warehouse-maintenance-services-georgia': typeof WarehouseMaintenanceServicesGeorgiaRoute
+  '/warehouse-safety-installation-atlanta': typeof WarehouseSafetyInstallationAtlantaRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/locations/atlanta': typeof LocationsAtlantaRoute
-  '/services/commercial-renovations': typeof ServicesCommercialRenovationsRoute
-  '/services/concrete-floor-repair': typeof ServicesConcreteFloorRepairRoute
-  '/services/dock-door-repair': typeof ServicesDockDoorRepairRoute
-  '/services/industrial-hvac': typeof ServicesIndustrialHvacRoute
-  '/services/safety-barriers': typeof ServicesSafetyBarriersRoute
-  '/services/warehouse-maintenance': typeof ServicesWarehouseMaintenanceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
+  '/commercial-renovations-atlanta': typeof CommercialRenovationsAtlantaRoute
+  '/concrete-floor-repair-atlanta': typeof ConcreteFloorRepairAtlantaRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRouteWithChildren
+  '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
+  '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
+  '/services': typeof ServicesRoute
+  '/warehouse-maintenance-services-georgia': typeof WarehouseMaintenanceServicesGeorgiaRoute
+  '/warehouse-safety-installation-atlanta': typeof WarehouseSafetyInstallationAtlantaRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/locations/atlanta': typeof LocationsAtlantaRoute
-  '/services/commercial-renovations': typeof ServicesCommercialRenovationsRoute
-  '/services/concrete-floor-repair': typeof ServicesConcreteFloorRepairRoute
-  '/services/dock-door-repair': typeof ServicesDockDoorRepairRoute
-  '/services/industrial-hvac': typeof ServicesIndustrialHvacRoute
-  '/services/safety-barriers': typeof ServicesSafetyBarriersRoute
-  '/services/warehouse-maintenance': typeof ServicesWarehouseMaintenanceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/blog': typeof BlogRouteWithChildren
+  '/commercial-renovations-atlanta': typeof CommercialRenovationsAtlantaRoute
+  '/concrete-floor-repair-atlanta': typeof ConcreteFloorRepairAtlantaRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRouteWithChildren
+  '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
+  '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
+  '/services': typeof ServicesRoute
+  '/warehouse-maintenance-services-georgia': typeof WarehouseMaintenanceServicesGeorgiaRoute
+  '/warehouse-safety-installation-atlanta': typeof WarehouseSafetyInstallationAtlantaRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/locations/atlanta': typeof LocationsAtlantaRoute
-  '/services/commercial-renovations': typeof ServicesCommercialRenovationsRoute
-  '/services/concrete-floor-repair': typeof ServicesConcreteFloorRepairRoute
-  '/services/dock-door-repair': typeof ServicesDockDoorRepairRoute
-  '/services/industrial-hvac': typeof ServicesIndustrialHvacRoute
-  '/services/safety-barriers': typeof ServicesSafetyBarriersRoute
-  '/services/warehouse-maintenance': typeof ServicesWarehouseMaintenanceRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/blog'
+    | '/commercial-renovations-atlanta'
+    | '/concrete-floor-repair-atlanta'
     | '/contact'
+    | '/dock-door-repair-atlanta'
+    | '/industrial-hvac-repair-georgia'
     | '/services'
+    | '/warehouse-maintenance-services-georgia'
+    | '/warehouse-safety-installation-atlanta'
     | '/blog/$slug'
     | '/locations/atlanta'
-    | '/services/commercial-renovations'
-    | '/services/concrete-floor-repair'
-    | '/services/dock-door-repair'
-    | '/services/industrial-hvac'
-    | '/services/safety-barriers'
-    | '/services/warehouse-maintenance'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/blog'
+    | '/commercial-renovations-atlanta'
+    | '/concrete-floor-repair-atlanta'
     | '/contact'
+    | '/dock-door-repair-atlanta'
+    | '/industrial-hvac-repair-georgia'
     | '/services'
+    | '/warehouse-maintenance-services-georgia'
+    | '/warehouse-safety-installation-atlanta'
     | '/blog/$slug'
     | '/locations/atlanta'
-    | '/services/commercial-renovations'
-    | '/services/concrete-floor-repair'
-    | '/services/dock-door-repair'
-    | '/services/industrial-hvac'
-    | '/services/safety-barriers'
-    | '/services/warehouse-maintenance'
   id:
     | '__root__'
     | '/'
     | '/blog'
+    | '/commercial-renovations-atlanta'
+    | '/concrete-floor-repair-atlanta'
     | '/contact'
+    | '/dock-door-repair-atlanta'
+    | '/industrial-hvac-repair-georgia'
     | '/services'
+    | '/warehouse-maintenance-services-georgia'
+    | '/warehouse-safety-installation-atlanta'
     | '/blog/$slug'
     | '/locations/atlanta'
-    | '/services/commercial-renovations'
-    | '/services/concrete-floor-repair'
-    | '/services/dock-door-repair'
-    | '/services/industrial-hvac'
-    | '/services/safety-barriers'
-    | '/services/warehouse-maintenance'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogRoute: typeof BlogRouteWithChildren
+  CommercialRenovationsAtlantaRoute: typeof CommercialRenovationsAtlantaRoute
+  ConcreteFloorRepairAtlantaRoute: typeof ConcreteFloorRepairAtlantaRoute
   ContactRoute: typeof ContactRoute
-  ServicesRoute: typeof ServicesRouteWithChildren
+  DockDoorRepairAtlantaRoute: typeof DockDoorRepairAtlantaRoute
+  IndustrialHvacRepairGeorgiaRoute: typeof IndustrialHvacRepairGeorgiaRoute
+  ServicesRoute: typeof ServicesRoute
+  WarehouseMaintenanceServicesGeorgiaRoute: typeof WarehouseMaintenanceServicesGeorgiaRoute
+  WarehouseSafetyInstallationAtlantaRoute: typeof WarehouseSafetyInstallationAtlantaRoute
   LocationsAtlantaRoute: typeof LocationsAtlantaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/warehouse-safety-installation-atlanta': {
+      id: '/warehouse-safety-installation-atlanta'
+      path: '/warehouse-safety-installation-atlanta'
+      fullPath: '/warehouse-safety-installation-atlanta'
+      preLoaderRoute: typeof WarehouseSafetyInstallationAtlantaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/warehouse-maintenance-services-georgia': {
+      id: '/warehouse-maintenance-services-georgia'
+      path: '/warehouse-maintenance-services-georgia'
+      fullPath: '/warehouse-maintenance-services-georgia'
+      preLoaderRoute: typeof WarehouseMaintenanceServicesGeorgiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -191,11 +213,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/industrial-hvac-repair-georgia': {
+      id: '/industrial-hvac-repair-georgia'
+      path: '/industrial-hvac-repair-georgia'
+      fullPath: '/industrial-hvac-repair-georgia'
+      preLoaderRoute: typeof IndustrialHvacRepairGeorgiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dock-door-repair-atlanta': {
+      id: '/dock-door-repair-atlanta'
+      path: '/dock-door-repair-atlanta'
+      fullPath: '/dock-door-repair-atlanta'
+      preLoaderRoute: typeof DockDoorRepairAtlantaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/concrete-floor-repair-atlanta': {
+      id: '/concrete-floor-repair-atlanta'
+      path: '/concrete-floor-repair-atlanta'
+      fullPath: '/concrete-floor-repair-atlanta'
+      preLoaderRoute: typeof ConcreteFloorRepairAtlantaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/commercial-renovations-atlanta': {
+      id: '/commercial-renovations-atlanta'
+      path: '/commercial-renovations-atlanta'
+      fullPath: '/commercial-renovations-atlanta'
+      preLoaderRoute: typeof CommercialRenovationsAtlantaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -211,48 +261,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
-    }
-    '/services/warehouse-maintenance': {
-      id: '/services/warehouse-maintenance'
-      path: '/warehouse-maintenance'
-      fullPath: '/services/warehouse-maintenance'
-      preLoaderRoute: typeof ServicesWarehouseMaintenanceRouteImport
-      parentRoute: typeof ServicesRoute
-    }
-    '/services/safety-barriers': {
-      id: '/services/safety-barriers'
-      path: '/safety-barriers'
-      fullPath: '/services/safety-barriers'
-      preLoaderRoute: typeof ServicesSafetyBarriersRouteImport
-      parentRoute: typeof ServicesRoute
-    }
-    '/services/industrial-hvac': {
-      id: '/services/industrial-hvac'
-      path: '/industrial-hvac'
-      fullPath: '/services/industrial-hvac'
-      preLoaderRoute: typeof ServicesIndustrialHvacRouteImport
-      parentRoute: typeof ServicesRoute
-    }
-    '/services/dock-door-repair': {
-      id: '/services/dock-door-repair'
-      path: '/dock-door-repair'
-      fullPath: '/services/dock-door-repair'
-      preLoaderRoute: typeof ServicesDockDoorRepairRouteImport
-      parentRoute: typeof ServicesRoute
-    }
-    '/services/concrete-floor-repair': {
-      id: '/services/concrete-floor-repair'
-      path: '/concrete-floor-repair'
-      fullPath: '/services/concrete-floor-repair'
-      preLoaderRoute: typeof ServicesConcreteFloorRepairRouteImport
-      parentRoute: typeof ServicesRoute
-    }
-    '/services/commercial-renovations': {
-      id: '/services/commercial-renovations'
-      path: '/commercial-renovations'
-      fullPath: '/services/commercial-renovations'
-      preLoaderRoute: typeof ServicesCommercialRenovationsRouteImport
-      parentRoute: typeof ServicesRoute
     }
     '/locations/atlanta': {
       id: '/locations/atlanta'
@@ -281,33 +289,19 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
-interface ServicesRouteChildren {
-  ServicesCommercialRenovationsRoute: typeof ServicesCommercialRenovationsRoute
-  ServicesConcreteFloorRepairRoute: typeof ServicesConcreteFloorRepairRoute
-  ServicesDockDoorRepairRoute: typeof ServicesDockDoorRepairRoute
-  ServicesIndustrialHvacRoute: typeof ServicesIndustrialHvacRoute
-  ServicesSafetyBarriersRoute: typeof ServicesSafetyBarriersRoute
-  ServicesWarehouseMaintenanceRoute: typeof ServicesWarehouseMaintenanceRoute
-}
-
-const ServicesRouteChildren: ServicesRouteChildren = {
-  ServicesCommercialRenovationsRoute: ServicesCommercialRenovationsRoute,
-  ServicesConcreteFloorRepairRoute: ServicesConcreteFloorRepairRoute,
-  ServicesDockDoorRepairRoute: ServicesDockDoorRepairRoute,
-  ServicesIndustrialHvacRoute: ServicesIndustrialHvacRoute,
-  ServicesSafetyBarriersRoute: ServicesSafetyBarriersRoute,
-  ServicesWarehouseMaintenanceRoute: ServicesWarehouseMaintenanceRoute,
-}
-
-const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
-  ServicesRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
+  CommercialRenovationsAtlantaRoute: CommercialRenovationsAtlantaRoute,
+  ConcreteFloorRepairAtlantaRoute: ConcreteFloorRepairAtlantaRoute,
   ContactRoute: ContactRoute,
-  ServicesRoute: ServicesRouteWithChildren,
+  DockDoorRepairAtlantaRoute: DockDoorRepairAtlantaRoute,
+  IndustrialHvacRepairGeorgiaRoute: IndustrialHvacRepairGeorgiaRoute,
+  ServicesRoute: ServicesRoute,
+  WarehouseMaintenanceServicesGeorgiaRoute:
+    WarehouseMaintenanceServicesGeorgiaRoute,
+  WarehouseSafetyInstallationAtlantaRoute:
+    WarehouseSafetyInstallationAtlantaRoute,
   LocationsAtlantaRoute: LocationsAtlantaRoute,
 }
 export const routeTree = rootRouteImport
