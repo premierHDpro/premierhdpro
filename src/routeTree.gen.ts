@@ -9,12 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WarehouseServicesLocustGroveRouteImport } from './routes/warehouse-services-locust-grove'
 import { Route as WarehouseSafetyInstallationAtlantaRouteImport } from './routes/warehouse-safety-installation-atlanta'
 import { Route as WarehouseMaintenanceServicesGeorgiaRouteImport } from './routes/warehouse-maintenance-services-georgia'
+import { Route as WarehouseMaintenanceMcdonoughRouteImport } from './routes/warehouse-maintenance-mcdonough'
+import { Route as WarehouseMaintenanceAtlantaRouteImport } from './routes/warehouse-maintenance-atlanta'
+import { Route as WarehouseHvacRepairAtlantaRouteImport } from './routes/warehouse-hvac-repair-atlanta'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as IndustrialHvacRepairGeorgiaRouteImport } from './routes/industrial-hvac-repair-georgia'
 import { Route as DockDoorRepairAtlantaRouteImport } from './routes/dock-door-repair-atlanta'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ConcreteFloorRepairMcdonoughRouteImport } from './routes/concrete-floor-repair-mcdonough'
 import { Route as ConcreteFloorRepairAtlantaRouteImport } from './routes/concrete-floor-repair-atlanta'
 import { Route as CommercialRenovationsAtlantaRouteImport } from './routes/commercial-renovations-atlanta'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -25,6 +30,12 @@ import { Route as LocationsHenryCountyRouteImport } from './routes/locations.hen
 import { Route as LocationsAtlantaRouteImport } from './routes/locations.atlanta'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const WarehouseServicesLocustGroveRoute =
+  WarehouseServicesLocustGroveRouteImport.update({
+    id: '/warehouse-services-locust-grove',
+    path: '/warehouse-services-locust-grove',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const WarehouseSafetyInstallationAtlantaRoute =
   WarehouseSafetyInstallationAtlantaRouteImport.update({
     id: '/warehouse-safety-installation-atlanta',
@@ -35,6 +46,24 @@ const WarehouseMaintenanceServicesGeorgiaRoute =
   WarehouseMaintenanceServicesGeorgiaRouteImport.update({
     id: '/warehouse-maintenance-services-georgia',
     path: '/warehouse-maintenance-services-georgia',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WarehouseMaintenanceMcdonoughRoute =
+  WarehouseMaintenanceMcdonoughRouteImport.update({
+    id: '/warehouse-maintenance-mcdonough',
+    path: '/warehouse-maintenance-mcdonough',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WarehouseMaintenanceAtlantaRoute =
+  WarehouseMaintenanceAtlantaRouteImport.update({
+    id: '/warehouse-maintenance-atlanta',
+    path: '/warehouse-maintenance-atlanta',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WarehouseHvacRepairAtlantaRoute =
+  WarehouseHvacRepairAtlantaRouteImport.update({
+    id: '/warehouse-hvac-repair-atlanta',
+    path: '/warehouse-hvac-repair-atlanta',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -58,6 +87,12 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConcreteFloorRepairMcdonoughRoute =
+  ConcreteFloorRepairMcdonoughRouteImport.update({
+    id: '/concrete-floor-repair-mcdonough',
+    path: '/concrete-floor-repair-mcdonough',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ConcreteFloorRepairAtlantaRoute =
   ConcreteFloorRepairAtlantaRouteImport.update({
     id: '/concrete-floor-repair-atlanta',
@@ -111,12 +146,17 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/commercial-renovations-atlanta': typeof CommercialRenovationsAtlantaRoute
   '/concrete-floor-repair-atlanta': typeof ConcreteFloorRepairAtlantaRoute
+  '/concrete-floor-repair-mcdonough': typeof ConcreteFloorRepairMcdonoughRoute
   '/contact': typeof ContactRoute
   '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/services': typeof ServicesRoute
+  '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
+  '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
+  '/warehouse-maintenance-mcdonough': typeof WarehouseMaintenanceMcdonoughRoute
   '/warehouse-maintenance-services-georgia': typeof WarehouseMaintenanceServicesGeorgiaRoute
   '/warehouse-safety-installation-atlanta': typeof WarehouseSafetyInstallationAtlantaRoute
+  '/warehouse-services-locust-grove': typeof WarehouseServicesLocustGroveRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/locations/atlanta': typeof LocationsAtlantaRoute
   '/locations/henry-county': typeof LocationsHenryCountyRoute
@@ -128,12 +168,17 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/commercial-renovations-atlanta': typeof CommercialRenovationsAtlantaRoute
   '/concrete-floor-repair-atlanta': typeof ConcreteFloorRepairAtlantaRoute
+  '/concrete-floor-repair-mcdonough': typeof ConcreteFloorRepairMcdonoughRoute
   '/contact': typeof ContactRoute
   '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/services': typeof ServicesRoute
+  '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
+  '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
+  '/warehouse-maintenance-mcdonough': typeof WarehouseMaintenanceMcdonoughRoute
   '/warehouse-maintenance-services-georgia': typeof WarehouseMaintenanceServicesGeorgiaRoute
   '/warehouse-safety-installation-atlanta': typeof WarehouseSafetyInstallationAtlantaRoute
+  '/warehouse-services-locust-grove': typeof WarehouseServicesLocustGroveRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/locations/atlanta': typeof LocationsAtlantaRoute
   '/locations/henry-county': typeof LocationsHenryCountyRoute
@@ -146,12 +191,17 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/commercial-renovations-atlanta': typeof CommercialRenovationsAtlantaRoute
   '/concrete-floor-repair-atlanta': typeof ConcreteFloorRepairAtlantaRoute
+  '/concrete-floor-repair-mcdonough': typeof ConcreteFloorRepairMcdonoughRoute
   '/contact': typeof ContactRoute
   '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/services': typeof ServicesRoute
+  '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
+  '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
+  '/warehouse-maintenance-mcdonough': typeof WarehouseMaintenanceMcdonoughRoute
   '/warehouse-maintenance-services-georgia': typeof WarehouseMaintenanceServicesGeorgiaRoute
   '/warehouse-safety-installation-atlanta': typeof WarehouseSafetyInstallationAtlantaRoute
+  '/warehouse-services-locust-grove': typeof WarehouseServicesLocustGroveRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/locations/atlanta': typeof LocationsAtlantaRoute
   '/locations/henry-county': typeof LocationsHenryCountyRoute
@@ -165,12 +215,17 @@ export interface FileRouteTypes {
     | '/blog'
     | '/commercial-renovations-atlanta'
     | '/concrete-floor-repair-atlanta'
+    | '/concrete-floor-repair-mcdonough'
     | '/contact'
     | '/dock-door-repair-atlanta'
     | '/industrial-hvac-repair-georgia'
     | '/services'
+    | '/warehouse-hvac-repair-atlanta'
+    | '/warehouse-maintenance-atlanta'
+    | '/warehouse-maintenance-mcdonough'
     | '/warehouse-maintenance-services-georgia'
     | '/warehouse-safety-installation-atlanta'
+    | '/warehouse-services-locust-grove'
     | '/blog/$slug'
     | '/locations/atlanta'
     | '/locations/henry-county'
@@ -182,12 +237,17 @@ export interface FileRouteTypes {
     | '/blog'
     | '/commercial-renovations-atlanta'
     | '/concrete-floor-repair-atlanta'
+    | '/concrete-floor-repair-mcdonough'
     | '/contact'
     | '/dock-door-repair-atlanta'
     | '/industrial-hvac-repair-georgia'
     | '/services'
+    | '/warehouse-hvac-repair-atlanta'
+    | '/warehouse-maintenance-atlanta'
+    | '/warehouse-maintenance-mcdonough'
     | '/warehouse-maintenance-services-georgia'
     | '/warehouse-safety-installation-atlanta'
+    | '/warehouse-services-locust-grove'
     | '/blog/$slug'
     | '/locations/atlanta'
     | '/locations/henry-county'
@@ -199,12 +259,17 @@ export interface FileRouteTypes {
     | '/blog'
     | '/commercial-renovations-atlanta'
     | '/concrete-floor-repair-atlanta'
+    | '/concrete-floor-repair-mcdonough'
     | '/contact'
     | '/dock-door-repair-atlanta'
     | '/industrial-hvac-repair-georgia'
     | '/services'
+    | '/warehouse-hvac-repair-atlanta'
+    | '/warehouse-maintenance-atlanta'
+    | '/warehouse-maintenance-mcdonough'
     | '/warehouse-maintenance-services-georgia'
     | '/warehouse-safety-installation-atlanta'
+    | '/warehouse-services-locust-grove'
     | '/blog/$slug'
     | '/locations/atlanta'
     | '/locations/henry-county'
@@ -217,12 +282,17 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   CommercialRenovationsAtlantaRoute: typeof CommercialRenovationsAtlantaRoute
   ConcreteFloorRepairAtlantaRoute: typeof ConcreteFloorRepairAtlantaRoute
+  ConcreteFloorRepairMcdonoughRoute: typeof ConcreteFloorRepairMcdonoughRoute
   ContactRoute: typeof ContactRoute
   DockDoorRepairAtlantaRoute: typeof DockDoorRepairAtlantaRoute
   IndustrialHvacRepairGeorgiaRoute: typeof IndustrialHvacRepairGeorgiaRoute
   ServicesRoute: typeof ServicesRoute
+  WarehouseHvacRepairAtlantaRoute: typeof WarehouseHvacRepairAtlantaRoute
+  WarehouseMaintenanceAtlantaRoute: typeof WarehouseMaintenanceAtlantaRoute
+  WarehouseMaintenanceMcdonoughRoute: typeof WarehouseMaintenanceMcdonoughRoute
   WarehouseMaintenanceServicesGeorgiaRoute: typeof WarehouseMaintenanceServicesGeorgiaRoute
   WarehouseSafetyInstallationAtlantaRoute: typeof WarehouseSafetyInstallationAtlantaRoute
+  WarehouseServicesLocustGroveRoute: typeof WarehouseServicesLocustGroveRoute
   LocationsAtlantaRoute: typeof LocationsAtlantaRoute
   LocationsHenryCountyRoute: typeof LocationsHenryCountyRoute
   LocationsLocustGroveRoute: typeof LocationsLocustGroveRoute
@@ -231,6 +301,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/warehouse-services-locust-grove': {
+      id: '/warehouse-services-locust-grove'
+      path: '/warehouse-services-locust-grove'
+      fullPath: '/warehouse-services-locust-grove'
+      preLoaderRoute: typeof WarehouseServicesLocustGroveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/warehouse-safety-installation-atlanta': {
       id: '/warehouse-safety-installation-atlanta'
       path: '/warehouse-safety-installation-atlanta'
@@ -243,6 +320,27 @@ declare module '@tanstack/react-router' {
       path: '/warehouse-maintenance-services-georgia'
       fullPath: '/warehouse-maintenance-services-georgia'
       preLoaderRoute: typeof WarehouseMaintenanceServicesGeorgiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/warehouse-maintenance-mcdonough': {
+      id: '/warehouse-maintenance-mcdonough'
+      path: '/warehouse-maintenance-mcdonough'
+      fullPath: '/warehouse-maintenance-mcdonough'
+      preLoaderRoute: typeof WarehouseMaintenanceMcdonoughRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/warehouse-maintenance-atlanta': {
+      id: '/warehouse-maintenance-atlanta'
+      path: '/warehouse-maintenance-atlanta'
+      fullPath: '/warehouse-maintenance-atlanta'
+      preLoaderRoute: typeof WarehouseMaintenanceAtlantaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/warehouse-hvac-repair-atlanta': {
+      id: '/warehouse-hvac-repair-atlanta'
+      path: '/warehouse-hvac-repair-atlanta'
+      fullPath: '/warehouse-hvac-repair-atlanta'
+      preLoaderRoute: typeof WarehouseHvacRepairAtlantaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -271,6 +369,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/concrete-floor-repair-mcdonough': {
+      id: '/concrete-floor-repair-mcdonough'
+      path: '/concrete-floor-repair-mcdonough'
+      fullPath: '/concrete-floor-repair-mcdonough'
+      preLoaderRoute: typeof ConcreteFloorRepairMcdonoughRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/concrete-floor-repair-atlanta': {
@@ -354,14 +459,19 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   CommercialRenovationsAtlantaRoute: CommercialRenovationsAtlantaRoute,
   ConcreteFloorRepairAtlantaRoute: ConcreteFloorRepairAtlantaRoute,
+  ConcreteFloorRepairMcdonoughRoute: ConcreteFloorRepairMcdonoughRoute,
   ContactRoute: ContactRoute,
   DockDoorRepairAtlantaRoute: DockDoorRepairAtlantaRoute,
   IndustrialHvacRepairGeorgiaRoute: IndustrialHvacRepairGeorgiaRoute,
   ServicesRoute: ServicesRoute,
+  WarehouseHvacRepairAtlantaRoute: WarehouseHvacRepairAtlantaRoute,
+  WarehouseMaintenanceAtlantaRoute: WarehouseMaintenanceAtlantaRoute,
+  WarehouseMaintenanceMcdonoughRoute: WarehouseMaintenanceMcdonoughRoute,
   WarehouseMaintenanceServicesGeorgiaRoute:
     WarehouseMaintenanceServicesGeorgiaRoute,
   WarehouseSafetyInstallationAtlantaRoute:
     WarehouseSafetyInstallationAtlantaRoute,
+  WarehouseServicesLocustGroveRoute: WarehouseServicesLocustGroveRoute,
   LocationsAtlantaRoute: LocationsAtlantaRoute,
   LocationsHenryCountyRoute: LocationsHenryCountyRoute,
   LocationsLocustGroveRoute: LocationsLocustGroveRoute,
