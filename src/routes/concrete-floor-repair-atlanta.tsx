@@ -14,41 +14,46 @@ export const Route = createFileRoute("/concrete-floor-repair-atlanta")({
     <ServicePage
       slug="concrete-floor-repair"
       heroEyebrow="Warehouse Concrete Repair Atlanta"
-      heroHeadline="Concrete Floor Repair for Warehouses & Industrial Facilities"
-      heroSubheadline="Industrial floor repair across Georgia — Atlanta, McDonough, Locust Grove, and Henry County. Rapid-cure repairs that return slabs to forklift traffic in hours, not days."
+      heroHeadline="Concrete Floor Repair for Warehouses & Industrial Facilities in Atlanta"
+      heroSubheadline="Fix cracked, uneven, or failing warehouse floors without shutting down operations. Premier HD Pro specializes in concrete floor repair for warehouses and distribution centers across Atlanta and Georgia — helping facility managers fix problems quickly while minimizing downtime."
       primaryCtaLabel="Get Concrete Repair Pricing"
-      problemIntro="Warehouse concrete takes more abuse than almost any other surface in a commercial building. Constant forklift traffic, dropped pallets, freeze-thaw at dock doors, and decades of joint impact compound fast. Cracked floors create forklift damage. Spalled joints destroy forklift wheels. Uneven surfaces throw racking out of plumb. Once degradation starts, every additional pass of a forklift makes the problem worse — and more expensive."
+      problemIntro="Warehouse floors don't fail overnight. Most issues build up over time and get worse if ignored. High forklift traffic, heavy loads, and constant use take a toll on industrial flooring — and once damage starts, every additional pass of a forklift makes the problem worse. Left untreated, floor issues lead to safety risks for employees, equipment damage, operational inefficiencies, and costly full replacements down the road."
       problems={[
-        "Cracked floors spreading from joints and control cuts",
-        "Spalling at dock door approaches and high-traffic joints",
-        "Uneven surfaces causing forklift wear and pallet rack instability",
-        "Forklift wheel damage from worn or unfilled joints",
-        "Failed coatings, delaminating epoxy, or worn sealers",
+        "Cracking from heavy loads and structural stress",
+        "Surface spalling and chipping",
+        "Uneven slabs causing forklift hazards",
+        "Concrete dusting affecting cleanliness and equipment",
+        "Worn or damaged high-traffic areas",
       ]}
       offers={[
-        "Crack repair (epoxy & polyurea injection)",
-        "Joint repair and semi-rigid filler",
-        "Spall repair at dock doors and joints",
-        "Section saw-cut and replacement",
-        "Concrete leveling and grinding",
-        "Concrete polishing and densifier upgrades",
-        "Epoxy and urethane coating systems",
-        "Phased repair plans for active facilities",
+        "Crack repair — seal and stabilize cracks to prevent spreading",
+        "Surface repair & resurfacing — restore worn surfaces without full replacement",
+        "Floor leveling — correct uneven areas to improve safety and equipment performance",
+        "Polished concrete upgrades — durable, low-maintenance finished floors",
+        "High-traffic area reinforcement — strengthen zones exposed to constant forklift use",
+        "Phased repair plans for active distribution centers",
       ]}
       midCtaText="Dealing with damaged concrete floors? Get a repair estimate today."
       midCtaLabel="Get Concrete Repair Pricing"
       process={[
-        { title: "Floor assessment", body: "We walk every joint and crack, photograph priority issues, and capture measurements for an accurate scope." },
-        { title: "Scope & prioritization", body: "Written scope ranked by safety, operational risk, and budget impact — so you can phase work intelligently." },
-        { title: "Phased execution", body: "Repairs sequenced around your shipping schedule using rapid-cure materials that return floors to traffic in hours." },
-        { title: "Verification & closeout", body: "Post-repair inspection with operations sign-off before crews demobilize. No surprises." },
+        { title: "Assessment", body: "We evaluate floor condition, damage areas, and operational constraints across your facility." },
+        { title: "Planning around operations", body: "We phase work to avoid disruption and keep your facility running through the project." },
+        { title: "Execution", body: "Efficient repair using proven methods and rapid-cure materials built for industrial environments." },
+        { title: "Completion & inspection", body: "Final walkthrough to ensure durability, safety, and long-term performance before sign-off." },
+      ]}
+      whyUs={[
+        "Experience working in active warehouse environments",
+        "Ability to phase projects around operations",
+        "Fast turnaround and reliable scheduling",
+        "Solutions designed for long-term durability",
+        "Serving Atlanta, McDonough, Locust Grove, and surrounding areas",
       ]}
       relatedPosts={[
-        { slug: "cost-to-repair-concrete-floors-warehouse", anchor: "Learn more about concrete repair costs in a warehouse" },
+        { slug: "cost-to-repair-concrete-floors-warehouse", anchor: "See our full cost guide to repairing warehouse concrete floors" },
         { slug: "polished-concrete-vs-epoxy-warehouse", anchor: "Compare polished concrete vs. epoxy floors for warehouses" },
       ]}
-      bottomCtaHeadline="Request pricing for your warehouse floor repair project."
-      bottomCtaText="Send us your floor plan or schedule a site walk. We'll deliver a phased scope and pricing built for your operation."
+      bottomCtaHeadline="Get Concrete Floor Repair Pricing"
+      bottomCtaText="If your warehouse floors are showing signs of damage, it's best to address the issue early before it becomes more expensive. Premier HD Pro helps facility managers across Georgia repair and upgrade industrial concrete floors with minimal disruption."
       bottomCtaLabel="Get Concrete Repair Pricing"
     />
   ),
