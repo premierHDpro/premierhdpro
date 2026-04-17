@@ -8,6 +8,9 @@ import {
   Building2,
   Factory,
   Warehouse,
+  MapPin,
+  Wrench,
+  Hammer,
 } from "lucide-react";
 import heroImg from "../assets/hero-warehouse.jpg";
 import { services } from "../data/services";
@@ -20,7 +23,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Commercial facility repairs, maintenance, and renovations for warehouses and distribution centers across Metro Atlanta and Georgia. Fast response, minimal downtime.",
+          "Warehouse maintenance services Georgia. Commercial contractor Atlanta serving distribution centers, warehouses, and industrial facilities. Fast response, minimal downtime.",
       },
       { property: "og:title", content: "Premier HD Pro — Commercial Contractor in Georgia" },
       {
@@ -33,13 +36,41 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
+const featuredArticles = [
+  {
+    slug: "cost-to-repair-concrete-floors-warehouse",
+    title: "Cost to Repair Concrete Floors in a Warehouse",
+    desc: "Breakdown of repair costs, causes, and what impacts pricing.",
+    service: { to: "/services/concrete-floor-repair", label: "Concrete Floor Repair" },
+  },
+  {
+    slug: "commercial-door-replacement-guide",
+    title: "Warehouse Door Won't Close Properly — Causes & Fixes",
+    desc: "Common issues with dock doors and what to check first.",
+    service: { to: "/services/dock-door-repair", label: "Door & Dock Repair" },
+  },
+  {
+    slug: "hvac-issues-large-warehouses",
+    title: "HVAC Not Cooling Warehouse — What Could Be Wrong",
+    desc: "Why large facilities struggle with temperature control.",
+    service: { to: "/services/industrial-hvac", label: "Industrial HVAC" },
+  },
+  {
+    slug: "preventative-maintenance-plan-facilities",
+    title: "Preventative Maintenance Plan for Distribution Centers",
+    desc: "How to reduce downtime and avoid costly repairs.",
+    service: { to: "/services/warehouse-maintenance", label: "Warehouse Maintenance" },
+  },
+] as const;
+
 function HomePage() {
   return (
     <>
+      {/* SECTION 1 — HERO */}
       <section className="relative overflow-hidden bg-primary text-primary-foreground">
         <img
           src={heroImg}
-          alt="Industrial warehouse with loading dock doors"
+          alt="Industrial warehouse with loading dock doors in Georgia"
           width={1920}
           height={1080}
           className="absolute inset-0 h-full w-full object-cover opacity-25"
@@ -53,7 +84,7 @@ function HomePage() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-primary-foreground/80 md:text-xl">
               Helping facility managers across Georgia reduce downtime, fix problems fast,
-              and keep operations running.
+              and keep operations running without disruption.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/contact" className="btn-primary">
@@ -72,17 +103,51 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Services */}
+      {/* SECTION 2 — TRUST / POSITIONING */}
       <section className="section-pad">
+        <div className="container-pro grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div>
+            <div className="eyebrow">Why Premier HD Pro</div>
+            <h2 className="text-3xl font-bold md:text-4xl">
+              Built for High-Traffic Industrial Facilities
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              We work with distribution centers, warehouses, and industrial facilities
+              that can't afford downtime. From urgent repairs to planned upgrades, our
+              team understands how to work inside active environments without slowing
+              operations.
+            </p>
+          </div>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {[
+              { icon: Factory, label: "Experience with active warehouse environments" },
+              { icon: Clock, label: "Work phased around your operations" },
+              { icon: Wrench, label: "Fast response for urgent repairs" },
+              { icon: MapPin, label: "Atlanta, McDonough, Locust Grove & more" },
+            ].map((it) => (
+              <li
+                key={it.label}
+                className="flex items-start gap-3 rounded-lg border border-border bg-card p-4"
+              >
+                <it.icon className="mt-0.5 h-5 w-5 flex-shrink-0 text-safety" />
+                <span className="text-sm font-semibold">{it.label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* SECTION 3 — SERVICES */}
+      <section className="section-pad bg-accent/40">
         <div className="container-pro">
           <div className="mb-12 max-w-2xl">
             <div className="eyebrow">What We Do</div>
             <h2 className="text-3xl font-bold md:text-4xl">
-              Specialized services for industrial and commercial facilities
+              Commercial & Industrial Services
             </h2>
             <p className="mt-4 text-muted-foreground">
-              From dock doors to concrete floors to phased renovations — built around active
-              warehouse operations and forklift traffic.
+              Six core services built around active warehouse operations and forklift
+              traffic — from dock doors to concrete floors to phased renovations.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -109,71 +174,135 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Who We Serve */}
-      <section className="section-pad bg-accent/40">
+      {/* SECTION 4 — COMMON PROBLEMS */}
+      <section className="section-pad">
         <div className="container-pro grid gap-12 lg:grid-cols-2">
           <div>
-            <div className="eyebrow">Who We Serve</div>
+            <div className="eyebrow">Problems We Solve</div>
             <h2 className="text-3xl font-bold md:text-4xl">
-              Built for high-traffic, active industrial environments
+              Common Facility Problems We Solve
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Our crews are trained to work safely around forklift traffic, phase work
-              around shipping schedules, and hand off clean spaces back to operations
-              every shift. We minimize downtime so your facility never stops moving.
+              If you're dealing with any of these issues, we can help. We'll walk your
+              facility, document the scope, and recommend the most cost-effective path
+              forward.
             </p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {[
-                { icon: Warehouse, label: "Distribution Centers" },
-                { icon: Truck, label: "Warehouses" },
-                { icon: Factory, label: "Industrial Facilities" },
-                { icon: Building2, label: "Manufacturing Buildings" },
-              ].map((it) => (
-                <div key={it.label} className="flex items-center gap-3 rounded-lg border border-border bg-card p-4">
-                  <it.icon className="h-5 w-5 text-safety" />
-                  <span className="text-sm font-semibold">{it.label}</span>
-                </div>
-              ))}
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link to="/contact" className="btn-primary">
+                Get a Facility Assessment <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
-          <div>
-            <div className="eyebrow">Problems We Solve</div>
-            <h2 className="text-3xl font-bold md:text-4xl">Fix the issues that actually slow operations down</h2>
-            <ul className="mt-6 space-y-3">
-              {[
-                "Cracked or failing concrete floors",
-                "Broken dock doors or entry systems",
-                "HVAC not keeping up with large spaces",
-                "Safety issues and compliance risks",
-                "Facility upgrades without shutting down operations",
-              ].map((p) => (
-                <li key={p} className="flex items-start gap-3 rounded-md border border-border bg-card p-4">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-safety" />
-                  <span className="text-sm font-medium">{p}</span>
-                </li>
-              ))}
-            </ul>
+          <ul className="space-y-3">
+            {[
+              "Cracked or failing warehouse concrete floors",
+              "Dock doors not opening or closing properly",
+              "HVAC systems not keeping up with large spaces",
+              "Safety risks from missing or damaged barriers",
+              "Facility upgrades needed without shutting down operations",
+            ].map((p) => (
+              <li
+                key={p}
+                className="flex items-start gap-3 rounded-md border border-border bg-card p-4"
+              >
+                <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-safety" />
+                <span className="text-sm font-medium">{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* SECTION 5 — FEATURED ARTICLES */}
+      <section className="section-pad bg-accent/40">
+        <div className="container-pro">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-2xl">
+              <div className="eyebrow">Insights</div>
+              <h2 className="text-3xl font-bold md:text-4xl">Facility Maintenance Insights</h2>
+              <p className="mt-3 text-muted-foreground">
+                Helpful guides for warehouse and facility managers.
+              </p>
+            </div>
+            <Link to="/blog" className="btn-outline">
+              View all articles
+            </Link>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2">
+            {featuredArticles.map((a) => (
+              <article
+                key={a.slug}
+                className="flex flex-col rounded-lg border border-border bg-card p-6"
+              >
+                <h3 className="text-lg font-bold">
+                  <Link
+                    to="/blog/$slug"
+                    params={{ slug: a.slug }}
+                    className="hover:text-primary"
+                  >
+                    {a.title}
+                  </Link>
+                </h3>
+                <p className="mt-2 flex-1 text-sm text-muted-foreground">{a.desc}</p>
+                <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4 text-sm">
+                  <Link
+                    to="/blog/$slug"
+                    params={{ slug: a.slug }}
+                    className="inline-flex items-center gap-1 font-semibold text-primary"
+                  >
+                    Read article <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link to={a.service.to} className="text-muted-foreground hover:text-primary">
+                    Related: <span className="font-semibold">{a.service.label}</span>
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why us */}
+      {/* SECTION 6 — WHY CHOOSE US */}
       <section className="section-pad">
         <div className="container-pro">
           <div className="mb-12 max-w-2xl">
-            <div className="eyebrow">Why Premier HD Pro</div>
+            <div className="eyebrow">Why Choose Us</div>
             <h2 className="text-3xl font-bold md:text-4xl">
-              A contractor your operations team can actually rely on
+              Why Facility Managers Choose Premier HD Pro
             </h2>
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
-              { icon: Factory, title: "Active facility experience", body: "We work around forklifts, conveyors, and 24/7 shipping schedules — not in empty buildings." },
-              { icon: Clock, title: "Fast response times", body: "Quick site walks and rapid quotes. We respond when downtime is on the line." },
-              { icon: ShieldCheck, title: "Phased work, no shutdowns", body: "We sequence renovations and repairs so your facility keeps shipping." },
-              { icon: CheckCircle2, title: "Long-term partner", body: "Built for ongoing maintenance — not one-off jobs and disappear." },
-              { icon: Truck, title: "Metro Atlanta coverage", body: "Atlanta, McDonough, Locust Grove, Henry County, and surrounding areas." },
-              { icon: Building2, title: "Commercial-grade work", body: "Industrial materials, code compliance, real warranties." },
+              {
+                icon: Factory,
+                title: "Industrial facility experience",
+                body: "Direct experience with distribution centers, warehouses, and manufacturing buildings.",
+              },
+              {
+                icon: ShieldCheck,
+                title: "Work in active environments",
+                body: "We phase work around shipping schedules and forklift traffic — no shutdowns required.",
+              },
+              {
+                icon: Clock,
+                title: "Fast turnaround & reliable scheduling",
+                body: "Quick site walks, written scopes, and crews that show up when they say they will.",
+              },
+              {
+                icon: Wrench,
+                title: "One contractor, multiple needs",
+                body: "Concrete, doors, HVAC, renovations, safety — managed under a single point of contact.",
+              },
+              {
+                icon: MapPin,
+                title: "Metro Atlanta coverage",
+                body: "Atlanta, McDonough, Locust Grove, Henry County, and surrounding Georgia areas.",
+              },
+              {
+                icon: CheckCircle2,
+                title: "Long-term partner",
+                body: "Built for ongoing maintenance relationships — not one-off jobs and disappear.",
+              },
             ].map((it) => (
               <div key={it.title} className="rounded-lg border border-border bg-card p-6">
                 <it.icon className="h-6 w-6 text-safety" />
@@ -185,7 +314,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Recent Projects placeholder */}
+      {/* SECTION 7 — RECENT PROJECTS */}
       <section className="section-pad bg-accent/40">
         <div className="container-pro">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
@@ -193,18 +322,39 @@ function HomePage() {
               <div className="eyebrow">Recent Projects</div>
               <h2 className="text-3xl font-bold md:text-4xl">Work across Metro Atlanta facilities</h2>
             </div>
-            <Link to="/contact" className="btn-outline">Discuss your project</Link>
+            <Link to="/contact" className="btn-outline">
+              Discuss your project
+            </Link>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {[
-              { t: "Dock Door Overhaul", c: "350,000 sq. ft. distribution center · McDonough, GA", tag: "Doors & Docks" },
-              { t: "Phased Concrete Joint Repair", c: "Active 24/7 fulfillment center · Henry County", tag: "Concrete" },
-              { t: "HVAC Rooftop Replacement", c: "Multi-tenant industrial building · Atlanta, GA", tag: "HVAC" },
+              {
+                t: "Dock Door Overhaul",
+                c: "350,000 sq. ft. distribution center · McDonough, GA",
+                tag: "Doors & Docks",
+                icon: Truck,
+              },
+              {
+                t: "Phased Concrete Joint Repair",
+                c: "Active 24/7 fulfillment center · Henry County",
+                tag: "Concrete",
+                icon: Hammer,
+              },
+              {
+                t: "HVAC Rooftop Replacement",
+                c: "Multi-tenant industrial building · Atlanta, GA",
+                tag: "HVAC",
+                icon: Warehouse,
+              },
             ].map((p) => (
               <div key={p.t} className="overflow-hidden rounded-lg border border-border bg-card">
-                <div className="aspect-[4/3] bg-gradient-to-br from-primary to-steel" />
+                <div className="relative flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-primary to-steel">
+                  <p.icon className="h-16 w-16 text-primary-foreground/40" />
+                </div>
                 <div className="p-5">
-                  <div className="text-xs font-semibold uppercase tracking-wider text-safety">{p.tag}</div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-safety">
+                    {p.tag}
+                  </div>
                   <h3 className="mt-1 text-lg font-bold">{p.t}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{p.c}</p>
                 </div>
@@ -214,6 +364,7 @@ function HomePage() {
         </div>
       </section>
 
+      {/* SECTION 8 — FINAL CTA */}
       <CtaBand />
     </>
   );
@@ -227,3 +378,4 @@ function Stat({ label, value }: { label: string; value: string }) {
     </div>
   );
 }
+

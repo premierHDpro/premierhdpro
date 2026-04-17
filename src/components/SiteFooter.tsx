@@ -25,7 +25,8 @@ export function SiteFooter() {
               <Phone className="h-4 w-4" /> (470) 555-0100
             </a>
             <a href="mailto:info@premierhdpro.com" className="flex items-center gap-2 hover:text-safety">
-              <Mail className="h-4 w-4" /> info@premierhdpro.com
+              <Mail className="h-4 w-4" />
+              <span>info@premierhdpro.com</span>
             </a>
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4" /> McDonough, GA — Serving Metro Atlanta
