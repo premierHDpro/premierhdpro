@@ -19,6 +19,9 @@ import { Route as ConcreteFloorRepairAtlantaRouteImport } from './routes/concret
 import { Route as CommercialRenovationsAtlantaRouteImport } from './routes/commercial-renovations-atlanta'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LocationsMcdonoughRouteImport } from './routes/locations.mcdonough'
+import { Route as LocationsLocustGroveRouteImport } from './routes/locations.locust-grove'
+import { Route as LocationsHenryCountyRouteImport } from './routes/locations.henry-county'
 import { Route as LocationsAtlantaRouteImport } from './routes/locations.atlanta'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
@@ -77,6 +80,21 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LocationsMcdonoughRoute = LocationsMcdonoughRouteImport.update({
+  id: '/locations/mcdonough',
+  path: '/locations/mcdonough',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsLocustGroveRoute = LocationsLocustGroveRouteImport.update({
+  id: '/locations/locust-grove',
+  path: '/locations/locust-grove',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsHenryCountyRoute = LocationsHenryCountyRouteImport.update({
+  id: '/locations/henry-county',
+  path: '/locations/henry-county',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LocationsAtlantaRoute = LocationsAtlantaRouteImport.update({
   id: '/locations/atlanta',
   path: '/locations/atlanta',
@@ -101,6 +119,9 @@ export interface FileRoutesByFullPath {
   '/warehouse-safety-installation-atlanta': typeof WarehouseSafetyInstallationAtlantaRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/locations/atlanta': typeof LocationsAtlantaRoute
+  '/locations/henry-county': typeof LocationsHenryCountyRoute
+  '/locations/locust-grove': typeof LocationsLocustGroveRoute
+  '/locations/mcdonough': typeof LocationsMcdonoughRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -115,6 +136,9 @@ export interface FileRoutesByTo {
   '/warehouse-safety-installation-atlanta': typeof WarehouseSafetyInstallationAtlantaRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/locations/atlanta': typeof LocationsAtlantaRoute
+  '/locations/henry-county': typeof LocationsHenryCountyRoute
+  '/locations/locust-grove': typeof LocationsLocustGroveRoute
+  '/locations/mcdonough': typeof LocationsMcdonoughRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -130,6 +154,9 @@ export interface FileRoutesById {
   '/warehouse-safety-installation-atlanta': typeof WarehouseSafetyInstallationAtlantaRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/locations/atlanta': typeof LocationsAtlantaRoute
+  '/locations/henry-county': typeof LocationsHenryCountyRoute
+  '/locations/locust-grove': typeof LocationsLocustGroveRoute
+  '/locations/mcdonough': typeof LocationsMcdonoughRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -146,6 +173,9 @@ export interface FileRouteTypes {
     | '/warehouse-safety-installation-atlanta'
     | '/blog/$slug'
     | '/locations/atlanta'
+    | '/locations/henry-county'
+    | '/locations/locust-grove'
+    | '/locations/mcdonough'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -160,6 +190,9 @@ export interface FileRouteTypes {
     | '/warehouse-safety-installation-atlanta'
     | '/blog/$slug'
     | '/locations/atlanta'
+    | '/locations/henry-county'
+    | '/locations/locust-grove'
+    | '/locations/mcdonough'
   id:
     | '__root__'
     | '/'
@@ -174,6 +207,9 @@ export interface FileRouteTypes {
     | '/warehouse-safety-installation-atlanta'
     | '/blog/$slug'
     | '/locations/atlanta'
+    | '/locations/henry-county'
+    | '/locations/locust-grove'
+    | '/locations/mcdonough'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -188,6 +224,9 @@ export interface RootRouteChildren {
   WarehouseMaintenanceServicesGeorgiaRoute: typeof WarehouseMaintenanceServicesGeorgiaRoute
   WarehouseSafetyInstallationAtlantaRoute: typeof WarehouseSafetyInstallationAtlantaRoute
   LocationsAtlantaRoute: typeof LocationsAtlantaRoute
+  LocationsHenryCountyRoute: typeof LocationsHenryCountyRoute
+  LocationsLocustGroveRoute: typeof LocationsLocustGroveRoute
+  LocationsMcdonoughRoute: typeof LocationsMcdonoughRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -262,6 +301,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/locations/mcdonough': {
+      id: '/locations/mcdonough'
+      path: '/locations/mcdonough'
+      fullPath: '/locations/mcdonough'
+      preLoaderRoute: typeof LocationsMcdonoughRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/locust-grove': {
+      id: '/locations/locust-grove'
+      path: '/locations/locust-grove'
+      fullPath: '/locations/locust-grove'
+      preLoaderRoute: typeof LocationsLocustGroveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/henry-county': {
+      id: '/locations/henry-county'
+      path: '/locations/henry-county'
+      fullPath: '/locations/henry-county'
+      preLoaderRoute: typeof LocationsHenryCountyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/locations/atlanta': {
       id: '/locations/atlanta'
       path: '/locations/atlanta'
@@ -303,7 +363,19 @@ const rootRouteChildren: RootRouteChildren = {
   WarehouseSafetyInstallationAtlantaRoute:
     WarehouseSafetyInstallationAtlantaRoute,
   LocationsAtlantaRoute: LocationsAtlantaRoute,
+  LocationsHenryCountyRoute: LocationsHenryCountyRoute,
+  LocationsLocustGroveRoute: LocationsLocustGroveRoute,
+  LocationsMcdonoughRoute: LocationsMcdonoughRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
