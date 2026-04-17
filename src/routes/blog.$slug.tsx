@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Clock } from "lucide-react";
-import { posts } from "../data/posts";
+import { posts, type Post } from "../data/posts";
 import { services } from "../data/services";
 import { PageHeader } from "../components/PageHeader";
 import { CtaBand } from "../components/CtaBand";
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function PostPage() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: Post };
   const related = (post.related ?? [])
     .map((slug) => services.find((s) => s.slug === slug))
     .filter(Boolean) as typeof services;

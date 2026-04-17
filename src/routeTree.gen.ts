@@ -9,38 +9,202 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesWarehouseMaintenanceRouteImport } from './routes/services.warehouse-maintenance'
+import { Route as ServicesSafetyBarriersRouteImport } from './routes/services.safety-barriers'
+import { Route as ServicesIndustrialHvacRouteImport } from './routes/services.industrial-hvac'
+import { Route as ServicesDockDoorRepairRouteImport } from './routes/services.dock-door-repair'
+import { Route as ServicesConcreteFloorRepairRouteImport } from './routes/services.concrete-floor-repair'
+import { Route as ServicesCommercialRenovationsRouteImport } from './routes/services.commercial-renovations'
+import { Route as LocationsAtlantaRouteImport } from './routes/locations.atlanta'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesWarehouseMaintenanceRoute =
+  ServicesWarehouseMaintenanceRouteImport.update({
+    id: '/warehouse-maintenance',
+    path: '/warehouse-maintenance',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesSafetyBarriersRoute = ServicesSafetyBarriersRouteImport.update({
+  id: '/safety-barriers',
+  path: '/safety-barriers',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesIndustrialHvacRoute = ServicesIndustrialHvacRouteImport.update({
+  id: '/industrial-hvac',
+  path: '/industrial-hvac',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesDockDoorRepairRoute = ServicesDockDoorRepairRouteImport.update({
+  id: '/dock-door-repair',
+  path: '/dock-door-repair',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesConcreteFloorRepairRoute =
+  ServicesConcreteFloorRepairRouteImport.update({
+    id: '/concrete-floor-repair',
+    path: '/concrete-floor-repair',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesCommercialRenovationsRoute =
+  ServicesCommercialRenovationsRouteImport.update({
+    id: '/commercial-renovations',
+    path: '/commercial-renovations',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const LocationsAtlantaRoute = LocationsAtlantaRouteImport.update({
+  id: '/locations/atlanta',
+  path: '/locations/atlanta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/blog/$slug': typeof BlogSlugRoute
+  '/locations/atlanta': typeof LocationsAtlantaRoute
+  '/services/commercial-renovations': typeof ServicesCommercialRenovationsRoute
+  '/services/concrete-floor-repair': typeof ServicesConcreteFloorRepairRoute
+  '/services/dock-door-repair': typeof ServicesDockDoorRepairRoute
+  '/services/industrial-hvac': typeof ServicesIndustrialHvacRoute
+  '/services/safety-barriers': typeof ServicesSafetyBarriersRoute
+  '/services/warehouse-maintenance': typeof ServicesWarehouseMaintenanceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/blog/$slug': typeof BlogSlugRoute
+  '/locations/atlanta': typeof LocationsAtlantaRoute
+  '/services/commercial-renovations': typeof ServicesCommercialRenovationsRoute
+  '/services/concrete-floor-repair': typeof ServicesConcreteFloorRepairRoute
+  '/services/dock-door-repair': typeof ServicesDockDoorRepairRoute
+  '/services/industrial-hvac': typeof ServicesIndustrialHvacRoute
+  '/services/safety-barriers': typeof ServicesSafetyBarriersRoute
+  '/services/warehouse-maintenance': typeof ServicesWarehouseMaintenanceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/contact': typeof ContactRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/blog/$slug': typeof BlogSlugRoute
+  '/locations/atlanta': typeof LocationsAtlantaRoute
+  '/services/commercial-renovations': typeof ServicesCommercialRenovationsRoute
+  '/services/concrete-floor-repair': typeof ServicesConcreteFloorRepairRoute
+  '/services/dock-door-repair': typeof ServicesDockDoorRepairRoute
+  '/services/industrial-hvac': typeof ServicesIndustrialHvacRoute
+  '/services/safety-barriers': typeof ServicesSafetyBarriersRoute
+  '/services/warehouse-maintenance': typeof ServicesWarehouseMaintenanceRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/blog'
+    | '/contact'
+    | '/services'
+    | '/blog/$slug'
+    | '/locations/atlanta'
+    | '/services/commercial-renovations'
+    | '/services/concrete-floor-repair'
+    | '/services/dock-door-repair'
+    | '/services/industrial-hvac'
+    | '/services/safety-barriers'
+    | '/services/warehouse-maintenance'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/blog'
+    | '/contact'
+    | '/services'
+    | '/blog/$slug'
+    | '/locations/atlanta'
+    | '/services/commercial-renovations'
+    | '/services/concrete-floor-repair'
+    | '/services/dock-door-repair'
+    | '/services/industrial-hvac'
+    | '/services/safety-barriers'
+    | '/services/warehouse-maintenance'
+  id:
+    | '__root__'
+    | '/'
+    | '/blog'
+    | '/contact'
+    | '/services'
+    | '/blog/$slug'
+    | '/locations/atlanta'
+    | '/services/commercial-renovations'
+    | '/services/concrete-floor-repair'
+    | '/services/dock-door-repair'
+    | '/services/industrial-hvac'
+    | '/services/safety-barriers'
+    | '/services/warehouse-maintenance'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BlogRoute: typeof BlogRouteWithChildren
+  ContactRoute: typeof ContactRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
+  LocationsAtlantaRoute: typeof LocationsAtlantaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +212,103 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/warehouse-maintenance': {
+      id: '/services/warehouse-maintenance'
+      path: '/warehouse-maintenance'
+      fullPath: '/services/warehouse-maintenance'
+      preLoaderRoute: typeof ServicesWarehouseMaintenanceRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/safety-barriers': {
+      id: '/services/safety-barriers'
+      path: '/safety-barriers'
+      fullPath: '/services/safety-barriers'
+      preLoaderRoute: typeof ServicesSafetyBarriersRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/industrial-hvac': {
+      id: '/services/industrial-hvac'
+      path: '/industrial-hvac'
+      fullPath: '/services/industrial-hvac'
+      preLoaderRoute: typeof ServicesIndustrialHvacRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/dock-door-repair': {
+      id: '/services/dock-door-repair'
+      path: '/dock-door-repair'
+      fullPath: '/services/dock-door-repair'
+      preLoaderRoute: typeof ServicesDockDoorRepairRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/concrete-floor-repair': {
+      id: '/services/concrete-floor-repair'
+      path: '/concrete-floor-repair'
+      fullPath: '/services/concrete-floor-repair'
+      preLoaderRoute: typeof ServicesConcreteFloorRepairRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/commercial-renovations': {
+      id: '/services/commercial-renovations'
+      path: '/commercial-renovations'
+      fullPath: '/services/commercial-renovations'
+      preLoaderRoute: typeof ServicesCommercialRenovationsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/locations/atlanta': {
+      id: '/locations/atlanta'
+      path: '/locations/atlanta'
+      fullPath: '/locations/atlanta'
+      preLoaderRoute: typeof LocationsAtlantaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
+interface ServicesRouteChildren {
+  ServicesCommercialRenovationsRoute: typeof ServicesCommercialRenovationsRoute
+  ServicesConcreteFloorRepairRoute: typeof ServicesConcreteFloorRepairRoute
+  ServicesDockDoorRepairRoute: typeof ServicesDockDoorRepairRoute
+  ServicesIndustrialHvacRoute: typeof ServicesIndustrialHvacRoute
+  ServicesSafetyBarriersRoute: typeof ServicesSafetyBarriersRoute
+  ServicesWarehouseMaintenanceRoute: typeof ServicesWarehouseMaintenanceRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesCommercialRenovationsRoute: ServicesCommercialRenovationsRoute,
+  ServicesConcreteFloorRepairRoute: ServicesConcreteFloorRepairRoute,
+  ServicesDockDoorRepairRoute: ServicesDockDoorRepairRoute,
+  ServicesIndustrialHvacRoute: ServicesIndustrialHvacRoute,
+  ServicesSafetyBarriersRoute: ServicesSafetyBarriersRoute,
+  ServicesWarehouseMaintenanceRoute: ServicesWarehouseMaintenanceRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BlogRoute: BlogRouteWithChildren,
+  ContactRoute: ContactRoute,
+  ServicesRoute: ServicesRouteWithChildren,
+  LocationsAtlantaRoute: LocationsAtlantaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
