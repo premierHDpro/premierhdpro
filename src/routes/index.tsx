@@ -8,9 +8,9 @@ import {
   Building2,
   Factory,
   Warehouse,
-  Phone,
   MapPin,
   Wrench,
+  Hammer,
 } from "lucide-react";
 import heroImg from "../assets/hero-warehouse.jpg";
 import { services } from "../data/services";
@@ -379,7 +379,3 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
-function Hammer({ className }: { className?: string }) {
-  // local fallback since lucide Hammer is already imported elsewhere; using Building2 visual instead
-  return <Building2 className={className} />;
-}
