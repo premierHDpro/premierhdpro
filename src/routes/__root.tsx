@@ -29,7 +29,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Premier HD Pro — Commercial Contractor for Warehouses & Distribution Centers in Georgia" },
+      { title: "test site" },
       {
         name: "description",
         content:
@@ -37,13 +37,19 @@ export const Route = createRootRoute({
       },
       { name: "author", content: "Premier HD Pro" },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Premier HD Pro — Commercial Contractor in Georgia" },
+      { property: "og:title", content: "test site" },
       {
         property: "og:description",
         content:
           "Warehouse maintenance, concrete floor repair, dock door repair, industrial HVAC, and renovations across Metro Atlanta.",
       },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "test site" },
+      { name: "description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
+      { property: "og:description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
+      { name: "twitter:description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/12c572e5-15ac-4320-a248-92f39f55f48a/id-preview-9a6e96c2--3281c354-18f0-4b44-9cb3-85f39f7cba34.lovable.app-1776442888654.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/12c572e5-15ac-4320-a248-92f39f55f48a/id-preview-9a6e96c2--3281c354-18f0-4b44-9cb3-85f39f7cba34.lovable.app-1776442888654.png" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
   }),
