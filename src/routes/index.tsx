@@ -13,8 +13,13 @@ import {
   Hammer,
 } from "lucide-react";
 import heroImg from "../assets/hero-warehouse.jpg";
+import projectDockDoors from "../assets/project-dock-doors.jpg";
+import projectConcrete from "../assets/project-concrete.jpg";
+import projectHvac from "../assets/project-hvac.jpg";
+import projectRenovation from "../assets/project-renovation.jpg";
 import { services } from "../data/services";
 import { CtaBand } from "../components/CtaBand";
+import { ContactForm } from "../components/ContactForm";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -99,6 +104,26 @@ function HomePage() {
               <Stat label="Service area" value="Metro Atlanta + GA" />
               <Stat label="Specialty" value="Active industrial facilities" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST BAR */}
+      <section className="border-b border-border bg-card py-6">
+        <div className="container-pro">
+          <p className="text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Trusted by 80+ Georgia warehouse, distribution, and industrial facilities
+          </p>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm font-bold text-foreground/60">
+            <span>3PL Distribution</span>
+            <span>·</span>
+            <span>Cold Storage</span>
+            <span>·</span>
+            <span>Manufacturing</span>
+            <span>·</span>
+            <span>Last-Mile Fulfillment</span>
+            <span>·</span>
+            <span>Industrial Property Mgmt</span>
           </div>
         </div>
       </section>
@@ -326,30 +351,50 @@ function HomePage() {
               Discuss your project
             </Link>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 t: "Dock Door Overhaul",
                 c: "350,000 sq. ft. distribution center · McDonough, GA",
                 tag: "Doors & Docks",
-                icon: Truck,
+                value: "$85,000",
+                img: projectDockDoors,
               },
               {
                 t: "Phased Concrete Joint Repair",
                 c: "Active 24/7 fulfillment center · Henry County",
                 tag: "Concrete",
-                icon: Hammer,
+                value: "$42,000",
+                img: projectConcrete,
               },
               {
                 t: "HVAC Rooftop Replacement",
                 c: "Multi-tenant industrial building · Atlanta, GA",
                 tag: "HVAC",
-                icon: Warehouse,
+                value: "$118,000",
+                img: projectHvac,
+              },
+              {
+                t: "Distribution Center Office Buildout",
+                c: "Phased renovation · Locust Grove, GA",
+                tag: "Renovation",
+                value: "$170,000",
+                img: projectRenovation,
               },
             ].map((p) => (
-              <div key={p.t} className="overflow-hidden rounded-lg border border-border bg-card">
-                <div className="relative flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-primary to-steel">
-                  <p.icon className="h-16 w-16 text-primary-foreground/40" />
+              <div key={p.t} className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
+                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={p.img}
+                    alt={`${p.t} — ${p.c}`}
+                    width={1280}
+                    height={960}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute right-3 top-3 rounded bg-background/95 px-2 py-1 text-xs font-bold text-primary shadow">
+                    {p.value}
+                  </div>
                 </div>
                 <div className="p-5">
                   <div className="text-xs font-semibold uppercase tracking-wider text-safety">
@@ -360,6 +405,114 @@ function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHO WE SERVE */}
+      <section className="section-pad">
+        <div className="container-pro">
+          <div className="mb-12 max-w-2xl">
+            <div className="eyebrow">Who We Serve</div>
+            <h2 className="text-3xl font-bold md:text-4xl">Built for industrial operations</h2>
+            <p className="mt-4 text-muted-foreground">
+              We work alongside the people responsible for keeping facilities running every day.
+            </p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              { icon: Warehouse, t: "Distribution Centers" },
+              { icon: Truck, t: "Warehouses" },
+              { icon: Factory, t: "Manufacturing Plants" },
+              { icon: Wrench, t: "Facility Managers" },
+              { icon: Building2, t: "Property Managers" },
+            ].map((w) => (
+              <div key={w.t} className="flex flex-col items-center rounded-lg border border-border bg-card p-6 text-center transition-colors hover:border-primary">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary">
+                  <w.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-4 text-sm font-bold">{w.t}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="section-pad bg-accent/40">
+        <div className="container-pro">
+          <div className="mb-12 max-w-2xl">
+            <div className="eyebrow">What Clients Say</div>
+            <h2 className="text-3xl font-bold md:text-4xl">Trusted by Georgia facility teams</h2>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {[
+              { q: "They scoped, repaired, and were out before second shift started. No interruptions to outbound shipping.", n: "Mark D.", r: "Operations Manager, 3PL Distribution Center" },
+              { q: "We've used Premier HD Pro for ongoing concrete and dock work for two years. Always responsive, always clean work.", n: "Tracey W.", r: "Facility Manager, Manufacturing Plant" },
+              { q: "Phased the rooftop HVAC swap around our peak. Zero downtime, on schedule, on budget.", n: "Brian R.", r: "Property Manager, Industrial Park" },
+            ].map((t) => (
+              <figure key={t.n} className="flex flex-col rounded-lg border border-border bg-card p-6">
+                <blockquote className="flex-1 text-sm leading-relaxed text-foreground/85">"{t.q}"</blockquote>
+                <figcaption className="mt-4 border-t border-border pt-4 text-xs">
+                  <div className="font-bold">{t.n}</div>
+                  <div className="text-muted-foreground">{t.r}</div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section-pad">
+        <div className="container-pro grid gap-12 lg:grid-cols-3">
+          <div>
+            <div className="eyebrow">FAQ</div>
+            <h2 className="text-3xl font-bold md:text-4xl">Common questions from facility managers</h2>
+            <p className="mt-4 text-muted-foreground">
+              If you don't see your question here, call us at{" "}
+              <a href="tel:+14705550100" className="font-semibold text-foreground">(470) 555-0100</a>.
+            </p>
+          </div>
+          <div className="lg:col-span-2 space-y-4">
+            {[
+              { q: "Are you licensed and insured?", a: "Yes — we carry full general liability and workers' compensation coverage. Certificates available on request before any site walk." },
+              { q: "How fast can you respond to an urgent issue?", a: "For active service area accounts, we target same-day or next-business-day site walks for urgent dock door, HVAC, or safety issues." },
+              { q: "Can you work nights, weekends, or around active shifts?", a: "Yes. Most of our warehouse work is phased around shipping schedules, second shift, or weekend windows to avoid disrupting operations." },
+              { q: "Do you offer ongoing maintenance contracts?", a: "Yes. Many of our distribution and manufacturing clients run on monthly or quarterly preventative maintenance plans covering concrete, doors, HVAC, and safety inspections." },
+            ].map((f) => (
+              <details key={f.q} className="group rounded-lg border border-border bg-card p-5 open:shadow-md">
+                <summary className="flex cursor-pointer items-center justify-between font-semibold">
+                  {f.q}
+                  <span className="text-primary transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-sm text-muted-foreground">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INLINE LEAD FORM */}
+      <section className="section-pad bg-primary text-primary-foreground">
+        <div className="container-pro grid gap-10 lg:grid-cols-2">
+          <div>
+            <div className="eyebrow !text-safety">Request a Quote</div>
+            <h2 className="text-3xl font-bold md:text-4xl">Tell us about your facility</h2>
+            <p className="mt-4 max-w-md text-primary-foreground/80">
+              Send us a few details and we'll respond within one business day to schedule a site walk
+              or facility assessment — no obligation.
+            </p>
+            <ul className="mt-6 space-y-2 text-sm text-primary-foreground/80">
+              {["Same-day quotes for active accounts","Walk-throughs at no cost","Written scope with line-item pricing"].map((p) => (
+                <li key={p} className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-safety" /> {p}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-lg bg-background p-6 text-foreground shadow-xl md:p-8">
+            <ContactForm />
           </div>
         </div>
       </section>

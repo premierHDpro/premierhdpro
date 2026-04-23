@@ -4,6 +4,7 @@ import { PageHeader } from "../components/PageHeader";
 import { CtaBand } from "../components/CtaBand";
 import { ContactForm } from "../components/ContactForm";
 import { services } from "../data/services";
+import ogImg from "../assets/og-locust-grove.jpg";
 
 export const Route = createFileRoute("/locations/locust-grove")({
   head: () => ({
@@ -12,6 +13,8 @@ export const Route = createFileRoute("/locations/locust-grove")({
       { name: "description", content: "Locally based commercial contractor in Locust Grove, GA serving warehouses, distribution centers, and industrial facilities across Henry County and South Atlanta." },
       { property: "og:title", content: "Commercial Contractor in Locust Grove, GA" },
       { property: "og:description", content: "Locust Grove–based industrial contractor for warehouses and distribution centers in Henry County and South Atlanta." },
+      { property: "og:image", content: ogImg },
+      { name: "twitter:image", content: ogImg },
     ],
   }),
   component: LocustGroveLocation,

@@ -4,6 +4,7 @@ import { PageHeader } from "../components/PageHeader";
 import { CtaBand } from "../components/CtaBand";
 import { ContactForm } from "../components/ContactForm";
 import { services } from "../data/services";
+import ogImg from "../assets/og-mcdonough.jpg";
 
 export const Route = createFileRoute("/locations/mcdonough")({
   head: () => ({
@@ -12,6 +13,8 @@ export const Route = createFileRoute("/locations/mcdonough")({
       { name: "description", content: "Warehouse and distribution center contractor in McDonough, GA. Concrete repair, dock doors, HVAC, and maintenance for high-volume logistics facilities." },
       { property: "og:title", content: "Warehouse Contractor in McDonough, GA" },
       { property: "og:description", content: "Industrial contractor for McDonough distribution centers and 3PL facilities, just minutes from our Locust Grove office." },
+      { property: "og:image", content: ogImg },
+      { name: "twitter:image", content: ogImg },
     ],
   }),
   component: McDonoughLocation,
