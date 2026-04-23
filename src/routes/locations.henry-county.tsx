@@ -108,7 +108,7 @@ function HenryCountyLocation() {
               </ul>
               <p className="mt-4 text-sm text-muted-foreground">
                 For more on what to expect cost-wise, see our{" "}
-                <Link to="/blog/cost-to-repair-concrete-floors-warehouse" className="font-semibold text-primary underline-offset-4 hover:underline">warehouse concrete repair cost guide</Link>.
+                <Link to="/blog/$slug" params={{ slug: "cost-to-repair-concrete-floors-warehouse" }} className="font-semibold text-primary underline-offset-4 hover:underline">warehouse concrete repair cost guide</Link>.
               </p>
             </div>
 

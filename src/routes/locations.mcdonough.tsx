@@ -105,7 +105,7 @@ function McDonoughLocation() {
               </ul>
               <p className="mt-4 text-sm text-muted-foreground">
                 Planning a floor repair? Read{" "}
-                <Link to="/blog/cost-to-repair-concrete-floors-warehouse" className="font-semibold text-primary underline-offset-4 hover:underline">our guide on warehouse concrete repair costs</Link>.
+                <Link to="/blog/$slug" params={{ slug: "cost-to-repair-concrete-floors-warehouse" }} className="font-semibold text-primary underline-offset-4 hover:underline">our guide on warehouse concrete repair costs</Link>.
               </p>
             </div>
 
