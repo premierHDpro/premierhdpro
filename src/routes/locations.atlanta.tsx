@@ -4,6 +4,7 @@ import { PageHeader } from "../components/PageHeader";
 import { CtaBand } from "../components/CtaBand";
 import { ContactForm } from "../components/ContactForm";
 import { services } from "../data/services";
+import ogImg from "../assets/og-atlanta.jpg";
 
 export const Route = createFileRoute("/locations/atlanta")({
   head: () => ({
@@ -12,6 +13,8 @@ export const Route = createFileRoute("/locations/atlanta")({
       { name: "description", content: "Commercial contractor serving large warehouses and distribution centers across Metro Atlanta. Maintenance, repairs, and renovations for high-volume industrial facilities." },
       { property: "og:title", content: "Commercial Contractor in Atlanta, GA" },
       { property: "og:description", content: "Industrial contractor for Metro Atlanta distribution centers, fulfillment hubs, and large warehouse facilities." },
+      { property: "og:image", content: ogImg },
+      { name: "twitter:image", content: ogImg },
     ],
   }),
   component: AtlantaLocation,
