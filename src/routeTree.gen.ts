@@ -15,6 +15,7 @@ import { Route as WarehouseMaintenanceServicesGeorgiaRouteImport } from './route
 import { Route as WarehouseMaintenanceMcdonoughRouteImport } from './routes/warehouse-maintenance-mcdonough'
 import { Route as WarehouseMaintenanceAtlantaRouteImport } from './routes/warehouse-maintenance-atlanta'
 import { Route as WarehouseHvacRepairAtlantaRouteImport } from './routes/warehouse-hvac-repair-atlanta'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as IndustrialHvacRepairGeorgiaRouteImport } from './routes/industrial-hvac-repair-georgia'
 import { Route as DockDoorRepairAtlantaRouteImport } from './routes/dock-door-repair-atlanta'
@@ -66,6 +67,11 @@ const WarehouseHvacRepairAtlantaRoute =
     path: '/warehouse-hvac-repair-atlanta',
     getParentRoute: () => rootRouteImport,
   } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -151,6 +157,7 @@ export interface FileRoutesByFullPath {
   '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
   '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
   '/warehouse-maintenance-mcdonough': typeof WarehouseMaintenanceMcdonoughRoute
@@ -173,6 +180,7 @@ export interface FileRoutesByTo {
   '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
   '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
   '/warehouse-maintenance-mcdonough': typeof WarehouseMaintenanceMcdonoughRoute
@@ -196,6 +204,7 @@ export interface FileRoutesById {
   '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
   '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
   '/warehouse-maintenance-mcdonough': typeof WarehouseMaintenanceMcdonoughRoute
@@ -220,6 +229,7 @@ export interface FileRouteTypes {
     | '/dock-door-repair-atlanta'
     | '/industrial-hvac-repair-georgia'
     | '/services'
+    | '/sitemap.xml'
     | '/warehouse-hvac-repair-atlanta'
     | '/warehouse-maintenance-atlanta'
     | '/warehouse-maintenance-mcdonough'
@@ -242,6 +252,7 @@ export interface FileRouteTypes {
     | '/dock-door-repair-atlanta'
     | '/industrial-hvac-repair-georgia'
     | '/services'
+    | '/sitemap.xml'
     | '/warehouse-hvac-repair-atlanta'
     | '/warehouse-maintenance-atlanta'
     | '/warehouse-maintenance-mcdonough'
@@ -264,6 +275,7 @@ export interface FileRouteTypes {
     | '/dock-door-repair-atlanta'
     | '/industrial-hvac-repair-georgia'
     | '/services'
+    | '/sitemap.xml'
     | '/warehouse-hvac-repair-atlanta'
     | '/warehouse-maintenance-atlanta'
     | '/warehouse-maintenance-mcdonough'
@@ -287,6 +299,7 @@ export interface RootRouteChildren {
   DockDoorRepairAtlantaRoute: typeof DockDoorRepairAtlantaRoute
   IndustrialHvacRepairGeorgiaRoute: typeof IndustrialHvacRepairGeorgiaRoute
   ServicesRoute: typeof ServicesRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WarehouseHvacRepairAtlantaRoute: typeof WarehouseHvacRepairAtlantaRoute
   WarehouseMaintenanceAtlantaRoute: typeof WarehouseMaintenanceAtlantaRoute
   WarehouseMaintenanceMcdonoughRoute: typeof WarehouseMaintenanceMcdonoughRoute
@@ -341,6 +354,13 @@ declare module '@tanstack/react-router' {
       path: '/warehouse-hvac-repair-atlanta'
       fullPath: '/warehouse-hvac-repair-atlanta'
       preLoaderRoute: typeof WarehouseHvacRepairAtlantaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -464,6 +484,7 @@ const rootRouteChildren: RootRouteChildren = {
   DockDoorRepairAtlantaRoute: DockDoorRepairAtlantaRoute,
   IndustrialHvacRepairGeorgiaRoute: IndustrialHvacRepairGeorgiaRoute,
   ServicesRoute: ServicesRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   WarehouseHvacRepairAtlantaRoute: WarehouseHvacRepairAtlantaRoute,
   WarehouseMaintenanceAtlantaRoute: WarehouseMaintenanceAtlantaRoute,
   WarehouseMaintenanceMcdonoughRoute: WarehouseMaintenanceMcdonoughRoute,
