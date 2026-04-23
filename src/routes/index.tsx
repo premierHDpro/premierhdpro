@@ -41,25 +41,25 @@ const featuredArticles = [
     slug: "cost-to-repair-concrete-floors-warehouse",
     title: "Cost to Repair Concrete Floors in a Warehouse",
     desc: "Breakdown of repair costs, causes, and what impacts pricing.",
-    service: { to: "/services/concrete-floor-repair", label: "Concrete Floor Repair" },
+    service: { to: "/concrete-floor-repair-atlanta", label: "Concrete Floor Repair" },
   },
   {
     slug: "commercial-door-replacement-guide",
     title: "Warehouse Door Won't Close Properly — Causes & Fixes",
     desc: "Common issues with dock doors and what to check first.",
-    service: { to: "/services/dock-door-repair", label: "Door & Dock Repair" },
+    service: { to: "/dock-door-repair-atlanta", label: "Door & Dock Repair" },
   },
   {
     slug: "hvac-issues-large-warehouses",
     title: "HVAC Not Cooling Warehouse — What Could Be Wrong",
     desc: "Why large facilities struggle with temperature control.",
-    service: { to: "/services/industrial-hvac", label: "Industrial HVAC" },
+    service: { to: "/industrial-hvac-repair-georgia", label: "Industrial HVAC" },
   },
   {
     slug: "preventative-maintenance-plan-facilities",
     title: "Preventative Maintenance Plan for Distribution Centers",
     desc: "How to reduce downtime and avoid costly repairs.",
-    service: { to: "/services/warehouse-maintenance", label: "Warehouse Maintenance" },
+    service: { to: "/warehouse-maintenance-services-georgia", label: "Warehouse Maintenance" },
   },
 ] as const;
 
