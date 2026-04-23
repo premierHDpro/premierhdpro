@@ -109,7 +109,7 @@ function LocustGroveLocation() {
               </ul>
               <p className="mt-4 text-sm text-muted-foreground">
                 See{" "}
-                <Link to="/blog/cost-to-repair-concrete-floors-warehouse" className="font-semibold text-primary underline-offset-4 hover:underline">common warehouse maintenance issues and repair costs</Link>{" "}
+                <Link to="/blog/$slug" params={{ slug: "cost-to-repair-concrete-floors-warehouse" }} className="font-semibold text-primary underline-offset-4 hover:underline">common warehouse maintenance issues and repair costs</Link>{" "}
                 for more context on what we typically see in this market.
               </p>
             </div>

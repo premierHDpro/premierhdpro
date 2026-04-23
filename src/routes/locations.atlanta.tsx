@@ -106,7 +106,7 @@ function AtlantaLocation() {
               </ul>
               <p className="mt-4 text-sm text-muted-foreground">
                 For pricing context, see our{" "}
-                <Link to="/blog/cost-to-repair-concrete-floors-warehouse" className="font-semibold text-primary underline-offset-4 hover:underline">guide to warehouse concrete repair costs in Atlanta</Link>.
+                <Link to="/blog/$slug" params={{ slug: "cost-to-repair-concrete-floors-warehouse" }} className="font-semibold text-primary underline-offset-4 hover:underline">guide to warehouse concrete repair costs in Atlanta</Link>.
               </p>
             </div>
 
