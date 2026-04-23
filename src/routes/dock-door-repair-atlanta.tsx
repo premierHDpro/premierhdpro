@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "../components/ServicePage";
+import ogImg from "../assets/og-dock-door.jpg";
 
 export const Route = createFileRoute("/dock-door-repair-atlanta")({
   head: () => ({
@@ -8,6 +9,8 @@ export const Route = createFileRoute("/dock-door-repair-atlanta")({
       { name: "description", content: "Commercial dock door repair across Atlanta and Georgia. Dock doors, levelers, seals, and entry systems repaired fast to keep your loading dock operational." },
       { property: "og:title", content: "Dock Door Repair Atlanta — Warehouse Door Repair Georgia" },
       { property: "og:description", content: "Fast dock door, leveler, and entry system repairs for warehouses across Metro Atlanta." },
+      { property: "og:image", content: ogImg },
+      { name: "twitter:image", content: ogImg },
     ],
   }),
   component: () => (
