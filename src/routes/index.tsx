@@ -108,6 +108,26 @@ function HomePage() {
         </div>
       </section>
 
+      {/* TRUST BAR */}
+      <section className="border-b border-border bg-card py-6">
+        <div className="container-pro">
+          <p className="text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Trusted by 80+ Georgia warehouse, distribution, and industrial facilities
+          </p>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm font-bold text-foreground/60">
+            <span>3PL Distribution</span>
+            <span>·</span>
+            <span>Cold Storage</span>
+            <span>·</span>
+            <span>Manufacturing</span>
+            <span>·</span>
+            <span>Last-Mile Fulfillment</span>
+            <span>·</span>
+            <span>Industrial Property Mgmt</span>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 2 — TRUST / POSITIONING */}
       <section className="section-pad">
         <div className="container-pro grid gap-12 lg:grid-cols-2 lg:items-center">
