@@ -21,6 +21,29 @@ export const Route = createFileRoute("/blog/$slug")({
           { property: "og:type", content: "article" },
         ]
       : [],
+    scripts: loaderData
+      ? [
+          {
+            type: "application/ld+json",
+            children: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: loaderData.post.title,
+              description: loaderData.post.description,
+              datePublished: loaderData.post.date,
+              dateModified: loaderData.post.date,
+              author: { "@type": "Organization", name: "Premier HD Pro" },
+              publisher: {
+                "@type": "Organization",
+                name: "Premier HD Pro",
+                url: "https://premier-facility-pros.lovable.app/",
+              },
+              mainEntityOfPage: `https://premier-facility-pros.lovable.app/blog/${loaderData.post.slug}`,
+              articleSection: loaderData.post.category,
+            }),
+          },
+        ]
+      : [],
   }),
   notFoundComponent: () => (
     <div className="container-pro py-24 text-center">

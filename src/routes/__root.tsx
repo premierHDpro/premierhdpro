@@ -29,7 +29,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "test site" },
+      { title: "Premier HD Pro | Commercial Facility Repairs & Maintenance — Georgia" },
       {
         name: "description",
         content:
@@ -37,21 +37,50 @@ export const Route = createRootRoute({
       },
       { name: "author", content: "Premier HD Pro" },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "test site" },
+      { property: "og:title", content: "Premier HD Pro | Commercial Facility Repairs & Maintenance — Georgia" },
       {
         property: "og:description",
         content:
           "Warehouse maintenance, concrete floor repair, dock door repair, industrial HVAC, and renovations across Metro Atlanta.",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "test site" },
-      { name: "description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
-      { property: "og:description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
-      { name: "twitter:description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
+      { name: "twitter:title", content: "Premier HD Pro | Commercial Facility Repairs & Maintenance — Georgia" },
+      { name: "twitter:description", content: "Warehouse maintenance, concrete floor repair, dock door repair, industrial HVAC, and renovations across Metro Atlanta." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/12c572e5-15ac-4320-a248-92f39f55f48a/id-preview-9a6e96c2--3281c354-18f0-4b44-9cb3-85f39f7cba34.lovable.app-1776442888654.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/12c572e5-15ac-4320-a248-92f39f55f48a/id-preview-9a6e96c2--3281c354-18f0-4b44-9cb3-85f39f7cba34.lovable.app-1776442888654.png" },
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "canonical", href: "https://premier-facility-pros.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "GeneralContractor",
+          name: "Premier HD Pro",
+          description:
+            "Commercial general contractor serving warehouses, distribution centers, and industrial facilities across Metro Atlanta and Georgia.",
+          url: "https://premier-facility-pros.lovable.app/",
+          telephone: "+1-470-555-0100",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Locust Grove",
+            addressRegion: "GA",
+            addressCountry: "US",
+          },
+          areaServed: [
+            { "@type": "City", name: "Atlanta" },
+            { "@type": "City", name: "McDonough" },
+            { "@type": "City", name: "Locust Grove" },
+            { "@type": "AdministrativeArea", name: "Henry County" },
+            { "@type": "State", name: "Georgia" },
+          ],
+          priceRange: "$$",
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
