@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "../components/ServicePage";
+import ogImg from "../assets/og-industrial-hvac.jpg";
 
 export const Route = createFileRoute("/industrial-hvac-repair-georgia")({
   head: () => ({
@@ -8,6 +9,8 @@ export const Route = createFileRoute("/industrial-hvac-repair-georgia")({
       { name: "description", content: "Industrial HVAC repair, diagnostics, and upgrades across Atlanta and Georgia. Built for large warehouses, distribution centers, and manufacturing facilities." },
       { property: "og:title", content: "Warehouse HVAC Repair Atlanta — Industrial HVAC Contractor Georgia" },
       { property: "og:description", content: "HVAC repair and upgrades for large industrial facilities across Metro Atlanta." },
+      { property: "og:image", content: ogImg },
+      { name: "twitter:image", content: ogImg },
     ],
   }),
   component: () => (

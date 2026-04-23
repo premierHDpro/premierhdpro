@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "../components/ServicePage";
+import ogImg from "../assets/og-warehouse-maintenance.jpg";
 
 export const Route = createFileRoute("/warehouse-maintenance-services-georgia")({
   head: () => ({
@@ -8,6 +9,8 @@ export const Route = createFileRoute("/warehouse-maintenance-services-georgia")(
       { name: "description", content: "Reliable warehouse maintenance services across Georgia. Preventative programs, emergency repairs, and inspections for distribution centers in Atlanta, McDonough, Locust Grove, and Henry County." },
       { property: "og:title", content: "Warehouse Maintenance Services Georgia — Premier HD Pro" },
       { property: "og:description", content: "Facility maintenance Atlanta — programs built for active distribution centers and warehouses across Georgia." },
+      { property: "og:image", content: ogImg },
+      { name: "twitter:image", content: ogImg },
     ],
   }),
   component: () => (
