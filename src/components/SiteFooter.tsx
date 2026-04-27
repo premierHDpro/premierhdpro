@@ -23,8 +23,10 @@ export function SiteFooter() {
       <div className="container-pro grid gap-10 py-14 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="text-xl font-bold">Premier HD Pro</div>
-          <div className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-safety">
-            Built on Relationships · Driven by Integrity
+          <div className="mt-2 inline-flex items-center gap-2 border-y border-safety/60 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-safety">
+            <span>Built on Relationships</span>
+            <span className="text-safety/50">◆</span>
+            <span>Driven by Integrity</span>
           </div>
           <p className="mt-3 max-w-md text-sm text-primary-foreground/70">
             Commercial general contractor serving distribution centers, warehouses, and
