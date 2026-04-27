@@ -14,8 +14,10 @@ export function CtaBand({
         <div>
           <h2 className="text-2xl font-bold md:text-3xl">{title}</h2>
           <p className="mt-2 max-w-xl text-primary-foreground/75">{subtitle}</p>
-          <p className="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-safety">
-            Built on Relationships · Driven by Integrity
+          <p className="mt-4 inline-flex items-center gap-3 border-y-2 border-safety/70 py-2 text-xs font-bold uppercase tracking-[0.25em] text-safety">
+            <span>Built on Relationships</span>
+            <span className="text-safety/50">◆</span>
+            <span>Driven by Integrity</span>
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
