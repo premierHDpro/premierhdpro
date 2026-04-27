@@ -33,6 +33,9 @@ export function PageHeader({
         {subtitle && (
           <p className="mt-4 max-w-3xl text-lg text-primary-foreground/75">{subtitle}</p>
         )}
+        <p className="mt-5 text-xs font-bold uppercase tracking-[0.2em] text-safety">
+          Built on Relationships · Driven by Integrity
+        </p>
       </div>
     </section>
   );
