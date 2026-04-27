@@ -46,9 +46,11 @@ export const Route = createRootRoute({
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Premier HD Pro | Commercial Facility Repairs & Maintenance — Georgia" },
-      { name: "twitter:description", content: "Warehouse maintenance, concrete floor repair, dock door repair, industrial HVAC, and renovations across Metro Atlanta." },
+      { name: "twitter:description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/12c572e5-15ac-4320-a248-92f39f55f48a/id-preview-9a6e96c2--3281c354-18f0-4b44-9cb3-85f39f7cba34.lovable.app-1776442888654.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/12c572e5-15ac-4320-a248-92f39f55f48a/id-preview-9a6e96c2--3281c354-18f0-4b44-9cb3-85f39f7cba34.lovable.app-1776442888654.png" },
+      { name: "description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
+      { property: "og:description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
