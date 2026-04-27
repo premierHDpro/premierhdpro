@@ -14,6 +14,9 @@ export function CtaBand({
         <div>
           <h2 className="text-2xl font-bold md:text-3xl">{title}</h2>
           <p className="mt-2 max-w-xl text-primary-foreground/75">{subtitle}</p>
+          <p className="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-safety">
+            Built on Relationships · Driven by Integrity
+          </p>
         </div>
         <div className="flex flex-wrap gap-3">
           <Link to="/contact" className="btn-primary">Request a Quote</Link>
