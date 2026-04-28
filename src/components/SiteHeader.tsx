@@ -20,9 +20,9 @@ export function SiteHeader() {
           <img
             src={logo}
             alt="Premier HD logo"
-            width={40}
-            height={40}
-            className="h-10 w-10 object-contain"
+            width={56}
+            height={56}
+            className="h-14 w-14 object-contain"
           />
           <div className="leading-tight">
             <div className="text-base">Premier HD Pro</div>
