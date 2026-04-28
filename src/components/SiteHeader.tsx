@@ -44,11 +44,11 @@ export function SiteHeader() {
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
           <a
-            href="tel:+17707441949"
+            href="tel:+17706285444"
             className="flex items-center gap-2 text-sm font-semibold text-foreground"
           >
             <Phone className="h-4 w-4 text-safety" />
-            (770) 744-1949
+            (770) 628-5444
           </a>
           <Link to="/contact" className="btn-primary">
             Request a Quote
@@ -76,10 +76,10 @@ export function SiteHeader() {
               </Link>
             ))}
             <a
-              href="tel:+17707441949"
+              href="tel:+17706285444"
               className="mt-2 flex items-center gap-2 px-2 py-2 text-sm font-semibold"
             >
-              <Phone className="h-4 w-4 text-safety" /> (770) 744-1949
+              <Phone className="h-4 w-4 text-safety" /> (770) 628-5444
             </a>
             <Link to="/contact" className="btn-primary mt-2" onClick={() => setOpen(false)}>
               Request a Quote

@@ -107,10 +107,10 @@ export function ServicePage(props: ServicePageProps) {
               Schedule a Site Walk
             </Link>
             <a
-              href="tel:+17707441949"
+              href="tel:+17706285444"
               className="inline-flex items-center gap-2 px-2 py-2 text-sm font-semibold text-primary-foreground/90 hover:text-safety"
             >
-              <Phone className="h-4 w-4" /> (770) 744-1949
+              <Phone className="h-4 w-4" /> (770) 628-5444
             </a>
           </div>
         </div>
@@ -268,8 +268,8 @@ export function ServicePage(props: ServicePageProps) {
                 <Link to="/contact" className="btn-primary">
                   {bottomCtaLabel}
                 </Link>
-                <a href="tel:+17707441949" className="btn-outline">
-                  <Phone className="h-4 w-4" /> (770) 744-1949
+                <a href="tel:+17706285444" className="btn-outline">
+                  <Phone className="h-4 w-4" /> (770) 628-5444
                 </a>
               </div>
             </div>
