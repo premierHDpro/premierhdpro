@@ -14,9 +14,10 @@ const contactSchema = z.object({
 
 export function ContactForm({ compact = false }: { compact?: boolean }) {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const raw = Object.fromEntries(fd.entries());
@@ -32,8 +33,26 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       return;
     }
     setErrors({});
-    setSubmitted(true);
-    toast.success("Quote request sent — we'll be in touch shortly.");
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/public/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...parsed.data, website: raw.website ?? "" }),
+      });
+      if (!res.ok) {
+        throw new Error(`Request failed (${res.status})`);
+      }
+      setSubmitted(true);
+      toast.success("Quote request sent — we'll be in touch shortly.");
+    } catch (err) {
+      console.error("Contact form submit failed", err);
+      toast.error(
+        "Something went wrong sending your request. Please try again or call us at (770) 628-5444.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
   if (submitted) {
     return (
@@ -48,6 +67,15 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
   }
   return (
     <form onSubmit={onSubmit} className="grid gap-4">
+      {/* Honeypot — hidden from real users, bots fill it in */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute left-[-9999px] h-0 w-0 opacity-0"
+      />
       {!compact && (
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="Full name" name="name" required error={errors.name} />
@@ -88,8 +116,8 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
           placeholder="Approx. facility size, current issues, timeline..."
         />
       </div>
-      <button type="submit" className="btn-primary w-full">
-        Request a Quote
+      <button type="submit" className="btn-primary w-full" disabled={submitting}>
+        {submitting ? "Sending..." : "Request a Quote"}
       </button>
       <p className="text-xs text-muted-foreground">
         Or call us directly at{" "}
