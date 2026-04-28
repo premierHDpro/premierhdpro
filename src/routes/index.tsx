@@ -45,21 +45,9 @@ const featuredArticles = [
     service: { to: "/concrete-floor-repair-atlanta", label: "Concrete Floor Repair" },
   },
   {
-    slug: "commercial-door-replacement-guide",
-    title: "Warehouse Door Won't Close Properly — Causes & Fixes",
-    desc: "Common issues with dock doors and what to check first.",
-    service: { to: "/dock-door-repair-atlanta", label: "Door & Dock Repair" },
-  },
-  {
-    slug: "hvac-issues-large-warehouses",
-    title: "HVAC Not Cooling Warehouse — What Could Be Wrong",
-    desc: "Why large facilities struggle with temperature control.",
-    service: { to: "/industrial-hvac-repair-georgia", label: "Industrial HVAC" },
-  },
-  {
-    slug: "preventative-maintenance-plan-facilities",
-    title: "Preventative Maintenance Plan for Distribution Centers",
-    desc: "How to reduce downtime and avoid costly repairs.",
+    slug: "common-maintenance-issues-distribution-centers",
+    title: "Common Maintenance Issues in Distribution Centers",
+    desc: "The recurring problems that hit DCs hardest — and how to stay ahead of them.",
     service: { to: "/warehouse-maintenance-services-georgia", label: "Warehouse Maintenance" },
   },
 ] as const;
