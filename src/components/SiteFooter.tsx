@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
+import logo from "@/assets/premier-hd-logo.png";
 
 const services = [
   { to: "/warehouse-maintenance-services-georgia", label: "Warehouse Maintenance" },
@@ -22,7 +23,16 @@ export function SiteFooter() {
     <footer className="mt-20 border-t border-border bg-primary text-primary-foreground">
       <div className="container-pro grid gap-10 py-14 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="text-xl font-bold">Premier HD Pro</div>
+          <div className="flex items-center gap-3">
+            <img
+              src={logo}
+              alt="Premier HD logo"
+              width={48}
+              height={48}
+              className="h-12 w-12 rounded bg-white p-1 object-contain"
+            />
+            <div className="text-xl font-bold">Premier HD Pro</div>
+          </div>
           <div className="mt-2 inline-flex items-center gap-2 border-y border-safety/60 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-safety">
             <span>Built on Relationships</span>
             <span className="text-safety/50">◆</span>

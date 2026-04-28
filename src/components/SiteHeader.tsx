@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/premier-hd-logo.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -16,9 +17,13 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
       <div className="container-pro flex h-16 items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-2 font-bold">
-          <div className="flex h-9 w-9 items-center justify-center rounded bg-primary text-primary-foreground">
-            <span className="text-sm">PHD</span>
-          </div>
+          <img
+            src={logo}
+            alt="Premier HD logo"
+            width={40}
+            height={40}
+            className="h-10 w-10 object-contain"
+          />
           <div className="leading-tight">
             <div className="text-base">Premier HD Pro</div>
             <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
