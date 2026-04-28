@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "../components/ServicePage";
+import heroImg from "../assets/commercial-renovations-hero.jpg";
 
 export const Route = createFileRoute("/commercial-renovations-atlanta")({
   head: () => ({
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/commercial-renovations-atlanta")({
   component: () => (
     <ServicePage
       slug="commercial-renovations"
+      heroImage={heroImg}
       heroEyebrow="Commercial Renovations Atlanta"
       heroHeadline="Commercial Renovations for Active Warehouse Facilities"
       heroSubheadline="Warehouse office buildouts and commercial renovations across Atlanta and Georgia — McDonough, Locust Grove, and Henry County. Phased to keep your facility shipping every day of the project."
