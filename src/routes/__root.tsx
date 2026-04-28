@@ -66,7 +66,7 @@ export const Route = createRootRoute({
           description:
             "Commercial general contractor serving warehouses, distribution centers, and industrial facilities across Metro Atlanta and Georgia.",
           url: "https://premier-facility-pros.lovable.app/",
-          telephone: "+1-470-555-0100",
+          telephone: "+1-770-744-1949",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Locust Grove",

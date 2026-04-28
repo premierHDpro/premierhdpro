@@ -390,7 +390,7 @@ function HomePage() {
             <h2 className="text-3xl font-bold md:text-4xl">Common questions from facility managers</h2>
             <p className="mt-4 text-muted-foreground">
               If you don't see your question here, call us at{" "}
-              <a href="tel:+14705550100" className="font-semibold text-foreground">(470) 555-0100</a>.
+              <a href="tel:+17707441949" className="font-semibold text-foreground">(770) 744-1949</a>.
             </p>
           </div>
           <div className="lg:col-span-2 space-y-4">

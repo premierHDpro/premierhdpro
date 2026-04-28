@@ -22,8 +22,8 @@ export function CtaBand({
         </div>
         <div className="flex flex-wrap gap-3">
           <Link to="/contact" className="btn-primary">Request a Quote</Link>
-          <a href="tel:+14705550100" className="btn-ghost-light">
-            <Phone className="h-4 w-4" /> (470) 555-0100
+          <a href="tel:+17707441949" className="btn-ghost-light">
+            <Phone className="h-4 w-4" /> (770) 744-1949
           </a>
         </div>
       </div>
