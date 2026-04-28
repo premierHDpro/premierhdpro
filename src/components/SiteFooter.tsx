@@ -37,11 +37,6 @@ export function SiteFooter() {
               <span>Contractor</span>
             </div>
           </div>
-          <div className="mt-2 inline-flex items-center gap-2 border-y border-safety/60 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-safety">
-            <span>Built on Relationships</span>
-            <span className="text-safety/50">◆</span>
-            <span>Driven by Integrity</span>
-          </div>
           <p className="mt-3 max-w-md text-sm text-primary-foreground/70">
             Commercial general contractor serving distribution centers, warehouses, and
             industrial facilities across Metro Atlanta and Georgia.
