@@ -2,7 +2,6 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 import appCss from "../styles.css?url";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
-import { TaglineMarquee } from "../components/TaglineMarquee";
 import { Toaster } from "../components/ui/sonner";
 
 function NotFoundComponent() {
@@ -31,7 +30,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Premier HD Pro | Commercial Facility Repairs & Maintenance — Georgia" },
+      { title: "Warehouse Construction & Facility Services | Premier HD" },
       {
         name: "description",
         content:
@@ -39,19 +38,19 @@ export const Route = createRootRoute({
       },
       { name: "author", content: "Premier HD Pro" },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Premier HD Pro | Commercial Facility Repairs & Maintenance — Georgia" },
+      { property: "og:title", content: "Warehouse Construction & Facility Services | Premier HD" },
       {
         property: "og:description",
         content:
           "Warehouse maintenance, concrete floor repair, dock door repair, industrial HVAC, and renovations across Metro Atlanta.",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Premier HD Pro | Commercial Facility Repairs & Maintenance — Georgia" },
-      { name: "twitter:description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
+      { name: "twitter:title", content: "Warehouse Construction & Facility Services | Premier HD" },
+      { name: "twitter:description", content: "Full-service facility solutions for warehouses and distribution centers. Concrete, dock equipment, steel, HVAC, and maintenance with fast turnaround." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/12c572e5-15ac-4320-a248-92f39f55f48a/id-preview-9a6e96c2--3281c354-18f0-4b44-9cb3-85f39f7cba34.lovable.app-1776442888654.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/12c572e5-15ac-4320-a248-92f39f55f48a/id-preview-9a6e96c2--3281c354-18f0-4b44-9cb3-85f39f7cba34.lovable.app-1776442888654.png" },
-      { name: "description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
-      { property: "og:description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
+      { name: "description", content: "Full-service facility solutions for warehouses and distribution centers. Concrete, dock equipment, steel, HVAC, and maintenance with fast turnaround." },
+      { property: "og:description", content: "Full-service facility solutions for warehouses and distribution centers. Concrete, dock equipment, steel, HVAC, and maintenance with fast turnaround." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -109,11 +108,9 @@ function RootComponent() {
   return (
     <>
       <SiteHeader />
-      <TaglineMarquee />
       <main>
         <Outlet />
       </main>
-      <TaglineMarquee />
       <SiteFooter />
       <Toaster />
     </>
