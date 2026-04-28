@@ -13,10 +13,6 @@ import {
   Hammer,
 } from "lucide-react";
 import heroImg from "../assets/hero-warehouse.jpg";
-import projectDockDoors from "../assets/project-dock-doors.jpg";
-import projectConcrete from "../assets/project-concrete.jpg";
-import projectHvac from "../assets/project-hvac.jpg";
-import projectRenovation from "../assets/project-renovation.jpg";
 import { services } from "../data/services";
 import { CtaBand } from "../components/CtaBand";
 import { ContactForm } from "../components/ContactForm";
