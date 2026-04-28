@@ -40,7 +40,7 @@ function ContactPage() {
           <div className="lg:col-span-2 space-y-5">
             <Info icon={Phone} title="Call us" body={<a href="tel:+17706285444" className="font-bold">(770) 628-5444</a>} sub="Mon–Fri, 7am–6pm ET" />
             <Info icon={Mail} title="Email" body={<a href="mailto:office@premierhdpro.com" className="font-bold">office@premierhdpro.com</a>} sub="We respond within one business day" />
-            <Info icon={MapPin} title="Headquarters" body={<span className="font-bold">McDonough, GA</span>} sub="Serving Metro Atlanta and surrounding Georgia" />
+            <Info icon={MapPin} title="Headquarters" body={<span className="font-bold">Locust Grove, GA</span>} sub="Serving Metro Atlanta and surrounding Georgia" />
             <div className="rounded-lg border border-border bg-primary p-6 text-primary-foreground">
               <h3 className="text-lg font-bold">Emergency dock or door failure?</h3>
               <p className="mt-2 text-sm text-primary-foreground/75">
