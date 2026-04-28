@@ -17,6 +17,7 @@ export const Route = createFileRoute("/dock-door-repair-atlanta")({
   component: () => (
     <ServicePage
       slug="dock-door-repair"
+      heroImage={heroImg}
       heroEyebrow="Dock Door Repair Atlanta"
       heroHeadline="Dock Door & Warehouse Entry Repair Services"
       heroSubheadline="Warehouse door repair across Georgia — Atlanta, McDonough, Locust Grove, and Henry County. Rapid response for dock doors, levelers, seals, and entry systems that stop outbound shipping cold."
