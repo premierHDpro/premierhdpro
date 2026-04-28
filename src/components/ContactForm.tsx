@@ -93,8 +93,8 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       </button>
       <p className="text-xs text-muted-foreground">
         Or call us directly at{" "}
-        <a href="tel:+14705550100" className="font-semibold text-foreground">
-          (470) 555-0100
+        <a href="tel:+17707441949" className="font-semibold text-foreground">
+          (770) 744-1949
         </a>
       </p>
     </form>
