@@ -22,6 +22,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConcreteFloorRepairMcdonoughRouteImport } from './routes/concrete-floor-repair-mcdonough'
 import { Route as ConcreteFloorRepairAtlantaRouteImport } from './routes/concrete-floor-repair-atlanta'
 import { Route as CommercialRenovationsAtlantaRouteImport } from './routes/commercial-renovations-atlanta'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as LocationsMcdonoughRouteImport } from './routes/locations.mcdonough'
@@ -105,15 +106,20 @@ const CommercialRenovationsAtlantaRoute =
     path: '/commercial-renovations-atlanta',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
-  id: '/blog/',
-  path: '/blog/',
-  getParentRoute: () => rootRouteImport,
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
 } as any)
 const LocationsMcdonoughRoute = LocationsMcdonoughRouteImport.update({
   id: '/locations/mcdonough',
@@ -143,6 +149,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blog': typeof BlogRouteWithChildren
   '/commercial-renovations-atlanta': typeof CommercialRenovationsAtlantaRoute
   '/concrete-floor-repair-atlanta': typeof ConcreteFloorRepairAtlantaRoute
   '/concrete-floor-repair-mcdonough': typeof ConcreteFloorRepairMcdonoughRoute
@@ -188,6 +195,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/blog': typeof BlogRouteWithChildren
   '/commercial-renovations-atlanta': typeof CommercialRenovationsAtlantaRoute
   '/concrete-floor-repair-atlanta': typeof ConcreteFloorRepairAtlantaRoute
   '/concrete-floor-repair-mcdonough': typeof ConcreteFloorRepairMcdonoughRoute
@@ -212,6 +220,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/blog'
     | '/commercial-renovations-atlanta'
     | '/concrete-floor-repair-atlanta'
     | '/concrete-floor-repair-mcdonough'
@@ -256,6 +265,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/blog'
     | '/commercial-renovations-atlanta'
     | '/concrete-floor-repair-atlanta'
     | '/concrete-floor-repair-mcdonough'
@@ -279,6 +289,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BlogRoute: typeof BlogRouteWithChildren
   CommercialRenovationsAtlantaRoute: typeof CommercialRenovationsAtlantaRoute
   ConcreteFloorRepairAtlantaRoute: typeof ConcreteFloorRepairAtlantaRoute
   ConcreteFloorRepairMcdonoughRoute: typeof ConcreteFloorRepairMcdonoughRoute
@@ -296,7 +307,6 @@ export interface RootRouteChildren {
   LocationsHenryCountyRoute: typeof LocationsHenryCountyRoute
   LocationsLocustGroveRoute: typeof LocationsLocustGroveRoute
   LocationsMcdonoughRoute: typeof LocationsMcdonoughRoute
-  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -392,6 +402,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommercialRenovationsAtlantaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -401,10 +418,10 @@ declare module '@tanstack/react-router' {
     }
     '/blog/': {
       id: '/blog/'
-      path: '/blog'
+      path: '/'
       fullPath: '/blog/'
       preLoaderRoute: typeof BlogIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof BlogRoute
     }
     '/locations/mcdonough': {
       id: '/locations/mcdonough'
@@ -444,8 +461,21 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BlogRoute: BlogRouteWithChildren,
   CommercialRenovationsAtlantaRoute: CommercialRenovationsAtlantaRoute,
   ConcreteFloorRepairAtlantaRoute: ConcreteFloorRepairAtlantaRoute,
   ConcreteFloorRepairMcdonoughRoute: ConcreteFloorRepairMcdonoughRoute,
@@ -465,7 +495,6 @@ const rootRouteChildren: RootRouteChildren = {
   LocationsHenryCountyRoute: LocationsHenryCountyRoute,
   LocationsLocustGroveRoute: LocationsLocustGroveRoute,
   LocationsMcdonoughRoute: LocationsMcdonoughRoute,
-  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
