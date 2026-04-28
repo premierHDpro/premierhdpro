@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "../components/ServicePage";
+import heroImg from "../assets/hvac-hero.jpg";
 import ogImg from "../assets/og-industrial-hvac.jpg";
 
 export const Route = createFileRoute("/industrial-hvac-repair-georgia")({
@@ -16,6 +17,7 @@ export const Route = createFileRoute("/industrial-hvac-repair-georgia")({
   component: () => (
     <ServicePage
       slug="industrial-hvac"
+      heroImage={heroImg}
       heroEyebrow="Industrial HVAC Contractor Georgia"
       heroHeadline="Industrial HVAC Repair for Large Warehouse Facilities"
       heroSubheadline="Warehouse HVAC repair across Atlanta and Georgia — McDonough, Locust Grove, and Henry County. Diagnostics, repairs, and upgrades for the biggest mechanical problem in commercial buildings."

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "../components/ServicePage";
+import heroImg from "../assets/hvac-hero.jpg";
 
 export const Route = createFileRoute("/warehouse-hvac-repair-atlanta")({
   head: () => ({
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/warehouse-hvac-repair-atlanta")({
   component: () => (
     <ServicePage
       slug="industrial-hvac"
+      heroImage={heroImg}
       heroEyebrow="Warehouse HVAC Repair Atlanta"
       heroHeadline="Industrial HVAC Repair in Atlanta, GA for Warehouses & Industrial Facilities"
       heroSubheadline="Helping facility managers in Atlanta reduce downtime, fix HVAC problems fast, and keep employees and product comfortable across large warehouses and distribution centers."
