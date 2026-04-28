@@ -5,6 +5,7 @@ import { CtaBand } from "../components/CtaBand";
 import { ContactForm } from "../components/ContactForm";
 import { services } from "../data/services";
 import ogImg from "../assets/og-atlanta.jpg";
+import atlantaSkyline from "../assets/atlanta-skyline.webp";
 
 export const Route = createFileRoute("/locations/atlanta")({
   head: () => ({
@@ -37,6 +38,8 @@ function AtlantaLocation() {
         title="Commercial Contractor in Atlanta, GA"
         subtitle="Premier HD Pro serves large-scale warehouses, distribution centers, and industrial facilities across Metro Atlanta — from the I-285 perimeter down through the South Atlanta logistics corridor."
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Atlanta, GA" }]}
+        backgroundImage={atlantaSkyline}
+        backgroundAlt="Aerial view of the Atlanta skyline at golden hour"
       />
 
       <section className="section-pad">

@@ -5,15 +5,29 @@ export function PageHeader({
   title,
   subtitle,
   breadcrumb,
+  backgroundImage,
+  backgroundAlt,
 }: {
   eyebrow?: string;
   title: string;
   subtitle?: string;
   breadcrumb?: { label: string; to?: string }[];
+  backgroundImage?: string;
+  backgroundAlt?: string;
 }) {
   return (
-    <section className="border-b border-border bg-primary text-primary-foreground">
-      <div className="container-pro py-16 md:py-24">
+    <section className="relative overflow-hidden border-b border-border bg-primary text-primary-foreground">
+      {backgroundImage && (
+        <>
+          <img
+            src={backgroundImage}
+            alt={backgroundAlt ?? ""}
+            className="absolute inset-0 h-full w-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/40" />
+        </>
+      )}
+      <div className="container-pro relative py-16 md:py-24">
         {breadcrumb && (
           <nav className="mb-4 text-xs text-primary-foreground/60">
             {breadcrumb.map((b, i) => (
