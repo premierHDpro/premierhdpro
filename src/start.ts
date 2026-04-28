@@ -16,7 +16,6 @@ const securityHeaders = createMiddleware().server(async ({ next }) => {
   const response = result.response;
   if (response instanceof Response) {
     const h = response.headers;
-    if (!h.has("X-Frame-Options")) h.set("X-Frame-Options", "DENY");
     if (!h.has("X-Content-Type-Options")) h.set("X-Content-Type-Options", "nosniff");
     if (!h.has("Referrer-Policy")) h.set("Referrer-Policy", "strict-origin-when-cross-origin");
     if (!h.has("Permissions-Policy"))
@@ -29,7 +28,7 @@ const securityHeaders = createMiddleware().server(async ({ next }) => {
         [
           "default-src 'self'",
           "base-uri 'self'",
-          "frame-ancestors 'none'",
+          "frame-ancestors 'self' https://*.lovable.app https://*.lovableproject.com",
           "object-src 'none'",
           "img-src 'self' data: blob: https:",
           "font-src 'self' data: https:",
