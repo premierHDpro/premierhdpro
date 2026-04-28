@@ -4,6 +4,14 @@ import { createStart, createMiddleware } from "@tanstack/react-start";
 // CSP is intentionally permissive enough for Vite/HMR in dev and for
 // the Supabase + Lovable analytics endpoints used in prod.
 const securityHeaders = createMiddleware().server(async ({ next }) => {
+  const { getRequest } = await import("@tanstack/react-start/server");
+  const request = getRequest();
+  const url = new URL(request.url);
+  // Bypass /lovable/* internal routes (webhooks, cron, previews) — they
+  // self-authenticate and must not be touched by app middleware.
+  if (url.pathname.startsWith("/lovable/")) {
+    return next();
+  }
   const result = await next();
   const response = result.response;
   if (response instanceof Response) {
