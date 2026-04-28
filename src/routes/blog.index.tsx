@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Clock } from "lucide-react";
 import { PageHeader } from "../components/PageHeader";
 import { posts, type Post } from "../data/posts";
+import insightsHero from "../assets/insights-hero.jpg";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -36,6 +37,8 @@ function BlogIndex() {
         title="Facility Maintenance & Industrial Insights"
         subtitle="Practical guidance for facility, operations, and property managers running warehouses and distribution centers."
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Insights" }]}
+        backgroundImage={insightsHero}
+        backgroundAlt="Person reading and writing at a desk in a library"
       />
       <section className="section-pad">
         <div className="container-pro">
