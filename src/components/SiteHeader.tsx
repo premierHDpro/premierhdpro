@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/premier-hd-logo-pro.png";
+import { TaglineMarquee } from "./TaglineMarquee";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -87,6 +88,7 @@ export function SiteHeader() {
           </div>
         </div>
       )}
+      <TaglineMarquee />
     </header>
   );
 }
