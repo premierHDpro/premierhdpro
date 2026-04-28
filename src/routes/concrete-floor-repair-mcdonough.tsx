@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "../components/ServicePage";
+import heroImg from "../assets/concrete-floor-hero.jpg";
 
 export const Route = createFileRoute("/concrete-floor-repair-mcdonough")({
   head: () => ({
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/concrete-floor-repair-mcdonough")({
   component: () => (
     <ServicePage
       slug="concrete-floor-repair"
+      heroImage={heroImg}
       heroEyebrow="Concrete Floor Repair McDonough"
       heroHeadline="Concrete Floor Repair in McDonough, GA for Warehouses & Distribution Centers"
       heroSubheadline="Helping facility managers in McDonough reduce downtime, fix damaged warehouse floors fast, and keep distribution operations running along the I-75 logistics corridor."

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "../components/ServicePage";
+import heroImg from "../assets/concrete-floor-hero.jpg";
 
 export const Route = createFileRoute("/concrete-floor-repair-atlanta")({
   head: () => ({
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/concrete-floor-repair-atlanta")({
   component: () => (
     <ServicePage
       slug="concrete-floor-repair"
+      heroImage={heroImg}
       heroEyebrow="Warehouse Concrete Repair Atlanta"
       heroHeadline="Concrete Floor Repair for Warehouses & Industrial Facilities in Atlanta"
       heroSubheadline="Fix cracked, uneven, or failing warehouse floors without shutting down operations. Premier HD Pro specializes in concrete floor repair for warehouses and distribution centers across Atlanta and Georgia — helping facility managers fix problems quickly while minimizing downtime."
