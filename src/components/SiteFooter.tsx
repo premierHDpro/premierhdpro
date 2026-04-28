@@ -50,9 +50,9 @@ export function SiteFooter() {
             <a href="tel:+17706285444" className="flex items-center gap-2 hover:text-safety">
               <Phone className="h-4 w-4" /> (770) 628-5444
             </a>
-            <a href="mailto:info@premierhdpro.com" className="flex items-center gap-2 hover:text-safety">
+            <a href="mailto:office@premierhdpro.com" className="flex items-center gap-2 hover:text-safety">
               <Mail className="h-4 w-4" />
-              <span>info@premierhdpro.com</span>
+              <span>office@premierhdpro.com</span>
             </a>
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4" /> Locust Grove, GA — Serving Metro Atlanta
