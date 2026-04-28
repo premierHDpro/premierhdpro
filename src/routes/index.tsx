@@ -75,11 +75,6 @@ function HomePage() {
               Helping facility managers across Georgia reduce downtime, fix problems fast,
               and keep operations running without disruption.
             </p>
-            <p className="mt-6 inline-flex items-center gap-3 border-y-2 border-safety/70 py-2 text-sm font-bold uppercase tracking-[0.25em] text-safety">
-              <span>Built on Relationships</span>
-              <span className="text-safety/50">◆</span>
-              <span>Driven by Integrity</span>
-            </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/contact" className="btn-primary">
                 Request a Quote <ArrowRight className="h-4 w-4" />
