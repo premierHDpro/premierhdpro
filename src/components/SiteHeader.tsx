@@ -15,14 +15,14 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-      <div className="container-pro flex h-20 items-center justify-between gap-4">
+      <div className="container-pro flex h-24 items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-2 font-bold">
           <img
             src={logo}
             alt="Premier HD logo"
-            width={56}
-            height={56}
-            className="h-14 w-14 object-contain"
+            width={80}
+            height={80}
+            className="h-20 w-20 object-contain"
           />
           <div className="leading-tight">
             <div className="text-base">Premier HD Pro</div>
