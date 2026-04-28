@@ -3,7 +3,7 @@ import { ArrowRight, Clock } from "lucide-react";
 import { PageHeader } from "../components/PageHeader";
 import { posts, type Post } from "../data/posts";
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
       { title: "Facility Maintenance & Industrial Insights | Premier HD Pro Blog" },
