@@ -5,7 +5,7 @@ import { CtaBand } from "../components/CtaBand";
 import { ContactForm } from "../components/ContactForm";
 import { services } from "../data/services";
 import ogImg from "../assets/og-locust-grove.jpg";
-import locustGroveImg from "../assets/locust-grove.jpeg";
+import locustGroveImg from "../assets/locust-grove.jpg";
 
 export const Route = createFileRoute("/locations/locust-grove")({
   head: () => ({
@@ -39,7 +39,7 @@ function LocustGroveLocation() {
         subtitle="Premier HD Pro is based in Locust Grove, Georgia. We serve warehouses, distribution centers, and industrial facilities across Henry County and the South Atlanta logistics corridor."
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Locust Grove, GA" }]}
         backgroundImage={locustGroveImg}
-        backgroundAlt="Historic brick buildings in downtown Locust Grove, Georgia at dusk"
+        backgroundAlt="Downtown Locust Grove, Georgia main street with shops and storefronts"
       />
 
       <section className="section-pad">
