@@ -39,7 +39,7 @@ function LocustGroveLocation() {
         subtitle="Premier HD Pro is based in Locust Grove, Georgia. We serve warehouses, distribution centers, and industrial facilities across Henry County and the South Atlanta logistics corridor."
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Locust Grove, GA" }]}
         backgroundImage={locustGroveImg}
-        backgroundAlt="Downtown Locust Grove, Georgia main street with shops and storefronts"
+        backgroundAlt="Locust Grove, Georgia water tower (Est. 1893) above the tree line"
       />
 
       <section className="section-pad">
