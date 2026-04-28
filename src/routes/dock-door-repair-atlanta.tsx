@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "../components/ServicePage";
+import heroImg from "../assets/dock-door-hero.jpg";
 import ogImg from "../assets/og-dock-door.jpg";
 
 export const Route = createFileRoute("/dock-door-repair-atlanta")({
