@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "../components/ServicePage";
+import heroImg from "../assets/concrete-floor-hero.jpg";
 
 export const Route = createFileRoute("/concrete-floor-repair-mcdonough")({
   head: () => ({
