@@ -27,9 +27,9 @@ export function SiteFooter() {
             <img
               src={logo}
               alt="Premier HD logo"
-              width={48}
-              height={48}
-              className="h-12 w-12 rounded bg-white p-1 object-contain"
+              width={64}
+              height={64}
+              className="h-16 w-16 rounded bg-white p-1.5 object-contain"
             />
             <div className="text-xl font-bold">Premier HD Pro</div>
           </div>
