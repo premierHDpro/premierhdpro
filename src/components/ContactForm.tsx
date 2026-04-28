@@ -12,10 +12,21 @@ const contactSchema = z.object({
   message: z.string().trim().max(2000).optional(),
 });
 
+const serviceOptions = [
+  "Concrete Floor Repair",
+  "Dock Door / Leveler Repair",
+  "Warehouse Maintenance",
+  "Industrial HVAC",
+  "Renovations & Buildouts",
+  "Safety Barriers & Bollards",
+  "Other",
+];
+
 export function ContactForm({ compact = false }: { compact?: boolean }) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [selectedService, setSelectedService] = useState(serviceOptions[0]);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -92,18 +103,27 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
         <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           Service needed
         </label>
-        <select
-          name="service"
-          className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:border-primary focus:outline-none"
-        >
-          <option>Concrete Floor Repair</option>
-          <option>Dock Door / Leveler Repair</option>
-          <option>Warehouse Maintenance</option>
-          <option>Industrial HVAC</option>
-          <option>Renovations & Buildouts</option>
-          <option>Safety Barriers & Bollards</option>
-          <option>Other</option>
-        </select>
+        <input type="hidden" name="service" value={selectedService} />
+        <div className="grid gap-2 sm:grid-cols-2">
+          {serviceOptions.map((service) => {
+            const isSelected = selectedService === service;
+            return (
+              <button
+                key={service}
+                type="button"
+                onClick={() => setSelectedService(service)}
+                className={`rounded-md border px-3 py-2 text-left text-sm transition ${
+                  isSelected
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-input bg-background text-foreground hover:border-primary"
+                }`}
+                aria-pressed={isSelected}
+              >
+                {service}
+              </button>
+            );
+          })}
+        </div>
       </div>
       <div>
         <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
