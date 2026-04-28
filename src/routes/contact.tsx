@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { PageHeader } from "../components/PageHeader";
 import { ContactForm } from "../components/ContactForm";
+import contactHero from "../assets/contact-hero.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -23,6 +24,8 @@ function ContactPage() {
         title="Request a quote or schedule a site walk"
         subtitle="We respond within one business day. Tell us about your facility and what's not working — we'll come look."
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Contact" }]}
+        backgroundImage={contactHero}
+        backgroundAlt="Hand dialing a desk phone in an office"
       />
       <section className="section-pad">
         <div className="container-pro grid gap-12 lg:grid-cols-5">
