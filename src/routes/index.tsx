@@ -13,10 +13,6 @@ import {
   Hammer,
 } from "lucide-react";
 import heroImg from "../assets/hero-warehouse.jpg";
-import projectDockDoors from "../assets/project-dock-doors.jpg";
-import projectConcrete from "../assets/project-concrete.jpg";
-import projectHvac from "../assets/project-hvac.jpg";
-import projectRenovation from "../assets/project-renovation.jpg";
 import { services } from "../data/services";
 import { CtaBand } from "../components/CtaBand";
 import { ContactForm } from "../components/ContactForm";
@@ -338,76 +334,6 @@ function HomePage() {
                 <it.icon className="h-6 w-6 text-safety" />
                 <h3 className="mt-4 text-lg font-bold">{it.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{it.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 7 — RECENT PROJECTS */}
-      <section className="section-pad bg-accent/40">
-        <div className="container-pro">
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <div className="eyebrow">Recent Projects</div>
-              <h2 className="text-3xl font-bold md:text-4xl">Work across Metro Atlanta facilities</h2>
-            </div>
-            <Link to="/contact" className="btn-outline">
-              Discuss your project
-            </Link>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                t: "Dock Door Overhaul",
-                c: "350,000 sq. ft. distribution center · McDonough, GA",
-                tag: "Doors & Docks",
-                value: "$85,000",
-                img: projectDockDoors,
-              },
-              {
-                t: "Phased Concrete Joint Repair",
-                c: "Active 24/7 fulfillment center · Henry County",
-                tag: "Concrete",
-                value: "$42,000",
-                img: projectConcrete,
-              },
-              {
-                t: "HVAC Rooftop Replacement",
-                c: "Multi-tenant industrial building · Atlanta, GA",
-                tag: "HVAC",
-                value: "$118,000",
-                img: projectHvac,
-              },
-              {
-                t: "Distribution Center Office Buildout",
-                c: "Phased renovation · Locust Grove, GA",
-                tag: "Renovation",
-                value: "$170,000",
-                img: projectRenovation,
-              },
-            ].map((p) => (
-              <div key={p.t} className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
-                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                  <img
-                    src={p.img}
-                    alt={`${p.t} — ${p.c}`}
-                    width={1280}
-                    height={960}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute right-3 top-3 rounded bg-background/95 px-2 py-1 text-xs font-bold text-primary shadow">
-                    {p.value}
-                  </div>
-                </div>
-                <div className="p-5">
-                  <div className="text-xs font-semibold uppercase tracking-wider text-safety">
-                    {p.tag}
-                  </div>
-                  <h3 className="mt-1 text-lg font-bold">{p.t}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{p.c}</p>
-                </div>
               </div>
             ))}
           </div>
