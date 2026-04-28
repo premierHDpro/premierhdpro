@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "../components/ServicePage";
+import heroImg from "../assets/warehouse-maintenance-hero.jpg";
 
 export const Route = createFileRoute("/warehouse-maintenance-mcdonough")({
   head: () => ({
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/warehouse-maintenance-mcdonough")({
   component: () => (
     <ServicePage
       slug="warehouse-maintenance"
+      heroImage={heroImg}
       heroEyebrow="Warehouse Maintenance McDonough"
       heroHeadline="Warehouse Maintenance Services in McDonough, GA for Distribution Centers & Industrial Facilities"
       heroSubheadline="Helping facility managers in McDonough reduce downtime, fix problems fast, and keep distribution operations running across high-volume DCs along the I-75 corridor."

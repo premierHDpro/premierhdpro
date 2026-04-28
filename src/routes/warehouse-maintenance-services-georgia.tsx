@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "../components/ServicePage";
 import ogImg from "../assets/og-warehouse-maintenance.jpg";
+import heroImg from "../assets/warehouse-maintenance-hero.jpg";
 
 export const Route = createFileRoute("/warehouse-maintenance-services-georgia")({
   head: () => ({
@@ -16,6 +17,7 @@ export const Route = createFileRoute("/warehouse-maintenance-services-georgia")(
   component: () => (
     <ServicePage
       slug="warehouse-maintenance"
+      heroImage={heroImg}
       heroEyebrow="Warehouse Maintenance Services Georgia"
       heroHeadline="Warehouse Maintenance Services That Keep Operations Running"
       heroSubheadline="Premier HD Pro delivers preventative warehouse maintenance services across Georgia — Atlanta, McDonough, Locust Grove, and Henry County — built around the realities of active distribution centers."

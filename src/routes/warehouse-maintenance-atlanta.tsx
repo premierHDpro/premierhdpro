@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "../components/ServicePage";
+import heroImg from "../assets/warehouse-maintenance-hero.jpg";
 
 export const Route = createFileRoute("/warehouse-maintenance-atlanta")({
   head: () => ({
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/warehouse-maintenance-atlanta")({
   component: () => (
     <ServicePage
       slug="warehouse-maintenance"
+      heroImage={heroImg}
       heroEyebrow="Warehouse Maintenance Atlanta"
       heroHeadline="Warehouse Maintenance Services in Atlanta, GA for Distribution Centers & Industrial Facilities"
       heroSubheadline="Helping facility managers in Atlanta reduce downtime, fix problems fast, and keep operations running across high-volume warehouses, distribution centers, and industrial buildings."
