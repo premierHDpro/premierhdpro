@@ -5,7 +5,7 @@ import { CtaBand } from "../components/CtaBand";
 import { ContactForm } from "../components/ContactForm";
 import { services } from "../data/services";
 import ogImg from "../assets/og-mcdonough.jpg";
-import mcdonoughImg from "../assets/mcdonough.jpeg";
+import mcdonoughImg from "../assets/mcdonough.avif";
 
 export const Route = createFileRoute("/locations/mcdonough")({
   head: () => ({
