@@ -24,10 +24,10 @@ export function SiteHeader() {
             height={80}
             className="h-20 w-20 object-contain"
           />
-          <div className="leading-tight">
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">
-              Commercial Contractor
-            </div>
+          <div className="flex flex-col text-xs font-semibold uppercase leading-tight tracking-widest text-muted-foreground">
+            <span>Commercial</span>
+            <span>General</span>
+            <span>Contractor</span>
           </div>
         </Link>
         <nav className="hidden items-center gap-7 lg:flex">
