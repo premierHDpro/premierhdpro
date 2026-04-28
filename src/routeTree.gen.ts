@@ -29,7 +29,13 @@ import { Route as LocationsMcdonoughRouteImport } from './routes/locations.mcdon
 import { Route as LocationsLocustGroveRouteImport } from './routes/locations.locust-grove'
 import { Route as LocationsHenryCountyRouteImport } from './routes/locations.henry-county'
 import { Route as LocationsAtlantaRouteImport } from './routes/locations.atlanta'
+import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
+import { Route as ApiPublicContactRouteImport } from './routes/api/public/contact'
+import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
+import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
+import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
 
 const WarehouseServicesLocustGroveRoute =
   WarehouseServicesLocustGroveRouteImport.update({
@@ -141,11 +147,44 @@ const LocationsAtlantaRoute = LocationsAtlantaRouteImport.update({
   path: '/locations/atlanta',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
+  id: '/email/unsubscribe',
+  path: '/email/unsubscribe',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
+  id: '/lovable/email/suppression',
+  path: '/lovable/email/suppression',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicContactRoute = ApiPublicContactRouteImport.update({
+  id: '/api/public/contact',
+  path: '/api/public/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableEmailTransactionalSendRoute =
+  LovableEmailTransactionalSendRouteImport.update({
+    id: '/lovable/email/transactional/send',
+    path: '/lovable/email/transactional/send',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LovableEmailTransactionalPreviewRoute =
+  LovableEmailTransactionalPreviewRouteImport.update({
+    id: '/lovable/email/transactional/preview',
+    path: '/lovable/email/transactional/preview',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LovableEmailQueueProcessRoute =
+  LovableEmailQueueProcessRouteImport.update({
+    id: '/lovable/email/queue/process',
+    path: '/lovable/email/queue/process',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -164,11 +203,17 @@ export interface FileRoutesByFullPath {
   '/warehouse-safety-installation-atlanta': typeof WarehouseSafetyInstallationAtlantaRoute
   '/warehouse-services-locust-grove': typeof WarehouseServicesLocustGroveRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/locations/atlanta': typeof LocationsAtlantaRoute
   '/locations/henry-county': typeof LocationsHenryCountyRoute
   '/locations/locust-grove': typeof LocationsLocustGroveRoute
   '/locations/mcdonough': typeof LocationsMcdonoughRoute
   '/blog/': typeof BlogIndexRoute
+  '/api/public/contact': typeof ApiPublicContactRoute
+  '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
+  '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
+  '/lovable/email/transactional/send': typeof LovableEmailTransactionalSendRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -186,11 +231,17 @@ export interface FileRoutesByTo {
   '/warehouse-safety-installation-atlanta': typeof WarehouseSafetyInstallationAtlantaRoute
   '/warehouse-services-locust-grove': typeof WarehouseServicesLocustGroveRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/locations/atlanta': typeof LocationsAtlantaRoute
   '/locations/henry-county': typeof LocationsHenryCountyRoute
   '/locations/locust-grove': typeof LocationsLocustGroveRoute
   '/locations/mcdonough': typeof LocationsMcdonoughRoute
   '/blog': typeof BlogIndexRoute
+  '/api/public/contact': typeof ApiPublicContactRoute
+  '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
+  '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
+  '/lovable/email/transactional/send': typeof LovableEmailTransactionalSendRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -210,11 +261,17 @@ export interface FileRoutesById {
   '/warehouse-safety-installation-atlanta': typeof WarehouseSafetyInstallationAtlantaRoute
   '/warehouse-services-locust-grove': typeof WarehouseServicesLocustGroveRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/locations/atlanta': typeof LocationsAtlantaRoute
   '/locations/henry-county': typeof LocationsHenryCountyRoute
   '/locations/locust-grove': typeof LocationsLocustGroveRoute
   '/locations/mcdonough': typeof LocationsMcdonoughRoute
   '/blog/': typeof BlogIndexRoute
+  '/api/public/contact': typeof ApiPublicContactRoute
+  '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
+  '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
+  '/lovable/email/transactional/send': typeof LovableEmailTransactionalSendRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -235,11 +292,17 @@ export interface FileRouteTypes {
     | '/warehouse-safety-installation-atlanta'
     | '/warehouse-services-locust-grove'
     | '/blog/$slug'
+    | '/email/unsubscribe'
     | '/locations/atlanta'
     | '/locations/henry-county'
     | '/locations/locust-grove'
     | '/locations/mcdonough'
     | '/blog/'
+    | '/api/public/contact'
+    | '/lovable/email/suppression'
+    | '/lovable/email/queue/process'
+    | '/lovable/email/transactional/preview'
+    | '/lovable/email/transactional/send'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -257,11 +320,17 @@ export interface FileRouteTypes {
     | '/warehouse-safety-installation-atlanta'
     | '/warehouse-services-locust-grove'
     | '/blog/$slug'
+    | '/email/unsubscribe'
     | '/locations/atlanta'
     | '/locations/henry-county'
     | '/locations/locust-grove'
     | '/locations/mcdonough'
     | '/blog'
+    | '/api/public/contact'
+    | '/lovable/email/suppression'
+    | '/lovable/email/queue/process'
+    | '/lovable/email/transactional/preview'
+    | '/lovable/email/transactional/send'
   id:
     | '__root__'
     | '/'
@@ -280,11 +349,17 @@ export interface FileRouteTypes {
     | '/warehouse-safety-installation-atlanta'
     | '/warehouse-services-locust-grove'
     | '/blog/$slug'
+    | '/email/unsubscribe'
     | '/locations/atlanta'
     | '/locations/henry-county'
     | '/locations/locust-grove'
     | '/locations/mcdonough'
     | '/blog/'
+    | '/api/public/contact'
+    | '/lovable/email/suppression'
+    | '/lovable/email/queue/process'
+    | '/lovable/email/transactional/preview'
+    | '/lovable/email/transactional/send'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -303,10 +378,16 @@ export interface RootRouteChildren {
   WarehouseMaintenanceServicesGeorgiaRoute: typeof WarehouseMaintenanceServicesGeorgiaRoute
   WarehouseSafetyInstallationAtlantaRoute: typeof WarehouseSafetyInstallationAtlantaRoute
   WarehouseServicesLocustGroveRoute: typeof WarehouseServicesLocustGroveRoute
+  EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   LocationsAtlantaRoute: typeof LocationsAtlantaRoute
   LocationsHenryCountyRoute: typeof LocationsHenryCountyRoute
   LocationsLocustGroveRoute: typeof LocationsLocustGroveRoute
   LocationsMcdonoughRoute: typeof LocationsMcdonoughRoute
+  ApiPublicContactRoute: typeof ApiPublicContactRoute
+  LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
+  LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
+  LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
+  LovableEmailTransactionalSendRoute: typeof LovableEmailTransactionalSendRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -451,12 +532,54 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocationsAtlantaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/email/unsubscribe': {
+      id: '/email/unsubscribe'
+      path: '/email/unsubscribe'
+      fullPath: '/email/unsubscribe'
+      preLoaderRoute: typeof EmailUnsubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
+    }
+    '/lovable/email/suppression': {
+      id: '/lovable/email/suppression'
+      path: '/lovable/email/suppression'
+      fullPath: '/lovable/email/suppression'
+      preLoaderRoute: typeof LovableEmailSuppressionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/contact': {
+      id: '/api/public/contact'
+      path: '/api/public/contact'
+      fullPath: '/api/public/contact'
+      preLoaderRoute: typeof ApiPublicContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/transactional/send': {
+      id: '/lovable/email/transactional/send'
+      path: '/lovable/email/transactional/send'
+      fullPath: '/lovable/email/transactional/send'
+      preLoaderRoute: typeof LovableEmailTransactionalSendRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/transactional/preview': {
+      id: '/lovable/email/transactional/preview'
+      path: '/lovable/email/transactional/preview'
+      fullPath: '/lovable/email/transactional/preview'
+      preLoaderRoute: typeof LovableEmailTransactionalPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/queue/process': {
+      id: '/lovable/email/queue/process'
+      path: '/lovable/email/queue/process'
+      fullPath: '/lovable/email/queue/process'
+      preLoaderRoute: typeof LovableEmailQueueProcessRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -491,10 +614,16 @@ const rootRouteChildren: RootRouteChildren = {
   WarehouseSafetyInstallationAtlantaRoute:
     WarehouseSafetyInstallationAtlantaRoute,
   WarehouseServicesLocustGroveRoute: WarehouseServicesLocustGroveRoute,
+  EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   LocationsAtlantaRoute: LocationsAtlantaRoute,
   LocationsHenryCountyRoute: LocationsHenryCountyRoute,
   LocationsLocustGroveRoute: LocationsLocustGroveRoute,
   LocationsMcdonoughRoute: LocationsMcdonoughRoute,
+  ApiPublicContactRoute: ApiPublicContactRoute,
+  LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
+  LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,
+  LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
+  LovableEmailTransactionalSendRoute: LovableEmailTransactionalSendRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
