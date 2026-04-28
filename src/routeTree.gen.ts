@@ -22,8 +22,8 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConcreteFloorRepairMcdonoughRouteImport } from './routes/concrete-floor-repair-mcdonough'
 import { Route as ConcreteFloorRepairAtlantaRouteImport } from './routes/concrete-floor-repair-atlanta'
 import { Route as CommercialRenovationsAtlantaRouteImport } from './routes/commercial-renovations-atlanta'
-import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as LocationsMcdonoughRouteImport } from './routes/locations.mcdonough'
 import { Route as LocationsLocustGroveRouteImport } from './routes/locations.locust-grove'
 import { Route as LocationsHenryCountyRouteImport } from './routes/locations.henry-county'
@@ -105,14 +105,14 @@ const CommercialRenovationsAtlantaRoute =
     path: '/commercial-renovations-atlanta',
     getParentRoute: () => rootRouteImport,
   } as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LocationsMcdonoughRoute = LocationsMcdonoughRouteImport.update({
@@ -143,7 +143,6 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/blog': typeof BlogRouteWithChildren
   '/commercial-renovations-atlanta': typeof CommercialRenovationsAtlantaRoute
   '/concrete-floor-repair-atlanta': typeof ConcreteFloorRepairAtlantaRoute
   '/concrete-floor-repair-mcdonough': typeof ConcreteFloorRepairMcdonoughRoute
@@ -162,10 +161,10 @@ export interface FileRoutesByFullPath {
   '/locations/henry-county': typeof LocationsHenryCountyRoute
   '/locations/locust-grove': typeof LocationsLocustGroveRoute
   '/locations/mcdonough': typeof LocationsMcdonoughRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/blog': typeof BlogRouteWithChildren
   '/commercial-renovations-atlanta': typeof CommercialRenovationsAtlantaRoute
   '/concrete-floor-repair-atlanta': typeof ConcreteFloorRepairAtlantaRoute
   '/concrete-floor-repair-mcdonough': typeof ConcreteFloorRepairMcdonoughRoute
@@ -184,11 +183,11 @@ export interface FileRoutesByTo {
   '/locations/henry-county': typeof LocationsHenryCountyRoute
   '/locations/locust-grove': typeof LocationsLocustGroveRoute
   '/locations/mcdonough': typeof LocationsMcdonoughRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/blog': typeof BlogRouteWithChildren
   '/commercial-renovations-atlanta': typeof CommercialRenovationsAtlantaRoute
   '/concrete-floor-repair-atlanta': typeof ConcreteFloorRepairAtlantaRoute
   '/concrete-floor-repair-mcdonough': typeof ConcreteFloorRepairMcdonoughRoute
@@ -207,12 +206,12 @@ export interface FileRoutesById {
   '/locations/henry-county': typeof LocationsHenryCountyRoute
   '/locations/locust-grove': typeof LocationsLocustGroveRoute
   '/locations/mcdonough': typeof LocationsMcdonoughRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/blog'
     | '/commercial-renovations-atlanta'
     | '/concrete-floor-repair-atlanta'
     | '/concrete-floor-repair-mcdonough'
@@ -231,10 +230,10 @@ export interface FileRouteTypes {
     | '/locations/henry-county'
     | '/locations/locust-grove'
     | '/locations/mcdonough'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/blog'
     | '/commercial-renovations-atlanta'
     | '/concrete-floor-repair-atlanta'
     | '/concrete-floor-repair-mcdonough'
@@ -253,10 +252,10 @@ export interface FileRouteTypes {
     | '/locations/henry-county'
     | '/locations/locust-grove'
     | '/locations/mcdonough'
+    | '/blog'
   id:
     | '__root__'
     | '/'
-    | '/blog'
     | '/commercial-renovations-atlanta'
     | '/concrete-floor-repair-atlanta'
     | '/concrete-floor-repair-mcdonough'
@@ -275,11 +274,11 @@ export interface FileRouteTypes {
     | '/locations/henry-county'
     | '/locations/locust-grove'
     | '/locations/mcdonough'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BlogRoute: typeof BlogRouteWithChildren
   CommercialRenovationsAtlantaRoute: typeof CommercialRenovationsAtlantaRoute
   ConcreteFloorRepairAtlantaRoute: typeof ConcreteFloorRepairAtlantaRoute
   ConcreteFloorRepairMcdonoughRoute: typeof ConcreteFloorRepairMcdonoughRoute
@@ -297,6 +296,7 @@ export interface RootRouteChildren {
   LocationsHenryCountyRoute: typeof LocationsHenryCountyRoute
   LocationsLocustGroveRoute: typeof LocationsLocustGroveRoute
   LocationsMcdonoughRoute: typeof LocationsMcdonoughRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -392,18 +392,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommercialRenovationsAtlantaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/locations/mcdonough': {
@@ -444,19 +444,8 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface BlogRouteChildren {
-  BlogSlugRoute: typeof BlogSlugRoute
-}
-
-const BlogRouteChildren: BlogRouteChildren = {
-  BlogSlugRoute: BlogSlugRoute,
-}
-
-const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BlogRoute: BlogRouteWithChildren,
   CommercialRenovationsAtlantaRoute: CommercialRenovationsAtlantaRoute,
   ConcreteFloorRepairAtlantaRoute: ConcreteFloorRepairAtlantaRoute,
   ConcreteFloorRepairMcdonoughRoute: ConcreteFloorRepairMcdonoughRoute,
@@ -476,6 +465,7 @@ const rootRouteChildren: RootRouteChildren = {
   LocationsHenryCountyRoute: LocationsHenryCountyRoute,
   LocationsLocustGroveRoute: LocationsLocustGroveRoute,
   LocationsMcdonoughRoute: LocationsMcdonoughRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
