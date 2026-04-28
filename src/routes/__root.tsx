@@ -2,7 +2,6 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 import appCss from "../styles.css?url";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
-import { TaglineMarquee } from "../components/TaglineMarquee";
 import { Toaster } from "../components/ui/sonner";
 
 function NotFoundComponent() {
@@ -48,8 +47,8 @@ export const Route = createRootRoute({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Warehouse Construction & Facility Services | Premier HD" },
       { name: "twitter:description", content: "Full-service facility solutions for warehouses and distribution centers. Concrete, dock equipment, steel, HVAC, and maintenance with fast turnaround." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/12c572e5-15ac-4320-a248-92f39f55f48a/id-preview-9a6e96c2--3281c354-18f0-4b44-9cb3-85f39f7cba34.lovable.app-1776442888654.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/12c572e5-15ac-4320-a248-92f39f55f48a/id-preview-9a6e96c2--3281c354-18f0-4b44-9cb3-85f39f7cba34.lovable.app-1776442888654.png" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6b7a0800-542e-4dff-a524-5e8928f0ba19" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6b7a0800-542e-4dff-a524-5e8928f0ba19" },
       { name: "description", content: "Full-service facility solutions for warehouses and distribution centers. Concrete, dock equipment, steel, HVAC, and maintenance with fast turnaround." },
       { property: "og:description", content: "Full-service facility solutions for warehouses and distribution centers. Concrete, dock equipment, steel, HVAC, and maintenance with fast turnaround." },
     ],
@@ -109,11 +108,9 @@ function RootComponent() {
   return (
     <>
       <SiteHeader />
-      <TaglineMarquee />
       <main>
         <Outlet />
       </main>
-      <TaglineMarquee />
       <SiteFooter />
       <Toaster />
     </>
