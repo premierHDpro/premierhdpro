@@ -5,6 +5,7 @@ import { CtaBand } from "../components/CtaBand";
 import { ContactForm } from "../components/ContactForm";
 import { services } from "../data/services";
 import ogImg from "../assets/og-mcdonough.jpg";
+import mcdonoughImg from "../assets/mcdonough.jpeg";
 
 export const Route = createFileRoute("/locations/mcdonough")({
   head: () => ({
@@ -37,6 +38,8 @@ function McDonoughLocation() {
         title="Warehouse Contractor in McDonough, GA"
         subtitle="Premier HD Pro serves the distribution centers, 3PL cross-docks, and logistics facilities that make McDonough one of Georgia's most important warehouse hubs."
         breadcrumb={[{ label: "Home", to: "/" }, { label: "McDonough, GA" }]}
+        backgroundImage={mcdonoughImg}
+        backgroundAlt="Historic downtown McDonough, Georgia town square with gazebo and brick storefronts"
       />
 
       <section className="section-pad">
