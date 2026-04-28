@@ -109,6 +109,7 @@ function RootComponent() {
   return (
     <>
       <SiteHeader />
+      <TaglineMarquee />
       <main>
         <Outlet />
       </main>
