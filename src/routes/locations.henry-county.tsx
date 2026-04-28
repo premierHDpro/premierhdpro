@@ -4,6 +4,7 @@ import { PageHeader } from "../components/PageHeader";
 import { CtaBand } from "../components/CtaBand";
 import { ContactForm } from "../components/ContactForm";
 import { services } from "../data/services";
+import henryCountyImg from "../assets/henry-county.webp";
 
 export const Route = createFileRoute("/locations/henry-county")({
   head: () => ({
@@ -34,6 +35,8 @@ function HenryCountyLocation() {
         title="Commercial Contractor in Henry County, GA"
         subtitle="Premier HD Pro provides county-wide commercial and industrial contracting across Henry County — from McDonough and Stockbridge to Locust Grove and Hampton."
         breadcrumb={[{ label: "Home", to: "/" }, { label: "Henry County, GA" }]}
+        backgroundImage={henryCountyImg}
+        backgroundAlt="Henry County, Georgia treetops at sunset with the Atlanta skyline on the horizon"
       />
 
       <section className="section-pad">
