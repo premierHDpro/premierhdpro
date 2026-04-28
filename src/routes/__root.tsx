@@ -2,7 +2,6 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 import appCss from "../styles.css?url";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
-import { TaglineMarquee } from "../components/TaglineMarquee";
 import { Toaster } from "../components/ui/sonner";
 
 function NotFoundComponent() {
@@ -109,7 +108,6 @@ function RootComponent() {
   return (
     <>
       <SiteHeader />
-      <TaglineMarquee />
       <main>
         <Outlet />
       </main>
