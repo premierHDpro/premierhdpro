@@ -30,6 +30,8 @@ export type ServicePageProps = {
   bottomCtaLabel: string;
   /** Related blog post slugs (2+) with anchor text */
   relatedPosts: { slug: string; anchor: string }[];
+  /** Optional hero background photo (URL from imported asset) */
+  heroImage?: string;
 };
 
 const DEFAULT_WHY_US = [
@@ -58,6 +60,7 @@ export function ServicePage(props: ServicePageProps) {
     bottomCtaText,
     bottomCtaLabel,
     relatedPosts,
+    heroImage,
   } = props;
 
   const svc: Service | undefined = services.find((s) => s.slug === slug);
@@ -70,16 +73,27 @@ export function ServicePage(props: ServicePageProps) {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border bg-primary text-primary-foreground">
-        <div className="absolute inset-0 opacity-[0.07]" aria-hidden="true">
-          <div
-            className="h-full w-full"
-            style={{
-              backgroundImage:
-                "linear-gradient(135deg, transparent 0 49%, currentColor 49% 51%, transparent 51% 100%)",
-              backgroundSize: "28px 28px",
-            }}
-          />
-        </div>
+        {heroImage ? (
+          <>
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${heroImage})` }}
+              aria-hidden="true"
+            />
+            <div className="absolute inset-0 bg-primary/75" aria-hidden="true" />
+          </>
+        ) : (
+          <div className="absolute inset-0 opacity-[0.07]" aria-hidden="true">
+            <div
+              className="h-full w-full"
+              style={{
+                backgroundImage:
+                  "linear-gradient(135deg, transparent 0 49%, currentColor 49% 51%, transparent 51% 100%)",
+                backgroundSize: "28px 28px",
+              }}
+            />
+          </div>
+        )}
         <div className="container-pro relative py-16 md:py-24">
           <nav className="mb-4 text-xs text-primary-foreground/60">
             <Link to="/" className="hover:text-safety">Home</Link>
