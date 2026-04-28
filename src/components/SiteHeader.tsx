@@ -25,8 +25,7 @@ export function SiteHeader() {
             className="h-20 w-20 object-contain"
           />
           <div className="leading-tight">
-            <div className="text-base">Premier HD Pro</div>
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
+            <div className="text-xs uppercase tracking-widest text-muted-foreground">
               Commercial Contractor
             </div>
           </div>

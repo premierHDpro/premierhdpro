@@ -31,7 +31,9 @@ export function SiteFooter() {
               height={64}
               className="h-16 w-16 rounded bg-white p-1.5 object-contain"
             />
-            <div className="text-xl font-bold">Premier HD Pro</div>
+            <div className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/80">
+              Commercial Contractor
+            </div>
           </div>
           <div className="mt-2 inline-flex items-center gap-2 border-y border-safety/60 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-safety">
             <span>Built on Relationships</span>
