@@ -28,7 +28,7 @@ const securityHeaders = createMiddleware().server(async ({ next }) => {
         [
           "default-src 'self'",
           "base-uri 'self'",
-          "frame-ancestors 'self' https://*.lovable.app https://*.lovableproject.com",
+          "frame-ancestors 'self' https://lovable.dev https://*.lovable.dev https://gptengineer.app https://*.gptengineer.app https://*.lovable.app https://*.lovableproject.com",
           "object-src 'none'",
           "img-src 'self' data: blob: https:",
           "font-src 'self' data: https:",
