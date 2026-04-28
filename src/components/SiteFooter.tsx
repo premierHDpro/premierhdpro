@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
-import logo from "@/assets/premier-hd-logo.png";
+import logo from "@/assets/premier-hd-logo-pro.png";
 
 const services = [
   { to: "/warehouse-maintenance-services-georgia", label: "Warehouse Maintenance" },
