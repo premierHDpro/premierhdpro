@@ -1,0 +1,42 @@
+import { createStart, createMiddleware } from "@tanstack/react-start";
+
+// Baseline security headers applied to every SSR/server response.
+// CSP is intentionally permissive enough for Vite/HMR in dev and for
+// the Supabase + Lovable analytics endpoints used in prod.
+const securityHeaders = createMiddleware().server(async ({ next }) => {
+  const result = await next();
+  const response = result.response;
+  if (response instanceof Response) {
+    const h = response.headers;
+    if (!h.has("X-Frame-Options")) h.set("X-Frame-Options", "DENY");
+    if (!h.has("X-Content-Type-Options")) h.set("X-Content-Type-Options", "nosniff");
+    if (!h.has("Referrer-Policy")) h.set("Referrer-Policy", "strict-origin-when-cross-origin");
+    if (!h.has("Permissions-Policy"))
+      h.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
+    if (!h.has("Strict-Transport-Security"))
+      h.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+    if (!h.has("Content-Security-Policy")) {
+      h.set(
+        "Content-Security-Policy",
+        [
+          "default-src 'self'",
+          "base-uri 'self'",
+          "frame-ancestors 'none'",
+          "object-src 'none'",
+          "img-src 'self' data: blob: https:",
+          "font-src 'self' data: https:",
+          "style-src 'self' 'unsafe-inline'",
+          // 'unsafe-inline' is required for TanStack Start's hydration script
+          "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+          "connect-src 'self' https: wss:",
+          "form-action 'self'",
+        ].join("; "),
+      );
+    }
+  }
+  return result;
+});
+
+export const startInstance = createStart(() => ({
+  requestMiddleware: [securityHeaders],
+}));
