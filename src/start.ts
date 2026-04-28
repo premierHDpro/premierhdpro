@@ -9,7 +9,7 @@ const securityHeaders = createMiddleware().server(async ({ next }) => {
   const url = new URL(request.url);
   // Bypass /lovable/* internal routes (webhooks, cron, previews) — they
   // self-authenticate and must not be touched by app middleware.
-  if (url.pathname.startsWith("/lovable/")) {
+  if (url.pathname.startsWith("/lovable/") || url.pathname === "/email/unsubscribe") {
     return next();
   }
   const result = await next();
