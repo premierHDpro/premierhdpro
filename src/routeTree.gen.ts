@@ -19,6 +19,7 @@ import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as IndustrialHvacRepairGeorgiaRouteImport } from './routes/industrial-hvac-repair-georgia'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as DockDoorRepairAtlantaRouteImport } from './routes/dock-door-repair-atlanta'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConcreteFloorRepairMcdonoughRouteImport } from './routes/concrete-floor-repair-mcdonough'
@@ -96,6 +97,11 @@ const IndustrialHvacRepairGeorgiaRoute =
     path: '/industrial-hvac-repair-georgia',
     getParentRoute: () => rootRouteImport,
   } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DockDoorRepairAtlantaRoute = DockDoorRepairAtlantaRouteImport.update({
   id: '/dock-door-repair-atlanta',
   path: '/dock-door-repair-atlanta',
@@ -206,6 +212,7 @@ export interface FileRoutesByFullPath {
   '/concrete-floor-repair-mcdonough': typeof ConcreteFloorRepairMcdonoughRoute
   '/contact': typeof ContactRoute
   '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
+  '/faq': typeof FaqRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
@@ -236,6 +243,7 @@ export interface FileRoutesByTo {
   '/concrete-floor-repair-mcdonough': typeof ConcreteFloorRepairMcdonoughRoute
   '/contact': typeof ContactRoute
   '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
+  '/faq': typeof FaqRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
@@ -268,6 +276,7 @@ export interface FileRoutesById {
   '/concrete-floor-repair-mcdonough': typeof ConcreteFloorRepairMcdonoughRoute
   '/contact': typeof ContactRoute
   '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
+  '/faq': typeof FaqRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
@@ -301,6 +310,7 @@ export interface FileRouteTypes {
     | '/concrete-floor-repair-mcdonough'
     | '/contact'
     | '/dock-door-repair-atlanta'
+    | '/faq'
     | '/industrial-hvac-repair-georgia'
     | '/privacy-policy'
     | '/services'
@@ -331,6 +341,7 @@ export interface FileRouteTypes {
     | '/concrete-floor-repair-mcdonough'
     | '/contact'
     | '/dock-door-repair-atlanta'
+    | '/faq'
     | '/industrial-hvac-repair-georgia'
     | '/privacy-policy'
     | '/services'
@@ -362,6 +373,7 @@ export interface FileRouteTypes {
     | '/concrete-floor-repair-mcdonough'
     | '/contact'
     | '/dock-door-repair-atlanta'
+    | '/faq'
     | '/industrial-hvac-repair-georgia'
     | '/privacy-policy'
     | '/services'
@@ -394,6 +406,7 @@ export interface RootRouteChildren {
   ConcreteFloorRepairMcdonoughRoute: typeof ConcreteFloorRepairMcdonoughRoute
   ContactRoute: typeof ContactRoute
   DockDoorRepairAtlantaRoute: typeof DockDoorRepairAtlantaRoute
+  FaqRoute: typeof FaqRoute
   IndustrialHvacRepairGeorgiaRoute: typeof IndustrialHvacRepairGeorgiaRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ServicesRoute: typeof ServicesRoute
@@ -486,6 +499,13 @@ declare module '@tanstack/react-router' {
       path: '/industrial-hvac-repair-georgia'
       fullPath: '/industrial-hvac-repair-georgia'
       preLoaderRoute: typeof IndustrialHvacRepairGeorgiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dock-door-repair-atlanta': {
@@ -644,6 +664,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConcreteFloorRepairMcdonoughRoute: ConcreteFloorRepairMcdonoughRoute,
   ContactRoute: ContactRoute,
   DockDoorRepairAtlantaRoute: DockDoorRepairAtlantaRoute,
+  FaqRoute: FaqRoute,
   IndustrialHvacRepairGeorgiaRoute: IndustrialHvacRepairGeorgiaRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ServicesRoute: ServicesRoute,
