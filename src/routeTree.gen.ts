@@ -15,7 +15,9 @@ import { Route as WarehouseMaintenanceServicesGeorgiaRouteImport } from './route
 import { Route as WarehouseMaintenanceMcdonoughRouteImport } from './routes/warehouse-maintenance-mcdonough'
 import { Route as WarehouseMaintenanceAtlantaRouteImport } from './routes/warehouse-maintenance-atlanta'
 import { Route as WarehouseHvacRepairAtlantaRouteImport } from './routes/warehouse-hvac-repair-atlanta'
+import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as IndustrialHvacRepairGeorgiaRouteImport } from './routes/industrial-hvac-repair-georgia'
 import { Route as DockDoorRepairAtlantaRouteImport } from './routes/dock-door-repair-atlanta'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -73,9 +75,19 @@ const WarehouseHvacRepairAtlantaRoute =
     path: '/warehouse-hvac-repair-atlanta',
     getParentRoute: () => rootRouteImport,
   } as any)
+const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
+  id: '/terms-of-service',
+  path: '/terms-of-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndustrialHvacRepairGeorgiaRoute =
@@ -195,7 +207,9 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
   '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
   '/warehouse-maintenance-mcdonough': typeof WarehouseMaintenanceMcdonoughRoute
@@ -223,7 +237,9 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
   '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
   '/warehouse-maintenance-mcdonough': typeof WarehouseMaintenanceMcdonoughRoute
@@ -253,7 +269,9 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/dock-door-repair-atlanta': typeof DockDoorRepairAtlantaRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
   '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
   '/warehouse-maintenance-mcdonough': typeof WarehouseMaintenanceMcdonoughRoute
@@ -284,7 +302,9 @@ export interface FileRouteTypes {
     | '/contact'
     | '/dock-door-repair-atlanta'
     | '/industrial-hvac-repair-georgia'
+    | '/privacy-policy'
     | '/services'
+    | '/terms-of-service'
     | '/warehouse-hvac-repair-atlanta'
     | '/warehouse-maintenance-atlanta'
     | '/warehouse-maintenance-mcdonough'
@@ -312,7 +332,9 @@ export interface FileRouteTypes {
     | '/contact'
     | '/dock-door-repair-atlanta'
     | '/industrial-hvac-repair-georgia'
+    | '/privacy-policy'
     | '/services'
+    | '/terms-of-service'
     | '/warehouse-hvac-repair-atlanta'
     | '/warehouse-maintenance-atlanta'
     | '/warehouse-maintenance-mcdonough'
@@ -341,7 +363,9 @@ export interface FileRouteTypes {
     | '/contact'
     | '/dock-door-repair-atlanta'
     | '/industrial-hvac-repair-georgia'
+    | '/privacy-policy'
     | '/services'
+    | '/terms-of-service'
     | '/warehouse-hvac-repair-atlanta'
     | '/warehouse-maintenance-atlanta'
     | '/warehouse-maintenance-mcdonough'
@@ -371,7 +395,9 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DockDoorRepairAtlantaRoute: typeof DockDoorRepairAtlantaRoute
   IndustrialHvacRepairGeorgiaRoute: typeof IndustrialHvacRepairGeorgiaRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ServicesRoute: typeof ServicesRoute
+  TermsOfServiceRoute: typeof TermsOfServiceRoute
   WarehouseHvacRepairAtlantaRoute: typeof WarehouseHvacRepairAtlantaRoute
   WarehouseMaintenanceAtlantaRoute: typeof WarehouseMaintenanceAtlantaRoute
   WarehouseMaintenanceMcdonoughRoute: typeof WarehouseMaintenanceMcdonoughRoute
@@ -434,11 +460,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WarehouseHvacRepairAtlantaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms-of-service': {
+      id: '/terms-of-service'
+      path: '/terms-of-service'
+      fullPath: '/terms-of-service'
+      preLoaderRoute: typeof TermsOfServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/industrial-hvac-repair-georgia': {
@@ -605,7 +645,9 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DockDoorRepairAtlantaRoute: DockDoorRepairAtlantaRoute,
   IndustrialHvacRepairGeorgiaRoute: IndustrialHvacRepairGeorgiaRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   ServicesRoute: ServicesRoute,
+  TermsOfServiceRoute: TermsOfServiceRoute,
   WarehouseHvacRepairAtlantaRoute: WarehouseHvacRepairAtlantaRoute,
   WarehouseMaintenanceAtlantaRoute: WarehouseMaintenanceAtlantaRoute,
   WarehouseMaintenanceMcdonoughRoute: WarehouseMaintenanceMcdonoughRoute,
