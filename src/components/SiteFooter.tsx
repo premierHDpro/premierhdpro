@@ -83,6 +83,7 @@ export function SiteFooter() {
           <div className="flex items-center gap-4">
             <Link to="/privacy-policy" className="hover:text-safety">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-safety">Terms of Service</Link>
+            <Link to="/faq" className="hover:text-safety">FAQ</Link>
           </div>
           <div>Licensed & Insured · Commercial General Contractor · Georgia</div>
         </div>
