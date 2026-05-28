@@ -46,9 +46,11 @@ export const Route = createRootRoute({
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Warehouse Construction & Facility Services | Premier HD" },
-      { name: "twitter:description", content: "Full-service facility solutions for warehouses and distribution centers. Concrete, dock equipment, steel, HVAC, and maintenance with fast turnaround." },
+      { name: "twitter:description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6b7a0800-542e-4dff-a524-5e8928f0ba19" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6b7a0800-542e-4dff-a524-5e8928f0ba19" },
+      { name: "description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
+      { property: "og:description", content: "Premier Facility Pros provides SEO-optimized commercial facility repair and maintenance services for warehouses and industrial buildings in Georgia." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
