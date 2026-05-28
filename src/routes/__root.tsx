@@ -34,7 +34,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Premier HD Pro is a commercial general contractor serving warehouses, distribution centers, and industrial facilities across Metro Atlanta and Georgia. Maintenance, repairs, renovations.",
+          "Commercial general contractor for warehouses and industrial facilities across Metro Atlanta and Georgia.",
       },
       { name: "author", content: "Premier HD Pro" },
       { property: "og:type", content: "website" },
@@ -42,19 +42,16 @@ export const Route = createRootRoute({
       {
         property: "og:description",
         content:
-          "Warehouse maintenance, concrete floor repair, dock door repair, industrial HVAC, and renovations across Metro Atlanta.",
+          "Warehouse maintenance, concrete repair, dock door repair, HVAC, and renovations across Metro Atlanta.",
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Warehouse Construction & Facility Services | Premier HD" },
       { name: "twitter:description", content: "Full-service facility solutions for warehouses and distribution centers. Concrete, dock equipment, steel, HVAC, and maintenance with fast turnaround." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6b7a0800-542e-4dff-a524-5e8928f0ba19" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6b7a0800-542e-4dff-a524-5e8928f0ba19" },
-      { name: "description", content: "Full-service facility solutions for warehouses and distribution centers. Concrete, dock equipment, steel, HVAC, and maintenance with fast turnaround." },
-      { property: "og:description", content: "Full-service facility solutions for warehouses and distribution centers. Concrete, dock equipment, steel, HVAC, and maintenance with fast turnaround." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "canonical", href: "https://premier-facility-pros.lovable.app/" },
     ],
     scripts: [
       {
@@ -65,7 +62,7 @@ export const Route = createRootRoute({
           name: "Premier HD Pro",
           description:
             "Commercial general contractor serving warehouses, distribution centers, and industrial facilities across Metro Atlanta and Georgia.",
-          url: "https://premier-facility-pros.lovable.app/",
+          url: "https://premierhdpro.com/",
           telephone: "+1-770-628-5444",
           address: {
             "@type": "PostalAddress",
