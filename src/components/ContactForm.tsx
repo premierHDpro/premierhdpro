@@ -126,10 +126,11 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
         </div>
       </div>
       <div>
-        <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+        <label htmlFor="contact-message" className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           Tell us about the project
         </label>
         <textarea
+          id="contact-message"
           name="message"
           rows={4}
           className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:border-primary focus:outline-none"
@@ -164,13 +165,15 @@ function Field({
   placeholder?: string;
   error?: string;
 }) {
+  const id = `contact-${name}`;
   return (
     <div>
-      <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+      <label htmlFor={id} className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
         {label}
         {required && <span className="text-safety"> *</span>}
       </label>
       <input
+        id={id}
         name={name}
         type={type}
         required={required}
