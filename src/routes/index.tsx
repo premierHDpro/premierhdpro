@@ -93,7 +93,7 @@ function HomePage() {
           <div className="max-w-3xl">
             <div className="eyebrow">Commercial General Contractor · Georgia</div>
             <h1 className="text-4xl font-bold leading-tight md:text-6xl">
-              Commercial Facility Repairs & Maintenance for Warehouses and Distribution Centers
+              COMMERCIAL CONSTRUCTION & FACILITY SERVICES
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-primary-foreground/80 md:text-xl">
               Helping facility managers across Georgia reduce downtime, fix problems fast,
