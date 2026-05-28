@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://premier-facility-pros.lovable.app/sitemap.xml
+Sitemap: https://premierhdpro.com/sitemap.xml
