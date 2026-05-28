@@ -20,18 +20,22 @@ import { ContactForm } from "../components/ContactForm";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Premier HD Pro — Commercial Contractor for Warehouses & Distribution Centers in Georgia" },
+      { title: "Premier HD Pro | Commercial Contractor in Georgia" },
       {
         name: "description",
         content:
-          "Warehouse maintenance services Georgia. Commercial contractor Atlanta serving distribution centers, warehouses, and industrial facilities. Fast response, minimal downtime.",
+          "Warehouse maintenance across Georgia. Commercial contractor serving distribution centers and industrial facilities with fast response.",
       },
-      { property: "og:title", content: "Premier HD Pro — Commercial Contractor in Georgia" },
+      { property: "og:title", content: "Premier HD Pro | Commercial Contractor in Georgia" },
       {
         property: "og:description",
         content:
           "Helping facility managers across Georgia reduce downtime, fix problems fast, and keep operations running.",
       },
+      { property: "og:url", content: "https://premierhdpro.com/" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://premierhdpro.com/" },
     ],
   }),
   component: HomePage,
