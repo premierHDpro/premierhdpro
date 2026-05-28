@@ -202,7 +202,7 @@ function HomePage() {
                   <h3 className="text-lg font-bold">{s.title}</h3>
                   <p className="mt-2 flex-1 text-sm text-muted-foreground">{s.short}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                    Learn more <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    Explore service details <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </Link>
               );
