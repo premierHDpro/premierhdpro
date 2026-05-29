@@ -569,6 +569,22 @@ function GeorgiaMap() {
           strokeLinejoin="round"
           filter="url(#ga-shadow)"
         />
+        {/* County boundaries (clipped to state) */}
+        <defs>
+          <clipPath id="ga-clip">
+            <path d={path} />
+          </clipPath>
+        </defs>
+        <g clipPath="url(#ga-clip)">
+          <path
+            d={GA_COUNTY_PATHS}
+            fill="none"
+            stroke="oklch(1 0 0 / 0.22)"
+            strokeWidth="0.18"
+            strokeLinejoin="round"
+            vectorEffect="non-scaling-stroke"
+          />
+        </g>
         {markers.map((m) => (
           <g key={m.label}>
             <circle cx={m.x} cy={m.y} r="3.5" fill="var(--color-signal)" opacity="0.55">
