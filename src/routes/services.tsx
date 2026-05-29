@@ -72,7 +72,7 @@ function ServiceCategory({
           return (
             <Link
               key={s.slug}
-              to={s.to}
+              to="/services/$slug" params={{ slug: s.slug }}
               className="group rounded-lg border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg"
             >
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded bg-accent text-primary">

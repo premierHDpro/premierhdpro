@@ -314,7 +314,7 @@ export function ServicePage(props: ServicePageProps) {
               return (
                 <Link
                   key={s.slug}
-                  to={s.to}
+                  to="/services/$slug" params={{ slug: s.slug }}
                   className="group rounded-lg border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary"
                 >
                   <Icon className="h-6 w-6 text-safety" />
