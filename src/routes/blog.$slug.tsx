@@ -104,7 +104,7 @@ function PostPage() {
                 <h3 className="text-lg font-bold">Related services</h3>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
                   {related.map((s) => (
-                    <Link key={s.slug} to={s.to} className="flex items-center justify-between rounded-md border border-border bg-card p-4 hover:border-primary">
+                    <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} className="flex items-center justify-between rounded-md border border-border bg-card p-4 hover:border-primary">
                       <span className="text-sm font-semibold">{s.title}</span>
                       <ArrowRight className="h-4 w-4 text-primary" />
                     </Link>

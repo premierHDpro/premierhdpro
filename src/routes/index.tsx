@@ -244,7 +244,7 @@ function HomePage() {
                 return (
                   <Link
                     key={s.slug}
-                    to={s.to}
+                    to="/services/$slug" params={{ slug: s.slug }}
                     className="group flex flex-col bg-ink p-6 transition-colors hover:bg-white/5"
                   >
                     <Icon className="h-6 w-6 text-signal" />
@@ -275,7 +275,7 @@ function HomePage() {
                 return (
                   <Link
                     key={s.slug}
-                    to={s.to}
+                    to="/services/$slug" params={{ slug: s.slug }}
                     className="group flex flex-col bg-ink p-6 transition-colors hover:bg-white/5"
                   >
                     <Icon className="h-6 w-6 text-signal" />

@@ -67,7 +67,7 @@ function AtlantaLocation() {
               <h2 className="text-2xl font-bold">Services we deliver across Metro Atlanta</h2>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {services.map((s) => (
-                  <Link key={s.slug} to={s.to} className="rounded-md border border-border bg-card p-4 transition-colors hover:border-primary">
+                  <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} className="rounded-md border border-border bg-card p-4 transition-colors hover:border-primary">
                     <div className="text-sm font-bold">{s.title}</div>
                     <div className="mt-1 text-xs text-muted-foreground">{s.short}</div>
                   </Link>

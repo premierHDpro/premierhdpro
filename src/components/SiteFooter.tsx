@@ -3,18 +3,18 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/premier-hd-logo-pro.png";
 
 const constructionServices = [
-  { to: "/commercial-renovations-atlanta", label: "Warehouse Renovations" },
-  { to: "/commercial-renovations-atlanta", label: "Tenant Improvements" },
-  { to: "/commercial-renovations-atlanta", label: "Office Buildouts" },
-  { to: "/concrete-floor-repair-atlanta", label: "Concrete Construction" },
-  { to: "/dock-door-repair-atlanta", label: "Doors, Frames & Hardware" },
+  { slug: "commercial-renovations", label: "Warehouse Renovations" },
+  { slug: "tenant-improvements", label: "Tenant Improvements" },
+  { slug: "office-buildouts", label: "Office Buildouts" },
+  { slug: "concrete-floor-repair", label: "Concrete Construction" },
+  { slug: "doors-frames-hardware", label: "Doors, Frames & Hardware" },
 ] as const;
 
 const facilityServices = [
-  { to: "/warehouse-maintenance-services-georgia", label: "Warehouse Maintenance" },
-  { to: "/dock-door-repair-atlanta", label: "Dock Equipment Repairs" },
-  { to: "/industrial-hvac-repair-georgia", label: "Industrial HVAC" },
-  { to: "/warehouse-safety-installation-atlanta", label: "Bollards & Safety Rails" },
+  { slug: "warehouse-maintenance", label: "Warehouse Maintenance" },
+  { slug: "dock-door-repair", label: "Dock Equipment Repairs" },
+  { slug: "industrial-hvac", label: "Industrial HVAC" },
+  { slug: "safety-barriers", label: "Bollards & Safety Rails" },
 ] as const;
 
 const locations = [
@@ -66,7 +66,7 @@ export function SiteFooter() {
           <ul className="space-y-2 text-sm text-primary-foreground/70">
             {constructionServices.map((s) => (
               <li key={s.label}>
-                <Link to={s.to} className="hover:text-signal">
+                <Link to="/services/$slug" params={{ slug: s.slug }} className="hover:text-signal">
                   {s.label}
                 </Link>
               </li>
@@ -76,7 +76,7 @@ export function SiteFooter() {
           <ul className="space-y-2 text-sm text-primary-foreground/70">
             {facilityServices.map((s) => (
               <li key={s.label}>
-                <Link to={s.to} className="hover:text-signal">
+                <Link to="/services/$slug" params={{ slug: s.slug }} className="hover:text-signal">
                   {s.label}
                 </Link>
               </li>
