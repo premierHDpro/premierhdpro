@@ -9,7 +9,6 @@ import {
   Factory,
   Warehouse,
   MapPin,
-  Wrench,
   HardHat,
   Users,
   Layers,
@@ -50,45 +49,6 @@ export const Route = createFileRoute("/")({
   }),
   component: HomePage,
 });
-
-const featuredArticles = [
-  {
-    slug: "cost-to-repair-concrete-floors-warehouse",
-    title: "Cost to Repair Concrete Floors in a Warehouse",
-    desc: "Breakdown of repair costs, causes, and what impacts pricing.",
-    service: { to: "/concrete-floor-repair-atlanta", label: "Concrete Floor Repair" },
-  },
-  {
-    slug: "common-maintenance-issues-distribution-centers",
-    title: "Common Maintenance Issues in Distribution Centers",
-    desc: "The recurring problems that hit DCs hardest — and how to stay ahead of them.",
-    service: { to: "/warehouse-maintenance-services-georgia", label: "Warehouse Maintenance" },
-  },
-  {
-    slug: "preventative-maintenance-checklist-warehouses",
-    title: "Preventative Maintenance Checklist for Warehouses",
-    desc: "A quarterly checklist that catches problems before they cause downtime.",
-    service: { to: "/warehouse-maintenance-services-georgia", label: "Warehouse Maintenance" },
-  },
-  {
-    slug: "dock-leveler-repair-vs-replacement",
-    title: "Dock Leveler Repair vs Replacement: How to Decide",
-    desc: "When to repair a failing leveler and when full replacement is the smarter call.",
-    service: { to: "/dock-door-repair-atlanta", label: "Dock Door Repair" },
-  },
-  {
-    slug: "polished-concrete-vs-epoxy-warehouse",
-    title: "Polished Concrete vs Epoxy Coatings for Warehouses",
-    desc: "How both finishes compare on cost, durability, and long-term maintenance.",
-    service: { to: "/concrete-floor-repair-atlanta", label: "Concrete Floor Repair" },
-  },
-  {
-    slug: "managing-warehouse-repairs-without-downtime",
-    title: "How to Manage Warehouse Repairs Without Downtime",
-    desc: "Tactics for completing major repairs in active distribution centers.",
-    service: { to: "/warehouse-maintenance-services-georgia", label: "Warehouse Maintenance" },
-  },
-] as const;
 
 const projects = [
   {
