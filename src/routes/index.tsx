@@ -213,7 +213,7 @@ function HomePage() {
       </section>
 
       {/* SERVICES — TWO CATEGORIES */}
-      <section className="section-pad section-dark">
+      <section className="section-pad bg-accent/40">
         <div className="container-pro">
           <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-2xl">
@@ -221,7 +221,7 @@ function HomePage() {
               <h2 className="text-3xl font-bold leading-tight md:text-5xl">
                 Commercial Construction & Facility Services
               </h2>
-              <p className="mt-4 text-ink-foreground/70">
+              <p className="mt-4 text-muted-foreground">
                 A single contractor for commercial buildouts and the ongoing facility work that
                 keeps industrial operations running.
               </p>
@@ -229,27 +229,27 @@ function HomePage() {
           </div>
 
           <div>
-            <div className="mb-6 flex items-baseline justify-between border-b border-white/10 pb-3">
+            <div className="mb-6 flex items-baseline justify-between border-b border-border pb-3">
               <div>
                 <div className="text-xs font-bold uppercase tracking-widest text-signal">01 — Commercial Construction</div>
                 <h3 className="mt-2 text-xl font-bold md:text-2xl">Warehouse, Industrial & Commercial Construction</h3>
               </div>
-              <span className="text-xs uppercase tracking-widest text-ink-foreground/40">
+              <span className="text-xs uppercase tracking-widest text-muted-foreground">
                 {construction.length} services
               </span>
             </div>
-            <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {construction.map((s) => {
                 const Icon = s.icon;
                 return (
                   <Link
                     key={s.slug}
                     to="/services/$slug" params={{ slug: s.slug }}
-                    className="group flex flex-col bg-ink p-6 transition-colors hover:bg-white/5"
+                    className="group flex flex-col bg-card p-6 transition-colors hover:bg-accent/50"
                   >
                     <Icon className="h-6 w-6 text-signal" />
                     <h4 className="mt-4 text-base font-bold leading-tight">{s.title}</h4>
-                    <p className="mt-2 flex-1 text-sm text-ink-foreground/65">{s.short}</p>
+                    <p className="mt-2 flex-1 text-sm text-muted-foreground">{s.short}</p>
                     <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-signal">
                       Learn more <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
                     </span>
@@ -260,27 +260,27 @@ function HomePage() {
           </div>
 
           <div className="mt-16">
-            <div className="mb-6 flex items-baseline justify-between border-b border-white/10 pb-3">
+            <div className="mb-6 flex items-baseline justify-between border-b border-border pb-3">
               <div>
                 <div className="text-xs font-bold uppercase tracking-widest text-signal">02 — Facility Services</div>
                 <h3 className="mt-2 text-xl font-bold md:text-2xl">Ongoing Repairs, Upgrades & Operational Support</h3>
               </div>
-              <span className="text-xs uppercase tracking-widest text-ink-foreground/40">
+              <span className="text-xs uppercase tracking-widest text-muted-foreground">
                 {facility.length} services
               </span>
             </div>
-            <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
               {facility.map((s) => {
                 const Icon = s.icon;
                 return (
                   <Link
                     key={s.slug}
                     to="/services/$slug" params={{ slug: s.slug }}
-                    className="group flex flex-col bg-ink p-6 transition-colors hover:bg-white/5"
+                    className="group flex flex-col bg-card p-6 transition-colors hover:bg-accent/50"
                   >
                     <Icon className="h-6 w-6 text-signal" />
                     <h4 className="mt-4 text-base font-bold leading-tight">{s.title}</h4>
-                    <p className="mt-2 flex-1 text-sm text-ink-foreground/65">{s.short}</p>
+                    <p className="mt-2 flex-1 text-sm text-muted-foreground">{s.short}</p>
                     <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-signal">
                       Learn more <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
                     </span>
