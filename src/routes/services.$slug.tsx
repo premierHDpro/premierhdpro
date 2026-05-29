@@ -5,6 +5,10 @@ import hvacRooftop from "../assets/hvac-rooftop-unit.jpg";
 import hvacControls from "../assets/hvac-controls-panel.jpg";
 import hvacCeiling from "../assets/hvac-ceiling-install.jpg";
 import hvacDuctwork from "../assets/hvac-warehouse-ductwork.jpg";
+import rackingEmpty from "../assets/racking-empty-frames.jpg";
+import rackingNewBays from "../assets/racking-new-bays.jpg";
+import rackingColumnProtectors from "../assets/racking-column-protectors.jpg";
+import rackingAisleGuards from "../assets/racking-aisle-guards.jpg";
 
 type ServiceContent = Omit<ServicePageProps, "slug">;
 
@@ -476,6 +480,13 @@ const CONTENT: Record<string, ServiceContent> = {
     heroSubheadline:
       "Concrete-filled bollards, steel guardrails, column protection, and pedestrian barriers installed to OSHA and ANSI standards.",
     primaryCtaLabel: "Request a Safety Walk",
+    heroImage: rackingColumnProtectors,
+    gallery: [
+      { src: rackingNewBays, caption: "New pallet rack bays set, plumbed, and anchored alongside an active pick aisle." },
+      { src: rackingColumnProtectors, caption: "Yellow column protectors installed at every upright to absorb forklift impacts." },
+      { src: rackingAisleGuards, caption: "End-of-aisle guards and base protectors lining a full racking run." },
+      { src: rackingEmpty, caption: "Freshly erected selective racking ready for wire decking and load." },
+    ],
     problemIntro:
       "Forklift impacts are predictable. Every unprotected column, rack upright, and corner is one incident away from a shutdown.",
     problems: [
