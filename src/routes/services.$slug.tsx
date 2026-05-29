@@ -11,6 +11,9 @@ import rackingColumnProtectors from "../assets/racking-column-protectors.jpg";
 import rackingAisleGuards from "../assets/racking-aisle-guards.jpg";
 import doorReplacementComplete from "../assets/door-replacement-complete.jpg";
 import doorReplacementProgress from "../assets/door-replacement-progress.jpg";
+import demoTileWall from "../assets/demo-tile-wall.jpg";
+import demoRestroomOverview from "../assets/demo-restroom-overview.jpg";
+import demoCrewStripout from "../assets/demo-crew-stripout.jpg";
 
 type ServiceContent = Omit<ServicePageProps, "slug">;
 
@@ -285,6 +288,13 @@ const CONTENT: Record<string, ServiceContent> = {
     heroSubheadline:
       "Interior demo, site clearing, and selective removal inside warehouses and commercial buildings — completed safely around live operations.",
     primaryCtaLabel: "Request a Demo Quote",
+    heroImage: demoCrewStripout,
+    gallery: [
+      { src: "/videos/demo-job.mp4", caption: "Walk-through of an active interior demo — tile, drywall, and partitions coming down.", video: true, poster: demoCrewStripout },
+      { src: demoCrewStripout, caption: "Crew mid-stripout — tile and drywall pulled back to studs and insulation." },
+      { src: demoTileWall, caption: "Full-height tile and drywall removed, plumbing and framing exposed for the next trade." },
+      { src: demoRestroomOverview, caption: "Commercial restroom demo — fixtures, partitions, and finishes cleared and staged for haul-off." },
+    ],
     problemIntro:
       "Demolition inside a working facility is high-risk. Dust, debris, and surprise utilities can stop production or injure workers.",
     problems: [

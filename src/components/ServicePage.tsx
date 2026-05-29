@@ -33,7 +33,7 @@ export type ServicePageProps = {
   /** Optional hero background photo (URL from imported asset) */
   heroImage?: string;
   /** Optional project gallery — recent work photos shown mid-page */
-  gallery?: { src: string; caption: string }[];
+  gallery?: { src: string; caption: string; video?: boolean; poster?: string }[];
   galleryHeading?: string;
   galleryEyebrow?: string;
 };
@@ -243,12 +243,25 @@ export function ServicePage(props: ServicePageProps) {
                       className="group overflow-hidden rounded-lg border border-border bg-card"
                     >
                       <div className="aspect-[4/3] overflow-hidden bg-muted">
-                        <img
-                          src={g.src}
-                          alt={g.caption}
-                          loading="lazy"
-                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
+                        {g.video ? (
+                          <video
+                            src={g.src}
+                            poster={g.poster}
+                            muted
+                            loop
+                            playsInline
+                            autoPlay
+                            controls
+                            className="h-full w-full object-cover"
+                          />
+                        ) : (
+                          <img
+                            src={g.src}
+                            alt={g.caption}
+                            loading="lazy"
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        )}
                       </div>
                       <figcaption className="border-t border-border px-4 py-3 text-sm font-medium text-foreground/80">
                         {g.caption}
