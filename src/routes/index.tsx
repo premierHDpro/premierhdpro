@@ -336,7 +336,7 @@ function HomePage() {
       </section>
 
       {/* WHY CHOOSE US — dark */}
-      <section className="section-pad section-dark">
+      <section className="section-pad">
         <div className="container-pro">
           <div className="mb-12 max-w-3xl">
             <div className="eyebrow">Why Premier HD Pro</div>
@@ -344,7 +344,7 @@ function HomePage() {
               Why Facilities & Commercial Clients Choose Premier HD Pro
             </h2>
           </div>
-          <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
             {[
               { icon: Clock, title: "Minimal Operational Disruption", body: "Work phased around shipping schedules, shifts, and forklift traffic — never a shutdown by default." },
               { icon: Zap, title: "Fast Response Times", body: "Same-day site walks for active accounts. Written scopes inside 48 hours on most projects." },
@@ -353,10 +353,10 @@ function HomePage() {
               { icon: ShieldCheck, title: "Safety & Execution Focused", body: "PPE, OSHA standards, and clean-as-you-build discipline on every site." },
               { icon: Layers, title: "Scalable Multi-Trade Support", body: "Concrete, framing, MEP, doors, finishes — scaled up or down to match project size." },
             ].map((it) => (
-              <div key={it.title} className="flex flex-col gap-3 bg-ink p-7">
+              <div key={it.title} className="flex flex-col gap-3 bg-card p-7">
                 <it.icon className="h-6 w-6 text-signal" />
                 <h3 className="text-lg font-bold leading-tight">{it.title}</h3>
-                <p className="text-sm text-ink-foreground/65">{it.body}</p>
+                <p className="text-sm text-muted-foreground">{it.body}</p>
               </div>
             ))}
           </div>
