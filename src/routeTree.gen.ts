@@ -147,9 +147,9 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   getParentRoute: () => BlogRoute,
 } as any)
 const ServicesSlugRoute = ServicesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/$slug',
+  path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const LocationsMcdonoughRoute = LocationsMcdonoughRouteImport.update({
   id: '/locations/mcdonough',
@@ -433,6 +433,7 @@ export interface RootRouteChildren {
   LocationsHenryCountyRoute: typeof LocationsHenryCountyRoute
   LocationsLocustGroveRoute: typeof LocationsLocustGroveRoute
   LocationsMcdonoughRoute: typeof LocationsMcdonoughRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
   ApiPublicContactRoute: typeof ApiPublicContactRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
@@ -578,10 +579,10 @@ declare module '@tanstack/react-router' {
     }
     '/services/$slug': {
       id: '/services/$slug'
-      path: '/$slug'
+      path: '/services/$slug'
       fullPath: '/services/$slug'
       preLoaderRoute: typeof ServicesSlugRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/locations/mcdonough': {
       id: '/locations/mcdonough'
@@ -700,6 +701,7 @@ const rootRouteChildren: RootRouteChildren = {
   LocationsHenryCountyRoute: LocationsHenryCountyRoute,
   LocationsLocustGroveRoute: LocationsLocustGroveRoute,
   LocationsMcdonoughRoute: LocationsMcdonoughRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
   ServicesIndexRoute: ServicesIndexRoute,
   ApiPublicContactRoute: ApiPublicContactRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
