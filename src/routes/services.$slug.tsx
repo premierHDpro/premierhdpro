@@ -26,6 +26,14 @@ import officeBuildoutTransactionWindow from "../assets/office-buildout-transacti
 import demoTileWall from "../assets/demo-tile-wall.jpg";
 import demoRestroomOverview from "../assets/demo-restroom-overview.jpg";
 import demoCrewStripout from "../assets/demo-crew-stripout.jpg";
+import polishedConcreteTrainingBefore from "../assets/polished-concrete-training-room-before.jpg";
+import polishedConcreteTrainingFinished from "../assets/polished-concrete-training-room-finished.jpg";
+import polishedConcreteBreakroomWide from "../assets/polished-concrete-breakroom-wide.jpg";
+import polishedConcreteBreakroomCabinets from "../assets/polished-concrete-breakroom-cabinets.jpg";
+import polishedConcreteOfficeWindow from "../assets/polished-concrete-office-window.jpg";
+import polishedConcreteCharcoalOffice from "../assets/polished-concrete-charcoal-office.jpg";
+import polishedConcreteCharcoalCorner from "../assets/polished-concrete-charcoal-corner.jpg";
+import polishedConcreteCorridor from "../assets/polished-concrete-corridor.jpg";
 
 type ServiceContent = Omit<ServicePageProps, "slug">;
 
@@ -249,6 +257,17 @@ const CONTENT: Record<string, ServiceContent> = {
     heroSubheadline:
       "Slab pours, joint repair, crack remediation, and polished concrete for warehouses, distribution centers, and manufacturing floors.",
     primaryCtaLabel: "Request a Floor Assessment",
+    heroImage: polishedConcreteTrainingFinished,
+    gallery: [
+      { src: polishedConcreteTrainingBefore, caption: "Training room slab before polishing — old flooring stripped, adhesive residue exposed, ready for grind." },
+      { src: polishedConcreteTrainingFinished, caption: "Same training room after our polished concrete process — light-gray finish with a deep, even reflection." },
+      { src: polishedConcreteBreakroomWide, caption: "Polished concrete breakroom floor finished while interior trades wrapped up overhead work." },
+      { src: polishedConcreteBreakroomCabinets, caption: "Wide view of the finished breakroom with new cabinetry — uniform sheen across the full slab." },
+      { src: polishedConcreteOfficeWindow, caption: "Charcoal-stained polished concrete in a window-front office suite — high gloss with natural mottling." },
+      { src: polishedConcreteCharcoalOffice, caption: "Private office finished in a darker charcoal polish, sealed and burnished to a wet-look shine." },
+      { src: polishedConcreteCharcoalCorner, caption: "Corner detail of the charcoal polish — even color, tight saw-cut joints, clean wall edge." },
+      { src: polishedConcreteCorridor, caption: "Polished concrete corridor running through the office suite, ready for final paint and trim." },
+    ],
     problemIntro:
       "Industrial floors take a beating. Forklift traffic, freeze-thaw, heavy loads, and bad joints all create problems that get worse with time.",
     problems: [
