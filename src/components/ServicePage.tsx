@@ -32,6 +32,10 @@ export type ServicePageProps = {
   relatedPosts: { slug: string; anchor: string }[];
   /** Optional hero background photo (URL from imported asset) */
   heroImage?: string;
+  /** Optional project gallery — recent work photos shown mid-page */
+  gallery?: { src: string; caption: string }[];
+  galleryHeading?: string;
+  galleryEyebrow?: string;
 };
 
 const DEFAULT_WHY_US = [
@@ -61,6 +65,9 @@ export function ServicePage(props: ServicePageProps) {
     bottomCtaLabel,
     relatedPosts,
     heroImage,
+    gallery,
+    galleryHeading = "Recent project photos",
+    galleryEyebrow = "Recent Work",
   } = props;
 
   const svc: Service | undefined = services.find((s) => s.slug === slug);
@@ -223,6 +230,34 @@ export function ServicePage(props: ServicePageProps) {
                 ))}
               </ul>
             </div>
+
+            {/* Project Gallery */}
+            {gallery && gallery.length > 0 && (
+              <div className="mt-14">
+                <div className="eyebrow !text-primary">{galleryEyebrow}</div>
+                <h2 className="text-2xl font-bold md:text-3xl">{galleryHeading}</h2>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {gallery.map((g) => (
+                    <figure
+                      key={g.src}
+                      className="group overflow-hidden rounded-lg border border-border bg-card"
+                    >
+                      <div className="aspect-[4/3] overflow-hidden bg-muted">
+                        <img
+                          src={g.src}
+                          alt={g.caption}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <figcaption className="border-t border-border px-4 py-3 text-sm font-medium text-foreground/80">
+                        {g.caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Service Area */}
             <div className="mt-14 rounded-lg border border-border bg-accent/40 p-6">
