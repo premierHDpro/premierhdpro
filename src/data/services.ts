@@ -32,7 +32,7 @@ export type Service = {
 export const services: Service[] = [
   // ───── COMMERCIAL CONSTRUCTION ─────
   {
-    slug: "warehouse-renovations",
+    slug: "commercial-renovations",
     to: "/commercial-renovations-atlanta",
     title: "Warehouse Renovations",
     short:
@@ -77,7 +77,7 @@ export const services: Service[] = [
     category: "construction",
   },
   {
-    slug: "concrete-construction",
+    slug: "concrete-floor-repair",
     to: "/concrete-floor-repair-atlanta",
     title: "Concrete Construction",
     short:
@@ -133,7 +133,7 @@ export const services: Service[] = [
 
   // ───── FACILITY SERVICES ─────
   {
-    slug: "dock-equipment-repairs",
+    slug: "dock-door-repair",
     to: "/dock-door-repair-atlanta",
     title: "Dock Equipment Repairs",
     short:
@@ -151,7 +151,7 @@ export const services: Service[] = [
     category: "facility",
   },
   {
-    slug: "bollards-safety-rails",
+    slug: "safety-barriers",
     to: "/warehouse-safety-installation-atlanta",
     title: "Bollards & Safety Rails",
     short:
@@ -196,7 +196,7 @@ export const services: Service[] = [
     category: "facility",
   },
   {
-    slug: "operational-improvements",
+    slug: "industrial-hvac",
     to: "/industrial-hvac-repair-georgia",
     title: "Operational Improvements",
     short:
