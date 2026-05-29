@@ -13,6 +13,10 @@ import doorReplacementComplete from "../assets/door-replacement-complete.jpg";
 import doorReplacementProgress from "../assets/door-replacement-progress.jpg";
 import autoDoorLaundryExterior from "../assets/auto-door-laundry-exterior.jpg";
 import autoDoorLaundryInterior from "../assets/auto-door-laundry-interior.jpg";
+import bathroomRenoMainVanity from "../assets/bathroom-reno-main-vanity.jpg";
+import bathroomRenoSinksStalls from "../assets/bathroom-reno-sinks-stalls.jpg";
+import bathroomRenoUrinals from "../assets/bathroom-reno-urinals.jpg";
+import bathroomRenoAdaStall from "../assets/bathroom-reno-ada-stall.jpg";
 import demoTileWall from "../assets/demo-tile-wall.jpg";
 import demoRestroomOverview from "../assets/demo-restroom-overview.jpg";
 import demoCrewStripout from "../assets/demo-crew-stripout.jpg";
@@ -54,6 +58,13 @@ const CONTENT: Record<string, ServiceContent> = {
     heroSubheadline:
       "Phased renovations, expansions, and reconfigurations for warehouses and distribution centers across Georgia — built around your operations.",
     primaryCtaLabel: "Request a Site Walk",
+    heroImage: bathroomRenoMainVanity,
+    gallery: [
+      { src: bathroomRenoMainVanity, caption: "New main restroom vanity, mirrors, and tile finishes installed during a renovation at a Home Depot distribution center." },
+      { src: bathroomRenoSinksStalls, caption: "Full sink run with stainless partitions and refreshed tile — completed while the DC stayed operational." },
+      { src: bathroomRenoUrinals, caption: "Urinal wall with touchless flush valves, privacy screens, and matching accent tile band." },
+      { src: bathroomRenoAdaStall, caption: "ADA single-user restroom with new fixtures, tile, and accessible layout." },
+    ],
     problemIntro:
       "Renovating an operating warehouse is not the same as a ground-up build. Crews need to work around shipping windows, racking, equipment, and a workforce that can't stop.",
     problems: [
