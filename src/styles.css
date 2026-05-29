@@ -30,6 +30,10 @@
   --color-ring: var(--ring);
   --color-steel: var(--steel);
   --color-safety: var(--safety);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-signal: var(--signal);
+  --color-signal-foreground: var(--signal-foreground);
   --font-display: var(--font-display);
 }
 
@@ -56,6 +60,10 @@
   --ring: oklch(0.32 0.11 263);
   --steel: oklch(0.38 0.03 250);
   --safety: oklch(0.78 0.10 80);
+  --ink: oklch(0.18 0.012 250);
+  --ink-foreground: oklch(0.97 0.005 250);
+  --signal: oklch(0.68 0.18 45);
+  --signal-foreground: oklch(0.16 0.01 250);
   --font-display: ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -102,8 +110,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--color-safety);
-  color: oklch(0.18 0.03 250);
+  background-color: var(--color-signal);
+  color: var(--color-signal-foreground);
   padding: 0.875rem 1.5rem;
   border-radius: var(--radius);
   font-weight: 600;
@@ -149,8 +157,41 @@
   letter-spacing: 0.15em;
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--color-safety);
+  color: var(--color-signal);
   margin-bottom: 0.75rem;
+}
+
+@utility section-dark {
+  background-color: var(--color-ink);
+  color: var(--color-ink-foreground);
+}
+
+@utility industrial-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card);
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.industrial-card:hover {
+  border-color: var(--color-ink);
+  transform: translateY(-2px);
+}
+
+@utility industrial-card-dark {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid oklch(1 0 0 / 0.08);
+  background-color: oklch(1 0 0 / 0.03);
+  padding: 1.5rem;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.industrial-card-dark:hover {
+  border-color: var(--color-signal);
+  background-color: oklch(1 0 0 / 0.05);
 }
 
 @keyframes marquee {
