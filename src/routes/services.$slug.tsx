@@ -17,6 +17,12 @@ import bathroomRenoMainVanity from "../assets/bathroom-reno-main-vanity.jpg";
 import bathroomRenoSinksStalls from "../assets/bathroom-reno-sinks-stalls.jpg";
 import bathroomRenoUrinals from "../assets/bathroom-reno-urinals.jpg";
 import bathroomRenoAdaStall from "../assets/bathroom-reno-ada-stall.jpg";
+import officeBuildoutOpenArea from "../assets/office-buildout-open-area.jpg";
+import officeBuildoutConference from "../assets/office-buildout-conference.jpg";
+import officeBuildoutCorridor from "../assets/office-buildout-corridor.jpg";
+import officeBuildoutPrivateOffice from "../assets/office-buildout-private-office.jpg";
+import officeBuildoutServiceWindow from "../assets/office-buildout-service-window.jpg";
+import officeBuildoutTransactionWindow from "../assets/office-buildout-transaction-window.jpg";
 import demoTileWall from "../assets/demo-tile-wall.jpg";
 import demoRestroomOverview from "../assets/demo-restroom-overview.jpg";
 import demoCrewStripout from "../assets/demo-crew-stripout.jpg";
@@ -133,6 +139,15 @@ const CONTENT: Record<string, ServiceContent> = {
     heroSubheadline:
       "Admin offices, breakrooms, conference rooms, and restroom additions — built inside operating warehouses with minimal disruption.",
     primaryCtaLabel: "Plan Your Office Buildout",
+    heroImage: officeBuildoutOpenArea,
+    gallery: [
+      { src: officeBuildoutOpenArea, caption: "Open work area with fresh carpet tile, ceiling grid, and full glazing — ready for furniture install." },
+      { src: officeBuildoutConference, caption: "Conference room buildout with matching carpet tile and corner glazing overlooking the property." },
+      { src: officeBuildoutServiceWindow, caption: "Interior service window with sliding glass, key lock, and solid wood transaction sill." },
+      { src: officeBuildoutTransactionWindow, caption: "Second transaction window into the bullpen — framed, glazed, and trimmed to match the office package." },
+      { src: officeBuildoutPrivateOffice, caption: "Private office with new carpet tile, perimeter glazing, and clean wall finishes." },
+      { src: officeBuildoutCorridor, caption: "Office corridor with new carpet tile run wall-to-wall between framed openings and doors." },
+    ],
     problemIntro:
       "Adding office space inside a warehouse requires more than framing. HVAC, electrical, plumbing, and life safety all have to integrate with the existing facility.",
     problems: [
