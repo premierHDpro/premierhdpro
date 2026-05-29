@@ -1,6 +1,10 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { ServicePage, type ServicePageProps } from "../components/ServicePage";
 import { services } from "../data/services";
+import hvacRooftop from "../assets/hvac-rooftop-unit.jpg";
+import hvacControls from "../assets/hvac-controls-panel.jpg";
+import hvacCeiling from "../assets/hvac-ceiling-install.jpg";
+import hvacDuctwork from "../assets/hvac-warehouse-ductwork.jpg";
 
 type ServiceContent = Omit<ServicePageProps, "slug">;
 
@@ -639,6 +643,13 @@ const CONTENT: Record<string, ServiceContent> = {
     heroSubheadline:
       "Repair, replacement, and improvement of HVAC, mechanical, and operational systems for industrial facilities across Georgia.",
     primaryCtaLabel: "Request an HVAC Assessment",
+    heroImage: hvacRooftop,
+    gallery: [
+      { src: hvacRooftop, caption: "50-ton AAON rooftop unit set and tied into gas line on a commercial roof." },
+      { src: hvacControls, caption: "Controls and compressor cabinet wired up and commissioned on a new rooftop unit." },
+      { src: hvacCeiling, caption: "Overhead unit replacement in an active warehouse — crews working from scissor and boom lifts." },
+      { src: hvacWarehouseDuctwork(), caption: "Warehouse air distribution and high-bay lighting in a recently serviced facility." },
+    ],
     problemIntro:
       "HVAC in an industrial facility isn't comfort — it's process, product, and worker safety. Failures cost real money.",
     problems: [
