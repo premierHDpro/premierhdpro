@@ -18,6 +18,7 @@ import heroImg from "../assets/hero-warehouse.jpg";
 import constructionHero from "../assets/construction-hero.jpg";
 import aboutImg from "../assets/project-renovation.jpg";
 import projectConcrete from "../assets/project-concrete.jpg";
+import { GA_COUNTY_PATHS } from "@/data/georgia-counties";
 import projectDockDoors from "../assets/project-dock-doors.jpg";
 import projectHvac from "../assets/project-hvac.jpg";
 import projectRenovation from "../assets/project-renovation.jpg";
