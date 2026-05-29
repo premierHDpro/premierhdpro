@@ -22,7 +22,6 @@ import type { ComponentType } from "react";
 
 export type Service = {
   slug: string;
-  to: string;
   title: string;
   short: string;
   icon: ComponentType<{ className?: string }>;
