@@ -11,6 +11,8 @@ import rackingColumnProtectors from "../assets/racking-column-protectors.jpg";
 import rackingAisleGuards from "../assets/racking-aisle-guards.jpg";
 import doorReplacementComplete from "../assets/door-replacement-complete.jpg";
 import doorReplacementProgress from "../assets/door-replacement-progress.jpg";
+import autoDoorLaundryExterior from "../assets/auto-door-laundry-exterior.jpg";
+import autoDoorLaundryInterior from "../assets/auto-door-laundry-interior.jpg";
 import demoTileWall from "../assets/demo-tile-wall.jpg";
 import demoRestroomOverview from "../assets/demo-restroom-overview.jpg";
 import demoCrewStripout from "../assets/demo-crew-stripout.jpg";
@@ -333,6 +335,8 @@ const CONTENT: Record<string, ServiceContent> = {
     gallery: [
       { src: doorReplacementProgress, caption: "New entry door and sidelite frame set and flashed during a country club entrance replacement." },
       { src: doorReplacementComplete, caption: "Finished door package — closer, hardware, and trim installed and back in service the same day." },
+      { src: autoDoorLaundryExterior, caption: "Stanley automatic sliding entrance installed at a new-build laundry — exterior view ready for opening day." },
+      { src: autoDoorLaundryInterior, caption: "Interior view of the same automatic sliding door package, fully commissioned and tied into the storefront." },
     ],
     problemIntro:
       "Doors are the most-used component in any building. Bad hardware or sloppy installs create daily headaches for facility teams.",
