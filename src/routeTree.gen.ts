@@ -28,6 +28,7 @@ import { Route as CommercialRenovationsAtlantaRouteImport } from './routes/comme
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as LocationsMcdonoughRouteImport } from './routes/locations.mcdonough'
 import { Route as LocationsLocustGroveRouteImport } from './routes/locations.locust-grove'
 import { Route as LocationsHenryCountyRouteImport } from './routes/locations.henry-county'
@@ -145,6 +146,11 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/',
   getParentRoute: () => BlogRoute,
 } as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ServicesRoute,
+} as any)
 const LocationsMcdonoughRoute = LocationsMcdonoughRouteImport.update({
   id: '/locations/mcdonough',
   path: '/locations/mcdonough',
@@ -215,7 +221,7 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/terms-of-service': typeof TermsOfServiceRoute
   '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
   '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
@@ -229,6 +235,7 @@ export interface FileRoutesByFullPath {
   '/locations/henry-county': typeof LocationsHenryCountyRoute
   '/locations/locust-grove': typeof LocationsLocustGroveRoute
   '/locations/mcdonough': typeof LocationsMcdonoughRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -246,7 +253,7 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/terms-of-service': typeof TermsOfServiceRoute
   '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
   '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
@@ -260,6 +267,7 @@ export interface FileRoutesByTo {
   '/locations/henry-county': typeof LocationsHenryCountyRoute
   '/locations/locust-grove': typeof LocationsLocustGroveRoute
   '/locations/mcdonough': typeof LocationsMcdonoughRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/blog': typeof BlogIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -279,7 +287,7 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/terms-of-service': typeof TermsOfServiceRoute
   '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
   '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
@@ -293,6 +301,7 @@ export interface FileRoutesById {
   '/locations/henry-county': typeof LocationsHenryCountyRoute
   '/locations/locust-grove': typeof LocationsLocustGroveRoute
   '/locations/mcdonough': typeof LocationsMcdonoughRoute
+  '/services/$slug': typeof ServicesSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -327,6 +336,7 @@ export interface FileRouteTypes {
     | '/locations/henry-county'
     | '/locations/locust-grove'
     | '/locations/mcdonough'
+    | '/services/$slug'
     | '/blog/'
     | '/api/public/contact'
     | '/lovable/email/suppression'
@@ -358,6 +368,7 @@ export interface FileRouteTypes {
     | '/locations/henry-county'
     | '/locations/locust-grove'
     | '/locations/mcdonough'
+    | '/services/$slug'
     | '/blog'
     | '/api/public/contact'
     | '/lovable/email/suppression'
@@ -390,6 +401,7 @@ export interface FileRouteTypes {
     | '/locations/henry-county'
     | '/locations/locust-grove'
     | '/locations/mcdonough'
+    | '/services/$slug'
     | '/blog/'
     | '/api/public/contact'
     | '/lovable/email/suppression'
@@ -409,7 +421,7 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   IndustrialHvacRepairGeorgiaRoute: typeof IndustrialHvacRepairGeorgiaRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  ServicesRoute: typeof ServicesRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
   TermsOfServiceRoute: typeof TermsOfServiceRoute
   WarehouseHvacRepairAtlantaRoute: typeof WarehouseHvacRepairAtlantaRoute
   WarehouseMaintenanceAtlantaRoute: typeof WarehouseMaintenanceAtlantaRoute
@@ -564,6 +576,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof ServicesRoute
+    }
     '/locations/mcdonough': {
       id: '/locations/mcdonough'
       path: '/locations/mcdonough'
@@ -656,6 +675,18 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
+interface ServicesRouteChildren {
+  ServicesSlugRoute: typeof ServicesSlugRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesSlugRoute: ServicesSlugRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogRoute: BlogRouteWithChildren,
@@ -667,7 +698,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   IndustrialHvacRepairGeorgiaRoute: IndustrialHvacRepairGeorgiaRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  ServicesRoute: ServicesRoute,
+  ServicesRoute: ServicesRouteWithChildren,
   TermsOfServiceRoute: TermsOfServiceRoute,
   WarehouseHvacRepairAtlantaRoute: WarehouseHvacRepairAtlantaRoute,
   WarehouseMaintenanceAtlantaRoute: WarehouseMaintenanceAtlantaRoute,
