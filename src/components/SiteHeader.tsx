@@ -52,7 +52,7 @@ export function SiteHeader() {
             (770) 628-5444
           </a>
           <Link to="/contact" className="btn-primary">
-            Request a Quote
+            Request a Site Walk
           </Link>
         </div>
         <button
@@ -83,7 +83,7 @@ export function SiteHeader() {
               <Phone className="h-4 w-4 text-safety" /> (770) 628-5444
             </a>
             <Link to="/contact" className="btn-primary mt-2" onClick={() => setOpen(false)}>
-              Request a Quote
+              Request a Site Walk
             </Link>
           </div>
         </div>

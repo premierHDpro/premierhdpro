@@ -13,12 +13,14 @@ const contactSchema = z.object({
 });
 
 const serviceOptions = [
-  "Concrete Floor Repair",
-  "Dock Door / Leveler Repair",
-  "Warehouse Maintenance",
-  "Industrial HVAC",
-  "Renovations & Buildouts",
-  "Safety Barriers & Bollards",
+  "Warehouse Renovation",
+  "Tenant Improvement / Buildout",
+  "Concrete Construction",
+  "Doors, Frames & Hardware",
+  "Facility Repairs & Maintenance",
+  "Dock Equipment",
+  "Safety & Bollards",
+  "Industrial HVAC / Electrical",
   "Other",
 ];
 

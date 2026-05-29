@@ -30,23 +30,23 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Warehouse Construction & Facility Services | Premier HD" },
+      { title: "Commercial Construction & Facility Solutions | Premier HD Pro" },
       {
         name: "description",
         content:
-          "Commercial general contractor for warehouses and industrial facilities across Metro Atlanta and Georgia.",
+          "Industrial and commercial general contractor for warehouses, distribution centers, and active facilities across Metro Atlanta and Georgia.",
       },
       { name: "author", content: "Premier HD Pro" },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Warehouse Construction & Facility Services | Premier HD" },
+      { property: "og:title", content: "Commercial Construction & Facility Solutions | Premier HD Pro" },
       {
         property: "og:description",
         content:
-          "Warehouse maintenance, concrete repair, dock door repair, HVAC, and renovations across Metro Atlanta.",
+          "Commercial construction, warehouse renovations, tenant improvements, and ongoing facility services across Metro Atlanta and Georgia.",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Warehouse Construction & Facility Services | Premier HD" },
-      { name: "twitter:description", content: "Warehouse maintenance, concrete repair, dock door repair, HVAC, and renovations across Metro Atlanta." },
+      { name: "twitter:title", content: "Commercial Construction & Facility Solutions | Premier HD Pro" },
+      { name: "twitter:description", content: "Commercial construction, warehouse renovations, tenant improvements, and ongoing facility services across Metro Atlanta." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6b7a0800-542e-4dff-a524-5e8928f0ba19" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6b7a0800-542e-4dff-a524-5e8928f0ba19" },
       { property: "og:site_name", content: "Premier HD Pro" },
@@ -62,7 +62,7 @@ export const Route = createRootRoute({
           "@type": "GeneralContractor",
           name: "Premier HD Pro",
           description:
-            "Commercial general contractor serving warehouses, distribution centers, and industrial facilities across Metro Atlanta and Georgia.",
+            "Industrial and commercial general contractor serving warehouses, distribution centers, manufacturing facilities, and commercial buildings across Metro Atlanta and Georgia. Commercial construction, renovations, tenant improvements, and ongoing facility services.",
           url: "https://premierhdpro.com/",
           telephone: "+1-770-628-5444",
           address: {
@@ -79,6 +79,19 @@ export const Route = createRootRoute({
             { "@type": "State", name: "Georgia" },
           ],
           priceRange: "$$",
+          knowsAbout: [
+            "Commercial construction",
+            "Industrial construction",
+            "Warehouse renovations",
+            "Tenant improvements",
+            "Office buildouts",
+            "Metal framing and drywall",
+            "Concrete construction",
+            "Demolition",
+            "Facility services",
+            "Dock equipment repair",
+            "Warehouse maintenance",
+          ],
         }),
       },
     ],
