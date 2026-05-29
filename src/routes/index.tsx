@@ -522,7 +522,10 @@ function GeorgiaMap() {
   // Real Georgia state outline (projected from GeoJSON to a 100x120 viewBox).
   const path =
     "M 52.87,1.23 L 48.51,6.63 L 48.18,9.26 L 55.0,14.65 L 57.12,14.24 L 60.25,19.77 L 60.92,22.68 L 64.16,27.94 L 68.86,31.12 L 71.54,35.82 L 77.02,40.11 L 76.79,43.02 L 80.37,47.72 L 85.85,51.6 L 87.19,55.75 L 87.41,61.15 L 90.21,62.94 L 93.45,69.72 L 93.56,74.01 L 98.25,76.23 L 93.22,84.81 L 92.33,89.23 L 90.21,93.11 L 89.98,97.12 L 87.75,98.92 L 86.85,109.71 L 81.26,108.74 L 76.57,106.67 L 74.67,108.6 L 75.45,113.31 L 74.56,118.43 L 72.1,118.57 L 71.09,113.17 L 44.94,111.23 L 16.99,109.57 L 14.2,102.24 L 11.96,95.32 L 13.42,88.68 L 11.41,81.07 L 13.19,76.78 L 13.08,73.6 L 16.55,70.42 L 14.2,68.89 L 15.09,66.4 L 12.86,62.39 L 10.51,55.33 L 5.48,23.37 L 1.9,1.65 L 28.17,1.51 L 42.48,1.65 L 52.87,1.23 Z";
-  const markers = [
+  const markers: Array<{
+    x: number; y: number; label: string;
+    anchor: "start" | "middle" | "end"; dx: number; dy: number;
+  }> = [
     { x: 26.78, y: 32.87, label: "Atlanta", anchor: "end", dx: -3, dy: 0 },
     { x: 31.63, y: 40.0, label: "Henry County", anchor: "start", dx: 4, dy: -1 },
     { x: 31.69, y: 40.5, label: "McDonough", anchor: "start", dx: 4, dy: 4 },
