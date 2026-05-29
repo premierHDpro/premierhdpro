@@ -457,14 +457,14 @@ function HomePage() {
       </section>
 
       {/* CLOSING CTA — dark band */}
-      <section className="section-pad section-dark">
+      <section className="section-pad bg-primary text-primary-foreground">
         <div className="container-pro grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <div>
             <div className="eyebrow">Let's Talk</div>
             <h2 className="text-3xl font-bold leading-tight md:text-5xl">
               Need a Commercial Construction Partner That Understands Operational Facilities?
             </h2>
-            <p className="mt-5 max-w-xl text-lg text-ink-foreground/75">
+            <p className="mt-5 max-w-xl text-lg text-primary-foreground/80">
               Talk with Premier HD Pro about renovations, upgrades, repairs, and industrial
               construction projects.
             </p>
