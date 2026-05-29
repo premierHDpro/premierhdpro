@@ -519,44 +519,50 @@ function HomePage() {
 }
 
 function GeorgiaMap() {
-  // Approximate Georgia state outline in a 100x130 viewBox.
-  // Markers positioned by approximate lat/lng of cities in metro Atlanta.
+  // Approximate Georgia state outline in a 100x120 viewBox.
+  // Top edge ~ TN/NC border, right edge ~ SC (Savannah River), bottom ~ FL, left ~ AL.
   const path =
-    "M 10,4 L 72,4 L 76,12 L 80,22 L 84,32 L 88,44 L 92,58 L 93,70 L 86,82 L 76,94 L 64,106 L 54,116 L 46,122 L 40,118 L 32,108 L 24,96 L 16,82 L 10,68 L 7,54 L 8,40 L 9,24 Z";
+    "M 8,6 L 78,6 L 80,14 L 82,20 L 84,26 L 86,32 L 88,40 L 89,48 L 88,56 L 86,64 L 82,72 L 78,80 L 74,86 L 70,92 L 66,98 L 62,104 L 56,108 L 48,110 L 40,108 L 34,104 L 30,98 L 26,90 L 22,80 L 18,68 L 14,54 L 11,40 L 9,24 Z";
   const markers = [
-    { x: 26, y: 36, label: "Atlanta" },
-    { x: 30, y: 42, label: "Henry County" },
-    { x: 31, y: 45, label: "McDonough" },
-    { x: 32, y: 48, label: "Locust Grove" },
+    { x: 28, y: 38, label: "Atlanta" },
+    { x: 34, y: 48, label: "Henry County" },
+    { x: 36, y: 54, label: "McDonough" },
+    { x: 38, y: 60, label: "Locust Grove" },
   ];
   return (
-    <div className="relative aspect-[100/130] w-full max-w-md justify-self-center">
+    <div className="relative aspect-[100/120] w-full max-w-md justify-self-center">
       <svg
-        viewBox="0 0 100 130"
+        viewBox="0 0 100 120"
         className="absolute inset-0 h-full w-full"
         aria-label="Map of Georgia showing Premier HD Pro service area"
         role="img"
       >
+        <defs>
+          <linearGradient id="ga-fill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="oklch(1 0 0 / 0.18)" />
+            <stop offset="100%" stopColor="oklch(1 0 0 / 0.08)" />
+          </linearGradient>
+        </defs>
         <path
           d={path}
-          fill="oklch(1 0 0 / 0.06)"
-          stroke="oklch(1 0 0 / 0.35)"
-          strokeWidth="0.6"
+          fill="url(#ga-fill)"
+          stroke="oklch(1 0 0 / 0.85)"
+          strokeWidth="0.8"
           strokeLinejoin="round"
         />
         {markers.map((m) => (
           <g key={m.label}>
-            <circle cx={m.x} cy={m.y} r="3" fill="var(--color-signal)" opacity="0.35">
+            <circle cx={m.x} cy={m.y} r="3.5" fill="var(--color-signal)" opacity="0.5">
               <animate attributeName="r" values="2;5;2" dur="2.4s" repeatCount="indefinite" />
-              <animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.7;0;0.7" dur="2.4s" repeatCount="indefinite" />
             </circle>
-            <circle cx={m.x} cy={m.y} r="1.6" fill="var(--color-signal)" />
+            <circle cx={m.x} cy={m.y} r="1.8" fill="var(--color-signal)" stroke="white" strokeWidth="0.3" />
             <text
-              x={m.x + 3}
+              x={m.x + 4}
               y={m.y + 1}
-              fontSize="3.2"
-              fontWeight="600"
-              fill="oklch(1 0 0 / 0.85)"
+              fontSize="3.6"
+              fontWeight="700"
+              fill="oklch(1 0 0 / 0.95)"
             >
               {m.label}
             </text>
@@ -564,11 +570,11 @@ function GeorgiaMap() {
         ))}
         <text
           x="88"
-          y="124"
-          fontSize="2.6"
+          y="116"
+          fontSize="3"
           letterSpacing="0.4"
           textAnchor="end"
-          fill="oklch(1 0 0 / 0.5)"
+          fill="oklch(1 0 0 / 0.6)"
         >
           GA · USA
         </text>
