@@ -4,7 +4,7 @@ import { services } from "../data/services";
 import { PageHeader } from "../components/PageHeader";
 import { CtaBand } from "../components/CtaBand";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Commercial Facility Services in Georgia | Premier HD Pro" },
