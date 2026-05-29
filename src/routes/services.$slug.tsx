@@ -9,6 +9,8 @@ import rackingEmpty from "../assets/racking-empty-frames.jpg";
 import rackingNewBays from "../assets/racking-new-bays.jpg";
 import rackingColumnProtectors from "../assets/racking-column-protectors.jpg";
 import rackingAisleGuards from "../assets/racking-aisle-guards.jpg";
+import doorReplacementComplete from "../assets/door-replacement-complete.jpg";
+import doorReplacementProgress from "../assets/door-replacement-progress.jpg";
 
 type ServiceContent = Omit<ServicePageProps, "slug">;
 
@@ -317,6 +319,11 @@ const CONTENT: Record<string, ServiceContent> = {
     heroSubheadline:
       "Hollow metal doors and frames, wood doors, dock doors, and complete hardware packages installed by qualified crews.",
     primaryCtaLabel: "Request a Hardware Quote",
+    heroImage: doorReplacementComplete,
+    gallery: [
+      { src: doorReplacementProgress, caption: "New entry door and sidelite frame set and flashed during a country club entrance replacement." },
+      { src: doorReplacementComplete, caption: "Finished door package — closer, hardware, and trim installed and back in service the same day." },
+    ],
     problemIntro:
       "Doors are the most-used component in any building. Bad hardware or sloppy installs create daily headaches for facility teams.",
     problems: [
