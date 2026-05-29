@@ -375,7 +375,7 @@ function HomePage() {
           <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
             {industries.map((i) => (
               <div key={i.t} className="flex items-center gap-4 bg-card p-7">
-                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center bg-ink text-signal">
+                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center bg-primary text-primary-foreground">
                   <i.icon className="h-6 w-6" />
                 </div>
                 <div>
@@ -388,13 +388,13 @@ function HomePage() {
       </section>
 
       {/* SERVICE AREA — dark map */}
-      <section className="section-pad section-dark relative overflow-hidden">
+      <section className="section-pad bg-primary text-primary-foreground relative overflow-hidden">
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-10"
           aria-hidden="true"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 1px 1px, oklch(1 0 0 / 0.4) 1px, transparent 0)",
+              "radial-gradient(circle at 1px 1px, oklch(1 0 0 / 0.5) 1px, transparent 0)",
             backgroundSize: "32px 32px",
           }}
         />
@@ -404,47 +404,20 @@ function HomePage() {
             <h2 className="text-3xl font-bold leading-tight md:text-5xl">
               Serving Commercial & Industrial Clients Across Georgia
             </h2>
-            <p className="mt-4 text-ink-foreground/70">
+            <p className="mt-4 text-primary-foreground/75">
               From the I-75 industrial corridor through Metro Atlanta — we work where the
               warehouses, distribution centers, and manufacturing facilities are.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
               {["Atlanta", "McDonough", "Locust Grove", "Henry County", "Metro Atlanta", "I-75 Corridor"].map((c) => (
-                <div key={c} className="flex items-center gap-2 border border-white/10 bg-white/5 px-4 py-3">
+                <div key={c} className="flex items-center gap-2 border border-primary-foreground/15 bg-primary-foreground/5 px-4 py-3">
                   <MapPin className="h-4 w-4 text-signal" />
                   <span className="text-sm font-semibold">{c}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="relative aspect-square w-full max-w-md justify-self-center">
-            <div className="absolute inset-0 border border-white/15">
-              {/* glowing location markers */}
-              {[
-                { x: "32%", y: "28%", label: "Atlanta" },
-                { x: "52%", y: "58%", label: "McDonough" },
-                { x: "58%", y: "70%", label: "Locust Grove" },
-                { x: "48%", y: "52%", label: "Henry County" },
-              ].map((m) => (
-                <div
-                  key={m.label}
-                  className="absolute"
-                  style={{ left: m.x, top: m.y }}
-                >
-                  <span className="relative flex h-3 w-3">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-signal opacity-60" />
-                    <span className="relative inline-flex h-3 w-3 rounded-full bg-signal" />
-                  </span>
-                  <span className="absolute left-5 top-[-2px] whitespace-nowrap text-xs font-semibold text-ink-foreground/80">
-                    {m.label}
-                  </span>
-                </div>
-              ))}
-              <div className="absolute bottom-3 right-3 text-[10px] uppercase tracking-widest text-ink-foreground/40">
-                GA · USA
-              </div>
-            </div>
-          </div>
+          <GeorgiaMap />
         </div>
       </section>
 
