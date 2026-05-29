@@ -8,7 +8,6 @@ import {
   Building2,
   Factory,
   Warehouse,
-  MapPin,
   HardHat,
   Users,
   Layers,
@@ -18,7 +17,6 @@ import heroImg from "../assets/hero-warehouse.jpg";
 import constructionHero from "../assets/construction-hero.jpg";
 import aboutImg from "../assets/project-renovation.jpg";
 import projectConcrete from "../assets/project-concrete.jpg";
-import { GA_COUNTY_PATHS } from "@/data/georgia-counties";
 import projectDockDoors from "../assets/project-dock-doors.jpg";
 import projectHvac from "../assets/project-hvac.jpg";
 import projectRenovation from "../assets/project-renovation.jpg";
@@ -388,39 +386,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SERVICE AREA — dark map */}
-      <section className="section-pad bg-primary text-primary-foreground relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-10"
-          aria-hidden="true"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, oklch(1 0 0 / 0.5) 1px, transparent 0)",
-            backgroundSize: "32px 32px",
-          }}
-        />
-        <div className="container-pro relative grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:items-center">
-          <div>
-            <div className="eyebrow">Service Area</div>
-            <h2 className="text-3xl font-bold leading-tight md:text-5xl">
-              Serving Commercial & Industrial Clients Across Georgia
-            </h2>
-            <p className="mt-4 text-primary-foreground/75">
-              From the I-75 industrial corridor through Metro Atlanta — we work where the
-              warehouses, distribution centers, and manufacturing facilities are.
-            </p>
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {["Atlanta", "McDonough", "Locust Grove", "Henry County", "Metro Atlanta", "I-75 Corridor"].map((c) => (
-                <div key={c} className="flex items-center gap-2 border border-primary-foreground/15 bg-primary-foreground/5 px-4 py-3">
-                  <MapPin className="h-4 w-4 text-signal" />
-                  <span className="text-sm font-semibold">{c}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <GeorgiaMap />
-        </div>
-      </section>
 
       {/* INSIGHTS / FAQ — combined slim section */}
       <section className="section-pad">
@@ -519,126 +484,5 @@ function HomePage() {
   );
 }
 
-function GeorgiaMap() {
-  // Major Georgia cities (lon/lat -> 100x120 viewBox projection)
-  // Projection: minx=-85.7 maxx=-80.8, miny=30.3 maxy=35.05
-  const cities: Array<{ x: number; y: number; label: string; anchor: "start" | "middle" | "end"; dx: number; dy: number }> = [
-    { x: 47.55, y: 11.49, label: "Dalton",     anchor: "start", dx: 2.5, dy: 1 },
-    { x: 56.18, y: 26.16, label: "Athens",     anchor: "start", dx: 2.5, dy: 1 },
-    { x: 41.43, y: 49.85, label: "Columbus",   anchor: "end",   dx: -2.5, dy: 1 },
-    { x: 53.67, y: 50.4,  label: "Macon",      anchor: "start", dx: 2.5, dy: 1 },
-    { x: 79.18, y: 56.84, label: "Augusta",    anchor: "start", dx: 2.5, dy: 1 },
-    { x: 96.94, y: 84.36, label: "Savannah",   anchor: "end",   dx: -2.5, dy: 1 },
-    { x: 45.51, y: 90.06, label: "Albany",     anchor: "end",   dx: -2.5, dy: 1 },
-    { x: 57.04, y: 99.41, label: "Valdosta",   anchor: "start", dx: 2.5, dy: 1 },
-  ];
-  // Real Georgia state outline (projected from GeoJSON to a 100x120 viewBox).
-  const path =
-    "M 52.87,1.23 L 48.51,6.63 L 48.18,9.26 L 55.0,14.65 L 57.12,14.24 L 60.25,19.77 L 60.92,22.68 L 64.16,27.94 L 68.86,31.12 L 71.54,35.82 L 77.02,40.11 L 76.79,43.02 L 80.37,47.72 L 85.85,51.6 L 87.19,55.75 L 87.41,61.15 L 90.21,62.94 L 93.45,69.72 L 93.56,74.01 L 98.25,76.23 L 93.22,84.81 L 92.33,89.23 L 90.21,93.11 L 89.98,97.12 L 87.75,98.92 L 86.85,109.71 L 81.26,108.74 L 76.57,106.67 L 74.67,108.6 L 75.45,113.31 L 74.56,118.43 L 72.1,118.57 L 71.09,113.17 L 44.94,111.23 L 16.99,109.57 L 14.2,102.24 L 11.96,95.32 L 13.42,88.68 L 11.41,81.07 L 13.19,76.78 L 13.08,73.6 L 16.55,70.42 L 14.2,68.89 L 15.09,66.4 L 12.86,62.39 L 10.51,55.33 L 5.48,23.37 L 1.9,1.65 L 28.17,1.51 L 42.48,1.65 L 52.87,1.23 Z";
-  const markers: Array<{
-    x: number; y: number; label: string;
-    anchor: "start" | "middle" | "end"; dx: number; dy: number;
-  }> = [
-    { x: 26.78, y: 32.87, label: "Atlanta", anchor: "end", dx: -3, dy: 0 },
-    { x: 31.63, y: 40.0, label: "Henry County", anchor: "start", dx: 4, dy: -1 },
-    { x: 31.69, y: 40.5, label: "McDonough", anchor: "start", dx: 4, dy: 4 },
-    { x: 32.47, y: 43.07, label: "Locust Grove", anchor: "start", dx: 4, dy: 7 },
-  ];
-  return (
-    <div className="relative aspect-[100/120] w-full max-w-2xl justify-self-center">
-      <svg
-        viewBox="0 0 100 120"
-        className="absolute inset-0 h-full w-full"
-        aria-label="Map of Georgia showing Premier HD Pro service area"
-        role="img"
-      >
-        <defs>
-          <linearGradient id="ga-fill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="oklch(1 0 0 / 0.22)" />
-            <stop offset="100%" stopColor="oklch(1 0 0 / 0.1)" />
-          </linearGradient>
-          <filter id="ga-shadow" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="1.2" stdDeviation="1.2" floodColor="black" floodOpacity="0.45" />
-          </filter>
-        </defs>
-        <path
-          d={path}
-          fill="url(#ga-fill)"
-          stroke="oklch(1 0 0 / 0.95)"
-          strokeWidth="0.9"
-          strokeLinejoin="round"
-          filter="url(#ga-shadow)"
-        />
-        {/* County boundaries (clipped to state) */}
-        <defs>
-          <clipPath id="ga-clip">
-            <path d={path} />
-          </clipPath>
-        </defs>
-        <g clipPath="url(#ga-clip)">
-          <path
-            d={GA_COUNTY_PATHS}
-            fill="none"
-            stroke="oklch(1 0 0 / 0.22)"
-            strokeWidth="0.18"
-            strokeLinejoin="round"
-            vectorEffect="non-scaling-stroke"
-          />
-        </g>
-        {markers.map((m) => (
-          <g key={m.label}>
-            <circle cx={m.x} cy={m.y} r="3.5" fill="var(--color-signal)" opacity="0.55">
-              <animate attributeName="r" values="2;5;2" dur="2.4s" repeatCount="indefinite" />
-              <animate attributeName="opacity" values="0.7;0;0.7" dur="2.4s" repeatCount="indefinite" />
-            </circle>
-            <circle cx={m.x} cy={m.y} r="1.6" fill="var(--color-signal)" stroke="white" strokeWidth="0.4" />
-            <text
-              x={m.x + m.dx}
-              y={m.y + m.dy}
-              textAnchor={m.anchor}
-              fontSize="3.2"
-              fontWeight="700"
-              fill="oklch(1 0 0 / 0.95)"
-              stroke="oklch(0.2 0.04 260 / 0.8)"
-              strokeWidth="0.5"
-              paintOrder="stroke"
-            >
-              {m.label}
-            </text>
-          </g>
-        ))}
-        {cities.map((c) => (
-          <g key={c.label} opacity="0.85">
-            <circle cx={c.x} cy={c.y} r="0.9" fill="oklch(1 0 0 / 0.85)" />
-            <text
-              x={c.x + c.dx}
-              y={c.y + c.dy}
-              textAnchor={c.anchor}
-              fontSize="2.4"
-              fontWeight="500"
-              fill="oklch(1 0 0 / 0.7)"
-              stroke="oklch(0.2 0.04 260 / 0.7)"
-              strokeWidth="0.4"
-              paintOrder="stroke"
-            >
-              {c.label}
-            </text>
-          </g>
-        ))}
-        <text
-          x="96"
-          y="116"
-          fontSize="3.2"
-          letterSpacing="0.4"
-          textAnchor="end"
-          fill="oklch(1 0 0 / 0.65)"
-          fontWeight="600"
-        >
-          GA · USA
-        </text>
-      </svg>
-    </div>
-  );
-}
 
 
