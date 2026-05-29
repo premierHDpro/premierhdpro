@@ -398,7 +398,7 @@ function HomePage() {
             backgroundSize: "32px 32px",
           }}
         />
-        <div className="container-pro relative grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="container-pro relative grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:items-center">
           <div>
             <div className="eyebrow">Service Area</div>
             <h2 className="text-3xl font-bold leading-tight md:text-5xl">
@@ -519,18 +519,20 @@ function HomePage() {
 }
 
 function GeorgiaMap() {
-  // Approximate Georgia state outline in a 100x120 viewBox.
-  // Top edge ~ TN/NC border, right edge ~ SC (Savannah River), bottom ~ FL, left ~ AL.
+  // Real Georgia state outline (projected from GeoJSON to a 100x120 viewBox).
   const path =
-    "M 8,6 L 78,6 L 80,14 L 82,20 L 84,26 L 86,32 L 88,40 L 89,48 L 88,56 L 86,64 L 82,72 L 78,80 L 74,86 L 70,92 L 66,98 L 62,104 L 56,108 L 48,110 L 40,108 L 34,104 L 30,98 L 26,90 L 22,80 L 18,68 L 14,54 L 11,40 L 9,24 Z";
-  const markers = [
-    { x: 28, y: 38, label: "Atlanta" },
-    { x: 34, y: 48, label: "Henry County" },
-    { x: 36, y: 54, label: "McDonough" },
-    { x: 38, y: 60, label: "Locust Grove" },
+    "M 52.87,1.23 L 48.51,6.63 L 48.18,9.26 L 55.0,14.65 L 57.12,14.24 L 60.25,19.77 L 60.92,22.68 L 64.16,27.94 L 68.86,31.12 L 71.54,35.82 L 77.02,40.11 L 76.79,43.02 L 80.37,47.72 L 85.85,51.6 L 87.19,55.75 L 87.41,61.15 L 90.21,62.94 L 93.45,69.72 L 93.56,74.01 L 98.25,76.23 L 93.22,84.81 L 92.33,89.23 L 90.21,93.11 L 89.98,97.12 L 87.75,98.92 L 86.85,109.71 L 81.26,108.74 L 76.57,106.67 L 74.67,108.6 L 75.45,113.31 L 74.56,118.43 L 72.1,118.57 L 71.09,113.17 L 44.94,111.23 L 16.99,109.57 L 14.2,102.24 L 11.96,95.32 L 13.42,88.68 L 11.41,81.07 L 13.19,76.78 L 13.08,73.6 L 16.55,70.42 L 14.2,68.89 L 15.09,66.4 L 12.86,62.39 L 10.51,55.33 L 5.48,23.37 L 1.9,1.65 L 28.17,1.51 L 42.48,1.65 L 52.87,1.23 Z";
+  const markers: Array<{
+    x: number; y: number; label: string;
+    anchor: "start" | "middle" | "end"; dx: number; dy: number;
+  }> = [
+    { x: 26.78, y: 32.87, label: "Atlanta", anchor: "end", dx: -3, dy: 0 },
+    { x: 31.63, y: 40.0, label: "Henry County", anchor: "start", dx: 4, dy: -1 },
+    { x: 31.69, y: 40.5, label: "McDonough", anchor: "start", dx: 4, dy: 4 },
+    { x: 32.47, y: 43.07, label: "Locust Grove", anchor: "start", dx: 4, dy: 7 },
   ];
   return (
-    <div className="relative aspect-[100/120] w-full max-w-md justify-self-center">
+    <div className="relative aspect-[100/120] w-full max-w-2xl justify-self-center">
       <svg
         viewBox="0 0 100 120"
         className="absolute inset-0 h-full w-full"
@@ -539,42 +541,51 @@ function GeorgiaMap() {
       >
         <defs>
           <linearGradient id="ga-fill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="oklch(1 0 0 / 0.18)" />
-            <stop offset="100%" stopColor="oklch(1 0 0 / 0.08)" />
+            <stop offset="0%" stopColor="oklch(1 0 0 / 0.22)" />
+            <stop offset="100%" stopColor="oklch(1 0 0 / 0.1)" />
           </linearGradient>
+          <filter id="ga-shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="1.2" stdDeviation="1.2" floodColor="black" floodOpacity="0.45" />
+          </filter>
         </defs>
         <path
           d={path}
           fill="url(#ga-fill)"
-          stroke="oklch(1 0 0 / 0.85)"
-          strokeWidth="0.8"
+          stroke="oklch(1 0 0 / 0.95)"
+          strokeWidth="0.9"
           strokeLinejoin="round"
+          filter="url(#ga-shadow)"
         />
         {markers.map((m) => (
           <g key={m.label}>
-            <circle cx={m.x} cy={m.y} r="3.5" fill="var(--color-signal)" opacity="0.5">
+            <circle cx={m.x} cy={m.y} r="3.5" fill="var(--color-signal)" opacity="0.55">
               <animate attributeName="r" values="2;5;2" dur="2.4s" repeatCount="indefinite" />
               <animate attributeName="opacity" values="0.7;0;0.7" dur="2.4s" repeatCount="indefinite" />
             </circle>
-            <circle cx={m.x} cy={m.y} r="1.8" fill="var(--color-signal)" stroke="white" strokeWidth="0.3" />
+            <circle cx={m.x} cy={m.y} r="1.6" fill="var(--color-signal)" stroke="white" strokeWidth="0.4" />
             <text
-              x={m.x + 4}
-              y={m.y + 1}
-              fontSize="3.6"
+              x={m.x + m.dx}
+              y={m.y + m.dy}
+              textAnchor={m.anchor}
+              fontSize="3.2"
               fontWeight="700"
               fill="oklch(1 0 0 / 0.95)"
+              stroke="oklch(0.2 0.04 260 / 0.8)"
+              strokeWidth="0.5"
+              paintOrder="stroke"
             >
               {m.label}
             </text>
           </g>
         ))}
         <text
-          x="88"
+          x="96"
           y="116"
-          fontSize="3"
+          fontSize="3.2"
           letterSpacing="0.4"
           textAnchor="end"
-          fill="oklch(1 0 0 / 0.6)"
+          fill="oklch(1 0 0 / 0.65)"
+          fontWeight="600"
         >
           GA · USA
         </text>
