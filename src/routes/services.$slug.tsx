@@ -648,7 +648,7 @@ const CONTENT: Record<string, ServiceContent> = {
       { src: hvacRooftop, caption: "50-ton AAON rooftop unit set and tied into gas line on a commercial roof." },
       { src: hvacControls, caption: "Controls and compressor cabinet wired up and commissioned on a new rooftop unit." },
       { src: hvacCeiling, caption: "Overhead unit replacement in an active warehouse — crews working from scissor and boom lifts." },
-      { src: hvacWarehouseDuctwork(), caption: "Warehouse air distribution and high-bay lighting in a recently serviced facility." },
+      { src: hvacDuctwork, caption: "Warehouse air distribution and high-bay lighting in a recently serviced facility." },
     ],
     problemIntro:
       "HVAC in an industrial facility isn't comfort — it's process, product, and worker safety. Failures cost real money.",
