@@ -96,7 +96,7 @@ function HomePage() {
   return (
     <>
       {/* SECTION 1 — HERO */}
-      <section className="relative overflow-hidden section-dark">
+      <section className="relative overflow-hidden bg-primary text-primary-foreground">
         <img
           src={constructionHero}
           alt="Active commercial construction site inside a large warehouse — steel framing and concrete work"
@@ -104,16 +104,16 @@ function HomePage() {
           height={1080}
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          className="absolute inset-0 h-full w-full object-cover opacity-35"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/30" />
         <div className="container-pro relative py-24 md:py-40">
           <div className="max-w-3xl">
             <div className="eyebrow">Industrial / Commercial General Contractor · Georgia</div>
             <h1 className="text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
               Commercial Construction & Facility Solutions for Industrial Properties
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-ink-foreground/80 md:text-xl">
+            <p className="mt-6 max-w-2xl text-lg text-primary-foreground/85 md:text-xl">
               Premier HD Pro helps warehouse, industrial, and commercial facilities complete
               renovations, upgrades, repairs, and construction projects with minimal
               operational disruption.
@@ -126,7 +126,7 @@ function HomePage() {
                 Get a Fast Quote
               </Link>
             </div>
-            <p className="mt-10 text-sm uppercase tracking-widest text-ink-foreground/60">
+            <p className="mt-10 text-sm uppercase tracking-widest text-primary-foreground/65">
               Serving warehouses, distribution centers, and commercial facilities across Georgia
             </p>
           </div>
@@ -213,7 +213,7 @@ function HomePage() {
       </section>
 
       {/* SERVICES — TWO CATEGORIES */}
-      <section className="section-pad section-dark">
+      <section className="section-pad bg-accent/40">
         <div className="container-pro">
           <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-2xl">
@@ -221,7 +221,7 @@ function HomePage() {
               <h2 className="text-3xl font-bold leading-tight md:text-5xl">
                 Commercial Construction & Facility Services
               </h2>
-              <p className="mt-4 text-ink-foreground/70">
+              <p className="mt-4 text-muted-foreground">
                 A single contractor for commercial buildouts and the ongoing facility work that
                 keeps industrial operations running.
               </p>
@@ -229,27 +229,27 @@ function HomePage() {
           </div>
 
           <div>
-            <div className="mb-6 flex items-baseline justify-between border-b border-white/10 pb-3">
+            <div className="mb-6 flex items-baseline justify-between border-b border-border pb-3">
               <div>
                 <div className="text-xs font-bold uppercase tracking-widest text-signal">01 — Commercial Construction</div>
                 <h3 className="mt-2 text-xl font-bold md:text-2xl">Warehouse, Industrial & Commercial Construction</h3>
               </div>
-              <span className="text-xs uppercase tracking-widest text-ink-foreground/40">
+              <span className="text-xs uppercase tracking-widest text-muted-foreground">
                 {construction.length} services
               </span>
             </div>
-            <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {construction.map((s) => {
                 const Icon = s.icon;
                 return (
                   <Link
                     key={s.slug}
                     to="/services/$slug" params={{ slug: s.slug }}
-                    className="group flex flex-col bg-ink p-6 transition-colors hover:bg-white/5"
+                    className="group flex flex-col bg-card p-6 transition-colors hover:bg-accent/50"
                   >
                     <Icon className="h-6 w-6 text-signal" />
                     <h4 className="mt-4 text-base font-bold leading-tight">{s.title}</h4>
-                    <p className="mt-2 flex-1 text-sm text-ink-foreground/65">{s.short}</p>
+                    <p className="mt-2 flex-1 text-sm text-muted-foreground">{s.short}</p>
                     <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-signal">
                       Learn more <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
                     </span>
@@ -260,27 +260,27 @@ function HomePage() {
           </div>
 
           <div className="mt-16">
-            <div className="mb-6 flex items-baseline justify-between border-b border-white/10 pb-3">
+            <div className="mb-6 flex items-baseline justify-between border-b border-border pb-3">
               <div>
                 <div className="text-xs font-bold uppercase tracking-widest text-signal">02 — Facility Services</div>
                 <h3 className="mt-2 text-xl font-bold md:text-2xl">Ongoing Repairs, Upgrades & Operational Support</h3>
               </div>
-              <span className="text-xs uppercase tracking-widest text-ink-foreground/40">
+              <span className="text-xs uppercase tracking-widest text-muted-foreground">
                 {facility.length} services
               </span>
             </div>
-            <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
               {facility.map((s) => {
                 const Icon = s.icon;
                 return (
                   <Link
                     key={s.slug}
                     to="/services/$slug" params={{ slug: s.slug }}
-                    className="group flex flex-col bg-ink p-6 transition-colors hover:bg-white/5"
+                    className="group flex flex-col bg-card p-6 transition-colors hover:bg-accent/50"
                   >
                     <Icon className="h-6 w-6 text-signal" />
                     <h4 className="mt-4 text-base font-bold leading-tight">{s.title}</h4>
-                    <p className="mt-2 flex-1 text-sm text-ink-foreground/65">{s.short}</p>
+                    <p className="mt-2 flex-1 text-sm text-muted-foreground">{s.short}</p>
                     <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-signal">
                       Learn more <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
                     </span>
@@ -336,7 +336,7 @@ function HomePage() {
       </section>
 
       {/* WHY CHOOSE US — dark */}
-      <section className="section-pad section-dark">
+      <section className="section-pad">
         <div className="container-pro">
           <div className="mb-12 max-w-3xl">
             <div className="eyebrow">Why Premier HD Pro</div>
@@ -344,7 +344,7 @@ function HomePage() {
               Why Facilities & Commercial Clients Choose Premier HD Pro
             </h2>
           </div>
-          <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
             {[
               { icon: Clock, title: "Minimal Operational Disruption", body: "Work phased around shipping schedules, shifts, and forklift traffic — never a shutdown by default." },
               { icon: Zap, title: "Fast Response Times", body: "Same-day site walks for active accounts. Written scopes inside 48 hours on most projects." },
@@ -353,10 +353,10 @@ function HomePage() {
               { icon: ShieldCheck, title: "Safety & Execution Focused", body: "PPE, OSHA standards, and clean-as-you-build discipline on every site." },
               { icon: Layers, title: "Scalable Multi-Trade Support", body: "Concrete, framing, MEP, doors, finishes — scaled up or down to match project size." },
             ].map((it) => (
-              <div key={it.title} className="flex flex-col gap-3 bg-ink p-7">
+              <div key={it.title} className="flex flex-col gap-3 bg-card p-7">
                 <it.icon className="h-6 w-6 text-signal" />
                 <h3 className="text-lg font-bold leading-tight">{it.title}</h3>
-                <p className="text-sm text-ink-foreground/65">{it.body}</p>
+                <p className="text-sm text-muted-foreground">{it.body}</p>
               </div>
             ))}
           </div>
@@ -375,7 +375,7 @@ function HomePage() {
           <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
             {industries.map((i) => (
               <div key={i.t} className="flex items-center gap-4 bg-card p-7">
-                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center bg-ink text-signal">
+                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center bg-primary text-primary-foreground">
                   <i.icon className="h-6 w-6" />
                 </div>
                 <div>
@@ -388,13 +388,13 @@ function HomePage() {
       </section>
 
       {/* SERVICE AREA — dark map */}
-      <section className="section-pad section-dark relative overflow-hidden">
+      <section className="section-pad bg-primary text-primary-foreground relative overflow-hidden">
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-10"
           aria-hidden="true"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 1px 1px, oklch(1 0 0 / 0.4) 1px, transparent 0)",
+              "radial-gradient(circle at 1px 1px, oklch(1 0 0 / 0.5) 1px, transparent 0)",
             backgroundSize: "32px 32px",
           }}
         />
@@ -404,47 +404,20 @@ function HomePage() {
             <h2 className="text-3xl font-bold leading-tight md:text-5xl">
               Serving Commercial & Industrial Clients Across Georgia
             </h2>
-            <p className="mt-4 text-ink-foreground/70">
+            <p className="mt-4 text-primary-foreground/75">
               From the I-75 industrial corridor through Metro Atlanta — we work where the
               warehouses, distribution centers, and manufacturing facilities are.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
               {["Atlanta", "McDonough", "Locust Grove", "Henry County", "Metro Atlanta", "I-75 Corridor"].map((c) => (
-                <div key={c} className="flex items-center gap-2 border border-white/10 bg-white/5 px-4 py-3">
+                <div key={c} className="flex items-center gap-2 border border-primary-foreground/15 bg-primary-foreground/5 px-4 py-3">
                   <MapPin className="h-4 w-4 text-signal" />
                   <span className="text-sm font-semibold">{c}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="relative aspect-square w-full max-w-md justify-self-center">
-            <div className="absolute inset-0 border border-white/15">
-              {/* glowing location markers */}
-              {[
-                { x: "32%", y: "28%", label: "Atlanta" },
-                { x: "52%", y: "58%", label: "McDonough" },
-                { x: "58%", y: "70%", label: "Locust Grove" },
-                { x: "48%", y: "52%", label: "Henry County" },
-              ].map((m) => (
-                <div
-                  key={m.label}
-                  className="absolute"
-                  style={{ left: m.x, top: m.y }}
-                >
-                  <span className="relative flex h-3 w-3">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-signal opacity-60" />
-                    <span className="relative inline-flex h-3 w-3 rounded-full bg-signal" />
-                  </span>
-                  <span className="absolute left-5 top-[-2px] whitespace-nowrap text-xs font-semibold text-ink-foreground/80">
-                    {m.label}
-                  </span>
-                </div>
-              ))}
-              <div className="absolute bottom-3 right-3 text-[10px] uppercase tracking-widest text-ink-foreground/40">
-                GA · USA
-              </div>
-            </div>
-          </div>
+          <GeorgiaMap />
         </div>
       </section>
 
@@ -484,14 +457,14 @@ function HomePage() {
       </section>
 
       {/* CLOSING CTA — dark band */}
-      <section className="section-pad section-dark">
+      <section className="section-pad bg-primary text-primary-foreground">
         <div className="container-pro grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <div>
             <div className="eyebrow">Let's Talk</div>
             <h2 className="text-3xl font-bold leading-tight md:text-5xl">
               Need a Commercial Construction Partner That Understands Operational Facilities?
             </h2>
-            <p className="mt-5 max-w-xl text-lg text-ink-foreground/75">
+            <p className="mt-5 max-w-xl text-lg text-primary-foreground/80">
               Talk with Premier HD Pro about renovations, upgrades, repairs, and industrial
               construction projects.
             </p>
@@ -542,6 +515,65 @@ function HomePage() {
       {/* FOOTER CTA band (kept) */}
       <CtaBand />
     </>
+  );
+}
+
+function GeorgiaMap() {
+  // Approximate Georgia state outline in a 100x130 viewBox.
+  // Markers positioned by approximate lat/lng of cities in metro Atlanta.
+  const path =
+    "M 10,4 L 72,4 L 76,12 L 80,22 L 84,32 L 88,44 L 92,58 L 93,70 L 86,82 L 76,94 L 64,106 L 54,116 L 46,122 L 40,118 L 32,108 L 24,96 L 16,82 L 10,68 L 7,54 L 8,40 L 9,24 Z";
+  const markers = [
+    { x: 26, y: 36, label: "Atlanta" },
+    { x: 30, y: 42, label: "Henry County" },
+    { x: 31, y: 45, label: "McDonough" },
+    { x: 32, y: 48, label: "Locust Grove" },
+  ];
+  return (
+    <div className="relative aspect-[100/130] w-full max-w-md justify-self-center">
+      <svg
+        viewBox="0 0 100 130"
+        className="absolute inset-0 h-full w-full"
+        aria-label="Map of Georgia showing Premier HD Pro service area"
+        role="img"
+      >
+        <path
+          d={path}
+          fill="oklch(1 0 0 / 0.06)"
+          stroke="oklch(1 0 0 / 0.35)"
+          strokeWidth="0.6"
+          strokeLinejoin="round"
+        />
+        {markers.map((m) => (
+          <g key={m.label}>
+            <circle cx={m.x} cy={m.y} r="3" fill="var(--color-signal)" opacity="0.35">
+              <animate attributeName="r" values="2;5;2" dur="2.4s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite" />
+            </circle>
+            <circle cx={m.x} cy={m.y} r="1.6" fill="var(--color-signal)" />
+            <text
+              x={m.x + 3}
+              y={m.y + 1}
+              fontSize="3.2"
+              fontWeight="600"
+              fill="oklch(1 0 0 / 0.85)"
+            >
+              {m.label}
+            </text>
+          </g>
+        ))}
+        <text
+          x="88"
+          y="124"
+          fontSize="2.6"
+          letterSpacing="0.4"
+          textAnchor="end"
+          fill="oklch(1 0 0 / 0.5)"
+        >
+          GA · USA
+        </text>
+      </svg>
+    </div>
   );
 }
 
