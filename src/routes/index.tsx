@@ -96,7 +96,7 @@ function HomePage() {
   return (
     <>
       {/* SECTION 1 — HERO */}
-      <section className="relative overflow-hidden section-dark">
+      <section className="relative overflow-hidden bg-primary text-primary-foreground">
         <img
           src={constructionHero}
           alt="Active commercial construction site inside a large warehouse — steel framing and concrete work"
@@ -104,16 +104,16 @@ function HomePage() {
           height={1080}
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          className="absolute inset-0 h-full w-full object-cover opacity-35"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/30" />
         <div className="container-pro relative py-24 md:py-40">
           <div className="max-w-3xl">
             <div className="eyebrow">Industrial / Commercial General Contractor · Georgia</div>
             <h1 className="text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
               Commercial Construction & Facility Solutions for Industrial Properties
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-ink-foreground/80 md:text-xl">
+            <p className="mt-6 max-w-2xl text-lg text-primary-foreground/85 md:text-xl">
               Premier HD Pro helps warehouse, industrial, and commercial facilities complete
               renovations, upgrades, repairs, and construction projects with minimal
               operational disruption.
@@ -126,7 +126,7 @@ function HomePage() {
                 Get a Fast Quote
               </Link>
             </div>
-            <p className="mt-10 text-sm uppercase tracking-widest text-ink-foreground/60">
+            <p className="mt-10 text-sm uppercase tracking-widest text-primary-foreground/65">
               Serving warehouses, distribution centers, and commercial facilities across Georgia
             </p>
           </div>
