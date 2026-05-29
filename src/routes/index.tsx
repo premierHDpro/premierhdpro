@@ -398,7 +398,7 @@ function HomePage() {
             backgroundSize: "32px 32px",
           }}
         />
-        <div className="container-pro relative grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="container-pro relative grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:items-center">
           <div>
             <div className="eyebrow">Service Area</div>
             <h2 className="text-3xl font-bold leading-tight md:text-5xl">
