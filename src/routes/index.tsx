@@ -18,10 +18,8 @@ import projectConcrete from "../assets/project-concrete.jpg";
 import projectDockDoors from "../assets/project-dock-doors.jpg";
 import projectHvac from "../assets/project-hvac.jpg";
 import projectRenovation from "../assets/project-renovation.jpg";
-import recentOffice from "../assets/office-buildout-open-area.jpg";
-import recentConcrete from "../assets/polished-concrete-training-room-finished.jpg";
-import recentBathroom from "../assets/bathroom-reno-main-vanity.jpg";
 import { services } from "../data/services";
+import { projects as allProjects } from "../data/projects";
 import { CtaBand } from "../components/CtaBand";
 import { ContactForm } from "../components/ContactForm";
 
@@ -81,32 +79,7 @@ const projects = [
   },
 ] as const;
 
-const recentProjects = [
-  {
-    title: "Office Buildout — Carpet & Service Windows",
-    type: "Office Buildouts",
-    slug: "office-buildouts",
-    img: recentOffice,
-    blurb:
-      "Full interior buildout with new carpet, private offices, and custom service and transaction windows.",
-  },
-  {
-    title: "Polished Concrete Floors",
-    type: "Concrete Construction & Floor Repair",
-    slug: "concrete-floor-repair",
-    img: recentConcrete,
-    blurb:
-      "Training room and breakroom slabs ground and polished to a high-gloss durable finish.",
-  },
-  {
-    title: "Home Depot DC Bathroom Renovation",
-    type: "Commercial Renovations",
-    slug: "commercial-renovations",
-    img: recentBathroom,
-    blurb:
-      "Full bathroom renovation at an active Home Depot distribution center — vanities, stalls, tile, and fixtures.",
-  },
-] as const;
+const recentProjects = allProjects.slice(0, 3);
 
 const industries = [
   { icon: Warehouse, t: "Warehouses" },
@@ -256,6 +229,11 @@ function HomePage() {
                 </div>
               </Link>
             ))}
+          </div>
+          <div className="mt-10 flex justify-center">
+            <Link to="/projects" className="btn-outline">
+              View all projects <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

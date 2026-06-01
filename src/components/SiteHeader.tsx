@@ -7,6 +7,7 @@ import { TaglineMarquee } from "./TaglineMarquee";
 const nav = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
+  { to: "/projects", label: "Projects" },
   { to: "/locations/locust-grove", label: "Service Areas" },
   { to: "/blog", label: "Insights" },
   { to: "/contact", label: "Contact" },
