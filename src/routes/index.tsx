@@ -20,6 +20,8 @@ import projectHvac from "../assets/project-hvac.jpg";
 import projectRenovation from "../assets/project-renovation.jpg";
 import brpConcreteBefore from "../assets/brp-concrete-repair-before.jpg.asset.json";
 import brpConcreteAfter from "../assets/brp-concrete-repair-after.jpg.asset.json";
+import tiBreakroom from "../assets/ti-breakroom.jpg.asset.json";
+import tiOffice from "../assets/ti-office.jpg.asset.json";
 import { services } from "../data/services";
 import { projects as allProjects } from "../data/projects";
 import { CtaBand } from "../components/CtaBand";
@@ -72,9 +74,14 @@ const projects = [
   {
     title: "Commercial Tenant Improvement",
     type: "TI Buildout",
-    scope: "Interior office and operational buildout for a commercial facility expansion.",
+    scope:
+      "Interior tenant improvement including a new breakroom with upper and lower cabinets, full electrical rough-in, and an office suite finished with polished concrete, fresh paint, ceiling grid, and new carpet tile.",
     challenge: "Coordinated trades around a live tenant move-in deadline.",
-    img: projectHvac,
+    img: tiOffice.url,
+    splitA: tiBreakroom.url,
+    splitB: tiOffice.url,
+    labelA: "Breakroom",
+    labelB: "Office",
   },
   {
     title: "Dock & Facility Upgrades",
