@@ -36,6 +36,11 @@ import polishedConcreteCharcoalCorner from "../assets/polished-concrete-charcoal
 import polishedConcreteCorridor from "../assets/polished-concrete-corridor.jpg";
 import brpConcreteBefore from "../assets/brp-concrete-repair-before.jpg.asset.json";
 import brpConcreteAfter from "../assets/brp-concrete-repair-after.jpg.asset.json";
+import flooringTileLaundry from "../assets/flooring-tile-laundry.webp.asset.json";
+import flooringTileWashroom from "../assets/flooring-tile-washroom.jpg.asset.json";
+import flooringCarpetCorridor from "../assets/flooring-carpet-corridor.jpg.asset.json";
+import flooringPolishedTraining from "../assets/flooring-polished-training.jpg.asset.json";
+import flooringPolishedCorridor from "../assets/flooring-polished-corridor.jpg.asset.json";
 
 type ServiceContent = Omit<ServicePageProps, "slug">;
 
@@ -420,6 +425,14 @@ const CONTENT: Record<string, ServiceContent> = {
     heroSubheadline:
       "Epoxy and urethane coatings, polished concrete, commercial flooring, paint, and finish packages built for industrial traffic.",
     primaryCtaLabel: "Request a Flooring Quote",
+    heroImage: flooringPolishedTraining.url,
+    gallery: [
+      { src: flooringPolishedTraining.url, caption: "Polished concrete in a large training / multi-purpose room — old flooring removed, slab ground and polished to a uniform sheen." },
+      { src: flooringPolishedCorridor.url, caption: "Dyed and polished concrete corridor with a rich mid-tone finish — durable, low-maintenance, and easy to clean." },
+      { src: flooringTileLaundry.url, caption: "Wood-look porcelain tile installed throughout a commercial laundry — slip-resistant and built for heavy foot traffic and water exposure." },
+      { src: flooringTileWashroom.url, caption: "Wall and floor tile in a commercial wash room — grey field tile with an orange accent band and wood-look plank floor tile." },
+      { src: flooringCarpetCorridor.url, caption: "Commercial carpet tile installed in an office corridor — durable broadloom-look pattern suited for high-traffic tenant spaces." },
+    ],
     problemIntro:
       "Industrial floors fail when the coating doesn't match the use. Residential-grade products in a forklift environment last weeks, not years.",
     problems: [
