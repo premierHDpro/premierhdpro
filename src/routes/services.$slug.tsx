@@ -34,6 +34,8 @@ import polishedConcreteOfficeWindow from "../assets/polished-concrete-office-win
 import polishedConcreteCharcoalOffice from "../assets/polished-concrete-charcoal-office.jpg";
 import polishedConcreteCharcoalCorner from "../assets/polished-concrete-charcoal-corner.jpg";
 import polishedConcreteCorridor from "../assets/polished-concrete-corridor.jpg";
+import brpConcreteBefore from "../assets/brp-concrete-repair-before.jpg.asset.json";
+import brpConcreteAfter from "../assets/brp-concrete-repair-after.jpg.asset.json";
 
 type ServiceContent = Omit<ServicePageProps, "slug">;
 
@@ -259,6 +261,8 @@ const CONTENT: Record<string, ServiceContent> = {
     primaryCtaLabel: "Request a Floor Assessment",
     heroImage: polishedConcreteTrainingFinished,
     gallery: [
+      { src: brpConcreteBefore.url, caption: "BRP forklift aisle — before: failed slab between storage racks saw-cut out and rebar tied, ready for pour." },
+      { src: brpConcreteAfter.url, caption: "BRP forklift aisle — after: fresh pour finished flush with the surrounding slab so forklift traffic could resume." },
       { src: polishedConcreteTrainingBefore, caption: "Training room slab before polishing — old flooring stripped, adhesive residue exposed, ready for grind." },
       { src: polishedConcreteTrainingFinished, caption: "Same training room after our polished concrete process — light-gray finish with a deep, even reflection." },
       { src: polishedConcreteBreakroomWide, caption: "Polished concrete breakroom floor finished while interior trades wrapped up overhead work." },
