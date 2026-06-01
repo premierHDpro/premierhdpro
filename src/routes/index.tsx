@@ -20,6 +20,8 @@ import projectHvac from "../assets/project-hvac.jpg";
 import projectRenovation from "../assets/project-renovation.jpg";
 import brpConcreteBefore from "../assets/brp-concrete-repair-before.jpg.asset.json";
 import brpConcreteAfter from "../assets/brp-concrete-repair-after.jpg.asset.json";
+import tiBreakroom from "../assets/ti-breakroom.jpg.asset.json";
+import tiOffice from "../assets/ti-office.jpg.asset.json";
 import { services } from "../data/services";
 import { projects as allProjects } from "../data/projects";
 import { CtaBand } from "../components/CtaBand";
@@ -72,9 +74,14 @@ const projects = [
   {
     title: "Commercial Tenant Improvement",
     type: "TI Buildout",
-    scope: "Interior office and operational buildout for a commercial facility expansion.",
+    scope:
+      "Interior tenant improvement including a new breakroom with upper and lower cabinets, full electrical rough-in, and an office suite finished with polished concrete, fresh paint, ceiling grid, and new carpet tile.",
     challenge: "Coordinated trades around a live tenant move-in deadline.",
-    img: projectHvac,
+    img: tiOffice.url,
+    splitA: tiBreakroom.url,
+    splitB: tiOffice.url,
+    labelA: "Breakroom",
+    labelB: "Office",
   },
   {
     title: "Dock & Facility Upgrades",
@@ -366,6 +373,38 @@ function HomePage() {
                       />
                       <div className="absolute bottom-2 left-2 bg-signal px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-signal-foreground">
                         After
+                      </div>
+                    </div>
+                    <div className="absolute left-4 top-4 bg-signal px-3 py-1 text-xs font-bold uppercase tracking-wider text-signal-foreground">
+                      {p.type}
+                    </div>
+                  </div>
+                ) : "splitA" in p && p.splitA && p.splitB ? (
+                  <div className="relative grid h-56 grid-cols-2 gap-px overflow-hidden bg-border">
+                    <div className="relative overflow-hidden bg-ink">
+                      <img
+                        src={p.splitA}
+                        alt={`${p.title} — ${p.labelA}`}
+                        className="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100"
+                        loading="lazy"
+                        width={800}
+                        height={800}
+                      />
+                      <div className="absolute bottom-2 left-2 bg-ink/85 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-primary-foreground">
+                        {p.labelA}
+                      </div>
+                    </div>
+                    <div className="relative overflow-hidden bg-ink">
+                      <img
+                        src={p.splitB}
+                        alt={`${p.title} — ${p.labelB}`}
+                        className="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100"
+                        loading="lazy"
+                        width={800}
+                        height={800}
+                      />
+                      <div className="absolute bottom-2 left-2 bg-ink/85 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-primary-foreground">
+                        {p.labelB}
                       </div>
                     </div>
                     <div className="absolute left-4 top-4 bg-signal px-3 py-1 text-xs font-bold uppercase tracking-wider text-signal-foreground">
