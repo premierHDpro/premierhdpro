@@ -22,6 +22,8 @@ import brpConcreteBefore from "../assets/brp-concrete-repair-before.jpg.asset.js
 import brpConcreteAfter from "../assets/brp-concrete-repair-after.jpg.asset.json";
 import tiBreakroom from "../assets/ti-breakroom.jpg.asset.json";
 import tiOffice from "../assets/ti-office.jpg.asset.json";
+import brpRackingAisle from "../assets/brp-racking-aisle.jpg.asset.json";
+import brpRackingProtectors from "../assets/brp-racking-protectors.jpg.asset.json";
 import { services } from "../data/services";
 import { projects as allProjects } from "../data/projects";
 import { CtaBand } from "../components/CtaBand";
@@ -86,9 +88,14 @@ const projects = [
   {
     title: "Dock & Facility Upgrades",
     type: "Facility Services",
-    scope: "Dock equipment, safety barriers, and lighting upgrades across an active DC.",
-    challenge: "Completed dock-by-dock at night to protect daily inbound and outbound flow.",
-    img: projectDockDoors,
+    scope:
+      "New pallet racking, column protectors, and end-of-aisle guards installed at BRP — staged through live pick aisles without shutting down operations.",
+    challenge: "Completed aisle-by-aisle around active forklift traffic to protect daily inbound and outbound flow.",
+    img: brpRackingAisle.url,
+    splitA: brpRackingAisle.url,
+    splitB: brpRackingProtectors.url,
+    labelA: "Aisle",
+    labelB: "End Guards",
   },
 ] as const;
 
