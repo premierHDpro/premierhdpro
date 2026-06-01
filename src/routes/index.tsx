@@ -18,6 +18,8 @@ import projectConcrete from "../assets/project-concrete.jpg";
 import projectDockDoors from "../assets/project-dock-doors.jpg";
 import projectHvac from "../assets/project-hvac.jpg";
 import projectRenovation from "../assets/project-renovation.jpg";
+import brpConcreteBefore from "../assets/brp-concrete-repair-before.jpg.asset.json";
+import brpConcreteAfter from "../assets/brp-concrete-repair-after.jpg.asset.json";
 import { services } from "../data/services";
 import { projects as allProjects } from "../data/projects";
 import { CtaBand } from "../components/CtaBand";
@@ -59,9 +61,13 @@ const projects = [
   {
     title: "Warehouse Concrete Repairs",
     type: "Industrial Concrete",
-    scope: "Large-scale slab and joint repair across a high-traffic forklift floor.",
-    challenge: "Sequenced pours so forklift routes stayed open and pick lines never paused.",
+    scope:
+      "Cracked slab repair between storage racks on an active forklift aisle at BRP — saw-cut, rebar tied, and re-poured flush with the surrounding floor.",
+    challenge:
+      "Worked around live forklift traffic and pick operations; staged demo and pour so the aisle reopened on schedule.",
     img: projectConcrete,
+    before: brpConcreteBefore.url,
+    after: brpConcreteAfter.url,
   },
   {
     title: "Commercial Tenant Improvement",
@@ -334,19 +340,53 @@ function HomePage() {
           <div className="grid gap-6 md:grid-cols-2">
             {projects.map((p) => (
               <article key={p.title} className="group flex flex-col overflow-hidden border border-border bg-card">
-                <div className="relative h-56 overflow-hidden bg-ink">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    className="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100"
-                    loading="lazy"
-                    width={1200}
-                    height={800}
-                  />
-                  <div className="absolute left-4 top-4 bg-signal px-3 py-1 text-xs font-bold uppercase tracking-wider text-signal-foreground">
-                    {p.type}
+                {"before" in p && p.before && p.after ? (
+                  <div className="relative grid h-56 grid-cols-2 gap-px overflow-hidden bg-border">
+                    <div className="relative overflow-hidden bg-ink">
+                      <img
+                        src={p.before}
+                        alt={`${p.title} — before`}
+                        className="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100"
+                        loading="lazy"
+                        width={800}
+                        height={800}
+                      />
+                      <div className="absolute bottom-2 left-2 bg-ink/85 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-primary-foreground">
+                        Before
+                      </div>
+                    </div>
+                    <div className="relative overflow-hidden bg-ink">
+                      <img
+                        src={p.after}
+                        alt={`${p.title} — after`}
+                        className="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100"
+                        loading="lazy"
+                        width={800}
+                        height={800}
+                      />
+                      <div className="absolute bottom-2 left-2 bg-signal px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-signal-foreground">
+                        After
+                      </div>
+                    </div>
+                    <div className="absolute left-4 top-4 bg-signal px-3 py-1 text-xs font-bold uppercase tracking-wider text-signal-foreground">
+                      {p.type}
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="relative h-56 overflow-hidden bg-ink">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      className="h-full w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100"
+                      loading="lazy"
+                      width={1200}
+                      height={800}
+                    />
+                    <div className="absolute left-4 top-4 bg-signal px-3 py-1 text-xs font-bold uppercase tracking-wider text-signal-foreground">
+                      {p.type}
+                    </div>
+                  </div>
+                )}
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="text-xl font-bold leading-tight">{p.title}</h3>
                   <p className="mt-3 text-sm text-muted-foreground">{p.scope}</p>
