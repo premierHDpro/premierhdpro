@@ -18,10 +18,8 @@ import projectConcrete from "../assets/project-concrete.jpg";
 import projectDockDoors from "../assets/project-dock-doors.jpg";
 import projectHvac from "../assets/project-hvac.jpg";
 import projectRenovation from "../assets/project-renovation.jpg";
-import recentOffice from "../assets/office-buildout-open-area.jpg";
-import recentConcrete from "../assets/polished-concrete-training-room-finished.jpg";
-import recentBathroom from "../assets/bathroom-reno-main-vanity.jpg";
 import { services } from "../data/services";
+import { projects as allProjects } from "../data/projects";
 import { CtaBand } from "../components/CtaBand";
 import { ContactForm } from "../components/ContactForm";
 
