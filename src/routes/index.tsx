@@ -17,7 +17,6 @@ import constructionHero from "../assets/construction-hero.jpg";
 import projectConcrete from "../assets/project-concrete.jpg";
 import projectDockDoors from "../assets/project-dock-doors.jpg";
 import projectHvac from "../assets/project-hvac.jpg";
-import projectRenovation from "../assets/project-renovation.jpg";
 import hvacRooftop from "../assets/hvac-rooftop-units.jpg";
 import brpConcreteBefore from "../assets/brp-concrete-repair-before.jpg.asset.json";
 import brpConcreteAfter from "../assets/brp-concrete-repair-after.jpg.asset.json";
