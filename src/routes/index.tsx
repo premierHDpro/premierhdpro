@@ -17,6 +17,7 @@ import heroImg from "../assets/hero-warehouse.jpg";
 import constructionHero from "../assets/construction-hero.jpg";
 import aboutImg from "../assets/project-renovation.jpg";
 import projectConcrete from "../assets/project-concrete.jpg";
+import aboutClip from "../assets/about-clip.mp4.asset.json";
 import projectDockDoors from "../assets/project-dock-doors.jpg";
 import projectHvac from "../assets/project-hvac.jpg";
 import projectRenovation from "../assets/project-renovation.jpg";
@@ -199,13 +200,15 @@ function HomePage() {
               width={800}
               height={600}
             />
-            <img
-              src={projectConcrete}
-              alt="Industrial concrete floor work"
+            <video
+              src={aboutClip.url}
               className="h-44 w-full object-cover"
-              loading="lazy"
-              width={800}
-              height={600}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="Premier HD crew on an active commercial jobsite"
             />
           </div>
         </div>
