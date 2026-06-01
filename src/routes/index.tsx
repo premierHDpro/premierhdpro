@@ -17,7 +17,7 @@ import constructionHero from "../assets/construction-hero.jpg";
 import projectConcrete from "../assets/project-concrete.jpg";
 import projectDockDoors from "../assets/project-dock-doors.jpg";
 import projectHvac from "../assets/project-hvac.jpg";
-import projectRenovation from "../assets/project-renovation.jpg";
+import hvacRooftop from "../assets/hvac-rooftop-units.jpg";
 import brpConcreteBefore from "../assets/brp-concrete-repair-before.jpg.asset.json";
 import brpConcreteAfter from "../assets/brp-concrete-repair-after.jpg.asset.json";
 import tiBreakroom from "../assets/ti-breakroom.jpg.asset.json";
@@ -56,11 +56,12 @@ export const Route = createFileRoute("/")({
 
 const projects = [
   {
-    title: "Distribution Center Renovation",
-    type: "Phased Renovation",
-    scope: "170,000 SF phased renovation completed in an active distribution warehouse.",
-    challenge: "Maintained full outbound shipping operations throughout a six-month construction schedule.",
-    img: projectRenovation,
+    title: "Warehouse Rooftop HVAC Replacement",
+    type: "Industrial HVAC",
+    scope:
+      "Replaced and commissioned multiple rooftop package units (RTUs) serving an active warehouse — new curbs, gas, electrical disconnects, and controls tied back in.",
+    challenge: "Crane picks and tie-ins scheduled around production so conditioned zones never went offline during business hours.",
+    img: hvacRooftop,
   },
   {
     title: "Warehouse Concrete Repairs",
