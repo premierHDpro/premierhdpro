@@ -16,6 +16,7 @@ import { Route as WarehouseMaintenanceMcdonoughRouteImport } from './routes/ware
 import { Route as WarehouseMaintenanceAtlantaRouteImport } from './routes/warehouse-maintenance-atlanta'
 import { Route as WarehouseHvacRepairAtlantaRouteImport } from './routes/warehouse-hvac-repair-atlanta'
 import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
+import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as IndustrialHvacRepairGeorgiaRouteImport } from './routes/industrial-hvac-repair-georgia'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -80,6 +81,11 @@ const WarehouseHvacRepairAtlantaRoute =
 const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
   id: '/terms-of-service',
   path: '/terms-of-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -221,6 +227,7 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/projects': typeof ProjectsRoute
   '/terms-of-service': typeof TermsOfServiceRoute
   '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
   '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
@@ -253,6 +260,7 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/projects': typeof ProjectsRoute
   '/terms-of-service': typeof TermsOfServiceRoute
   '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
   '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
@@ -287,6 +295,7 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/industrial-hvac-repair-georgia': typeof IndustrialHvacRepairGeorgiaRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/projects': typeof ProjectsRoute
   '/terms-of-service': typeof TermsOfServiceRoute
   '/warehouse-hvac-repair-atlanta': typeof WarehouseHvacRepairAtlantaRoute
   '/warehouse-maintenance-atlanta': typeof WarehouseMaintenanceAtlantaRoute
@@ -322,6 +331,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/industrial-hvac-repair-georgia'
     | '/privacy-policy'
+    | '/projects'
     | '/terms-of-service'
     | '/warehouse-hvac-repair-atlanta'
     | '/warehouse-maintenance-atlanta'
@@ -354,6 +364,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/industrial-hvac-repair-georgia'
     | '/privacy-policy'
+    | '/projects'
     | '/terms-of-service'
     | '/warehouse-hvac-repair-atlanta'
     | '/warehouse-maintenance-atlanta'
@@ -387,6 +398,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/industrial-hvac-repair-georgia'
     | '/privacy-policy'
+    | '/projects'
     | '/terms-of-service'
     | '/warehouse-hvac-repair-atlanta'
     | '/warehouse-maintenance-atlanta'
@@ -421,6 +433,7 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   IndustrialHvacRepairGeorgiaRoute: typeof IndustrialHvacRepairGeorgiaRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ProjectsRoute: typeof ProjectsRoute
   TermsOfServiceRoute: typeof TermsOfServiceRoute
   WarehouseHvacRepairAtlantaRoute: typeof WarehouseHvacRepairAtlantaRoute
   WarehouseMaintenanceAtlantaRoute: typeof WarehouseMaintenanceAtlantaRoute
@@ -491,6 +504,13 @@ declare module '@tanstack/react-router' {
       path: '/terms-of-service'
       fullPath: '/terms-of-service'
       preLoaderRoute: typeof TermsOfServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -687,6 +707,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   IndustrialHvacRepairGeorgiaRoute: IndustrialHvacRepairGeorgiaRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ProjectsRoute: ProjectsRoute,
   TermsOfServiceRoute: TermsOfServiceRoute,
   WarehouseHvacRepairAtlantaRoute: WarehouseHvacRepairAtlantaRoute,
   WarehouseMaintenanceAtlantaRoute: WarehouseMaintenanceAtlantaRoute,
