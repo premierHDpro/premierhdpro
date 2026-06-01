@@ -181,7 +181,7 @@ function HomePage() {
 
       {/* ABOUT */}
       <section className="section-pad">
-        <div className="container-pro grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="container-pro max-w-3xl">
           <div>
             <div className="eyebrow">About Premier HD Pro</div>
             <h2 className="text-3xl font-bold leading-tight md:text-5xl">
@@ -210,33 +210,52 @@ function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-3">
-            <img
-              src={aboutImg}
-              alt="Commercial interior construction inside an operational facility"
-              className="col-span-2 h-64 w-full object-cover"
-              loading="lazy"
-              width={1200}
-              height={800}
-            />
-            <img
-              src={heroImg}
-              alt="Warehouse exterior with loading docks"
-              className="h-44 w-full object-cover"
-              loading="lazy"
-              width={800}
-              height={600}
-            />
-            <video
-              src={aboutClip.url}
-              className="h-44 w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label="Premier HD crew on an active commercial jobsite"
-            />
+        </div>
+      </section>
+
+      {/* RECENT PROJECTS */}
+      <section className="section-pad bg-accent/40">
+        <div className="container-pro">
+          <div className="mb-10 max-w-2xl">
+            <div className="eyebrow">Recent Projects</div>
+            <h2 className="text-3xl font-bold leading-tight md:text-5xl">
+              A look at recent work
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Buildouts, floors, and renovations recently delivered for commercial and industrial
+              clients across Georgia.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {recentProjects.map((p) => (
+              <Link
+                key={p.title}
+                to="/services/$slug"
+                params={{ slug: p.slug }}
+                className="group block overflow-hidden border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+              >
+                <div className="relative h-56 w-full overflow-hidden">
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
+                    {p.type}
+                  </div>
+                  <h3 className="mt-2 text-lg font-bold">{p.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{p.blurb}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                    View service <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
