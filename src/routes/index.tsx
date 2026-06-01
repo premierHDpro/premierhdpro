@@ -230,6 +230,11 @@ function HomePage() {
               </Link>
             ))}
           </div>
+          <div className="mt-10 flex justify-center">
+            <Link to="/projects" className="btn-outline">
+              View all projects <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
