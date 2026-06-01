@@ -7,6 +7,8 @@ import demoStripout from "../assets/demo-restroom-overview.jpg";
 import racking from "../assets/racking-new-bays.jpg";
 import polishedCharcoal from "../assets/polished-concrete-charcoal-office.jpg";
 import officeConference from "../assets/office-buildout-conference.jpg";
+import brpConcreteBefore from "../assets/brp-concrete-repair-before.jpg.asset.json";
+import brpConcreteAfter from "../assets/brp-concrete-repair-after.jpg.asset.json";
 
 export type Project = {
   title: string;
@@ -17,6 +19,14 @@ export type Project = {
 };
 
 export const projects: readonly Project[] = [
+  {
+    title: "BRP Forklift Aisle Concrete Repair",
+    type: "Concrete Construction & Floor Repair",
+    slug: "concrete-floor-repair",
+    img: brpConcreteAfter.url,
+    blurb:
+      "Cracked slab between storage racks on an active forklift aisle at BRP — saw-cut, rebar tied, and re-poured flush with the surrounding floor.",
+  },
   {
     title: "Office Buildout — Carpet & Service Windows",
     type: "Office Buildouts",
