@@ -111,7 +111,7 @@ function PrivacyPolicyPage() {
             <p>
               Premier HD Pro<br />
               Locust Grove, GA<br />
-              Phone: <a className="text-primary underline" href="tel:+17706285444">(770) 628-5444</a><br />
+              Phone: <a className="text-primary underline" href="tel:+17702850204">(770) 285-0204</a><br />
               Email:{" "}
               <a className="text-primary underline" href="mailto:office@premierhdpro.com">
                 office@premierhdpro.com

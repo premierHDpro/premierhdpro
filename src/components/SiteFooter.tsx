@@ -49,8 +49,8 @@ export function SiteFooter() {
             Atlanta and Georgia.
           </p>
           <div className="mt-5 space-y-2 text-sm">
-            <a href="tel:+17706285444" className="flex items-center gap-2 hover:text-signal">
-              <Phone className="h-4 w-4" /> (770) 628-5444
+            <a href="tel:+17702850204" className="flex items-center gap-2 hover:text-signal">
+              <Phone className="h-4 w-4" /> (770) 285-0204
             </a>
             <a href="mailto:office@premierhdpro.com" className="flex items-center gap-2 hover:text-signal">
               <Mail className="h-4 w-4" />
