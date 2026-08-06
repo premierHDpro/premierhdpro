@@ -550,7 +550,7 @@ const CONTENT: Record<string, ServiceContent> = {
       "Insurance documentation",
     ],
     process: DEFAULT_PROCESS,
-    midCtaText: "Facility emergency right now? Call (770) 628-5444 — we dispatch fast.",
+    midCtaText: "Facility emergency right now? Call (770) 285-0204 — we dispatch fast.",
     midCtaLabel: "Request Emergency Service",
     bottomCtaHeadline: "Have an after-hours emergency?",
     bottomCtaText: "Call us directly — we'll dispatch a crew and document everything for insurance.",

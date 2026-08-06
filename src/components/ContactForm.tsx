@@ -61,7 +61,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
     } catch (err) {
       console.error("Contact form submit failed", err);
       toast.error(
-        "Something went wrong sending your request. Please try again or call us at (770) 628-5444.",
+        "Something went wrong sending your request. Please try again or call us at (770) 285-0204.",
       );
     } finally {
       setSubmitting(false);
@@ -144,8 +144,8 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       </button>
       <p className="text-xs text-muted-foreground">
         Or call us directly at{" "}
-        <a href="tel:+17706285444" className="font-semibold text-foreground">
-          (770) 628-5444
+        <a href="tel:+17702850204" className="font-semibold text-foreground">
+          (770) 285-0204
         </a>
       </p>
     </form>

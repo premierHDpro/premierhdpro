@@ -509,7 +509,7 @@ function HomePage() {
             <h2 className="text-3xl font-bold leading-tight md:text-4xl">From facility managers & commercial clients</h2>
             <p className="mt-4 text-muted-foreground">
               Don't see your question? Call us at{" "}
-              <a href="tel:+17706285444" className="font-semibold text-foreground">(770) 628-5444</a>.
+              <a href="tel:+17702850204" className="font-semibold text-foreground">(770) 285-0204</a>.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link to="/blog" className="btn-outline">
@@ -583,7 +583,7 @@ function HomePage() {
             </ul>
             <div className="mt-8 border-l-2 border-signal pl-4">
               <div className="text-xs font-bold uppercase tracking-widest text-signal">Direct line</div>
-              <a href="tel:+17706285444" className="mt-1 block text-2xl font-bold">(770) 628-5444</a>
+              <a href="tel:+17702850204" className="mt-1 block text-2xl font-bold">(770) 285-0204</a>
             </div>
           </div>
           <div className="border border-border bg-card p-6 md:p-8">

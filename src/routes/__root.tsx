@@ -64,7 +64,7 @@ export const Route = createRootRoute({
           description:
             "Industrial and commercial general contractor serving warehouses, distribution centers, manufacturing facilities, and commercial buildings across Metro Atlanta and Georgia. Commercial construction, renovations, tenant improvements, and ongoing facility services.",
           url: "https://premierhdpro.com/",
-          telephone: "+1-770-628-5444",
+          telephone: "+1-770-285-0204",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Locust Grove",

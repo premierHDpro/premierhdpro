@@ -19,11 +19,11 @@ const faqs = [
   },
   {
     q: "Do you offer emergency or after-hours repair service?",
-    a: "Yes. We understand that downtime is costly, so we offer responsive scheduling for urgent dock, door, concrete, and HVAC repairs. Call (770) 628-5444 to discuss timing.",
+    a: "Yes. We understand that downtime is costly, so we offer responsive scheduling for urgent dock, door, concrete, and HVAC repairs. Call (770) 285-0204 to discuss timing.",
   },
   {
     q: "How do I request a quote?",
-    a: "Submit our contact form, email office@premierhdpro.com, or call (770) 628-5444. We'll typically follow up within one business day to schedule a site walk or gather more details.",
+    a: "Submit our contact form, email office@premierhdpro.com, or call (770) 285-0204. We'll typically follow up within one business day to schedule a site walk or gather more details.",
   },
   {
     q: "Do you handle small repairs or only large projects?",
@@ -79,7 +79,7 @@ function FAQPage() {
           Quick answers about working with Premier HD Pro. Don't see your question? Reach out
           via our{" "}
           <Link to="/contact" className="text-primary underline">contact page</Link>{" "}
-          or call <a className="text-primary underline" href="tel:+17706285444">(770) 628-5444</a>.
+          or call <a className="text-primary underline" href="tel:+17702850204">(770) 285-0204</a>.
         </p>
 
         <div className="mt-10 space-y-6">
@@ -104,10 +104,10 @@ function FAQPage() {
               Request a Quote
             </Link>
             <a
-              href="tel:+17706285444"
+              href="tel:+17702850204"
               className="rounded-md border border-primary-foreground/30 px-5 py-2.5 font-semibold hover:bg-primary-foreground/10"
             >
-              Call (770) 628-5444
+              Call (770) 285-0204
             </a>
           </div>
         </div>
