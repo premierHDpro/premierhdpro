@@ -1,4 +1,5 @@
 import { createStart, createMiddleware } from "@tanstack/react-start";
+import { attachSupabaseAuth } from "@/integrations/supabase/auth-attacher";
 
 // Baseline security headers applied to every SSR/server response.
 // CSP is intentionally permissive enough for Vite/HMR in dev and for
@@ -45,5 +46,6 @@ const securityHeaders = createMiddleware().server(async ({ next }) => {
 });
 
 export const startInstance = createStart(() => ({
+  functionMiddleware: [attachSupabaseAuth],
   requestMiddleware: [securityHeaders],
 }));
