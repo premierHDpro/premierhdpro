@@ -17,13 +17,13 @@ import constructionHero from "../assets/construction-hero.jpg";
 import projectConcrete from "../assets/project-concrete.jpg";
 import projectDockDoors from "../assets/project-dock-doors.jpg";
 import projectHvac from "../assets/project-hvac.jpg";
-import hvacRooftop from "../assets/brp-hvac-rooftop.jpg.asset.json";
-import brpConcreteBefore from "../assets/brp-concrete-repair-before.jpg.asset.json";
-import brpConcreteAfter from "../assets/brp-concrete-repair-after.jpg.asset.json";
-import tiBreakroom from "../assets/ti-breakroom.jpg.asset.json";
-import tiOffice from "../assets/ti-office.jpg.asset.json";
-import brpRackingAisle from "../assets/brp-racking-aisle.jpg.asset.json";
-import brpRackingProtectors from "../assets/brp-racking-protectors.jpg.asset.json";
+const hvacRooftop = "/assets/brp-hvac-rooftop.jpg";
+const brpConcreteBefore = "/assets/brp-concrete-repair-before.jpg";
+const brpConcreteAfter = "/assets/brp-concrete-repair-after.jpg";
+const tiBreakroom = "/assets/ti-breakroom.jpg";
+const tiOffice = "/assets/ti-office.jpg";
+const brpRackingAisle = "/assets/brp-racking-aisle.jpg";
+const brpRackingProtectors = "/assets/brp-racking-protectors.jpg";
 import { services } from "../data/services";
 import { projects as allProjects } from "../data/projects";
 import { CtaBand } from "../components/CtaBand";
@@ -61,7 +61,7 @@ const projects = [
     scope:
       "Replaced and commissioned multiple rooftop package units (RTUs) serving an active warehouse — new curbs, gas, electrical disconnects, and controls tied back in.",
     challenge: "Crane picks and tie-ins scheduled around production so conditioned zones never went offline during business hours.",
-    img: hvacRooftop.url,
+    img: hvacRooftop,
   },
   {
     title: "Warehouse Concrete Repairs",
@@ -71,8 +71,8 @@ const projects = [
     challenge:
       "Worked around live forklift traffic and pick operations; staged demo and pour so the aisle reopened on schedule.",
     img: projectConcrete,
-    before: brpConcreteBefore.url,
-    after: brpConcreteAfter.url,
+    before: brpConcreteBefore,
+    after: brpConcreteAfter,
   },
   {
     title: "Commercial Tenant Improvement",
@@ -80,9 +80,9 @@ const projects = [
     scope:
       "Interior tenant improvement including a new breakroom with upper and lower cabinets, full electrical rough-in, and an office suite finished with polished concrete, fresh paint, ceiling grid, and new carpet tile.",
     challenge: "Coordinated trades around a live tenant move-in deadline.",
-    img: tiOffice.url,
-    splitA: tiBreakroom.url,
-    splitB: tiOffice.url,
+    img: tiOffice,
+    splitA: tiBreakroom,
+    splitB: tiOffice,
     labelA: "Breakroom",
     labelB: "Office",
   },
@@ -92,9 +92,9 @@ const projects = [
     scope:
       "New pallet racking, column protectors, and end-of-aisle guards installed at BRP — staged through live pick aisles without shutting down operations.",
     challenge: "Completed aisle-by-aisle around active forklift traffic to protect daily inbound and outbound flow.",
-    img: brpRackingAisle.url,
-    splitA: brpRackingAisle.url,
-    splitB: brpRackingProtectors.url,
+    img: brpRackingAisle,
+    splitA: brpRackingAisle,
+    splitB: brpRackingProtectors,
     labelA: "Aisle",
     labelB: "End Guards",
   },
