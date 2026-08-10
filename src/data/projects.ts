@@ -7,8 +7,8 @@ import demoStripout from "../assets/demo-restroom-overview.jpg";
 import racking from "../assets/racking-new-bays.jpg";
 import polishedCharcoal from "../assets/polished-concrete-charcoal-office.jpg";
 import officeConference from "../assets/office-buildout-conference.jpg";
-import brpConcreteBefore from "../assets/brp-concrete-repair-before.jpeg";
-import brpConcreteAfter from "../assets/brp-concrete-repair-after.jpeg";
+import brpConcreteBefore from "../assets/brp-concrete-repair-before.jpg.asset.json";
+import brpConcreteAfter from "../assets/brp-concrete-repair-after.jpg.asset.json";
 
 export type Project = {
   title: string;
