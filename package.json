@@ -1,14 +1,12 @@
 {
   "name": "tanstack_start_ts",
   "version": "1.0.0",
-  "main": ".output/server/index.mjs",
   "private": true,
   "sideEffects": false,
   "type": "module",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "start": "node .output/server/index.mjs",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
