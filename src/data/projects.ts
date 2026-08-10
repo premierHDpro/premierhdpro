@@ -23,7 +23,7 @@ export const projects: readonly Project[] = [
     title: "BRP Forklift Aisle Concrete Repair",
     type: "Concrete Construction & Floor Repair",
     slug: "concrete-floor-repair",
-    img: brpConcreteAfter.url,
+    img: brpConcreteAfter,
     blurb:
       "Cracked slab between storage racks on an active forklift aisle at BRP — saw-cut, rebar tied, and re-poured flush with the surrounding floor.",
   },
