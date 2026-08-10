@@ -1,5 +1,5 @@
 import recentOffice from "../assets/office-buildout-open-area.jpg";
-import recentConcrete from "../assets/polished-concrete-brp.jpg.asset.json";
+const recentConcrete = "/assets/polished-concrete-brp.jpg";
 import recentBathroom from "../assets/bathroom-reno-main-vanity.jpg";
 import autoDoor from "../assets/auto-door-laundry-exterior.jpg";
 import countryClubDoor from "../assets/door-replacement-complete.jpg";
@@ -39,7 +39,7 @@ export const projects: readonly Project[] = [
     title: "Polished Concrete Floors",
     type: "Concrete Construction & Floor Repair",
     slug: "concrete-floor-repair",
-    img: recentConcrete.url,
+    img: recentConcrete,
     blurb:
       "Office slab at BRP ground and polished to a high-gloss, durable finish with natural light reflection.",
   },
