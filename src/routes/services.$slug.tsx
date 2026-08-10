@@ -777,10 +777,12 @@ export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
     const svc = services.find((s) => s.slug === params.slug);
     if (!svc) throw notFound();
-    return { svc };
+    return { slug: svc.slug };
   },
   head: ({ loaderData }) => {
-    const svc = loaderData?.svc;
+    const svc = loaderData
+      ? services.find((s) => s.slug === loaderData.slug)
+      : undefined;
     const title = svc
       ? `${svc.title} | Premier HD Pro`
       : "Service | Premier HD Pro";
@@ -812,7 +814,9 @@ export const Route = createFileRoute("/services/$slug")({
 });
 
 function ServiceDetail() {
-  const { svc } = Route.useLoaderData();
+  const { slug } = Route.useLoaderData();
+  const svc = services.find((s) => s.slug === slug);
+  if (!svc) throw notFound();
   const content = CONTENT[svc.slug] ?? fallbackContent(svc.title, svc.short);
   return <ServicePage slug={svc.slug} {...content} />;
 }
