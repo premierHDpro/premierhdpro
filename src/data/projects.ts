@@ -7,8 +7,8 @@ import demoStripout from "../assets/demo-restroom-overview.jpg";
 import racking from "../assets/racking-new-bays.jpg";
 import polishedCharcoal from "../assets/polished-concrete-charcoal-office.jpg";
 import officeConference from "../assets/office-buildout-conference.jpg";
-
-const brpConcreteAfter = "/assets/brp-concrete-repair-after.jpeg";
+const brpConcreteBefore = "/assets/brp-concrete-repair-before.jpg";
+const brpConcreteAfter = "/assets/brp-concrete-repair-after.jpg";
 
 export type Project = {
   title: string;
