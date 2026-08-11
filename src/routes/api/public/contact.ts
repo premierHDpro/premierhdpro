@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
-import { sendTransactionalEmailCore } from "@/server/send-transactional-email.server";
+import { sendContactEmail } from "@/server/send-contact-email.server";
 
 const ContactSchema = z.object({
   name: z.string().trim().min(2).max(100),
@@ -38,23 +38,16 @@ export const Route = createFileRoute("/api/public/contact")({
           return Response.json({ success: true });
         }
 
-        // Call the send-transactional core in-process. We can't fetch our own
-        // public hostname from inside the worker — Cloudflare can't loop back
-        // and the request 522s.
-        const idempotencyKey = `contact-${crypto.randomUUID()}`;
-        const result = await sendTransactionalEmailCore({
-          templateName: "contact-lead",
-          recipientEmail: "office@premierhdpro.com",
-          idempotencyKey,
-          templateData: {
-            name: parsed.data.name,
-            company: parsed.data.company,
-            email: parsed.data.email,
-            phone: parsed.data.phone,
-            city: parsed.data.city,
-            service: parsed.data.service,
-            message: parsed.data.message,
-          },
+        // Standard host-agnostic send (Resend HTTP API) — no Lovable-only
+        // runtime endpoint or queue infrastructure required.
+        const result = await sendContactEmail({
+          name: parsed.data.name,
+          company: parsed.data.company,
+          email: parsed.data.email,
+          phone: parsed.data.phone,
+          city: parsed.data.city,
+          service: parsed.data.service,
+          message: parsed.data.message,
         });
 
         if (result.status >= 400) {
