@@ -27,8 +27,8 @@ export function SiteHeader() {
             className="h-20 w-20 object-contain"
           />
           <div className="flex flex-col text-xs font-semibold uppercase leading-tight tracking-widest text-muted-foreground">
+            <span>Industrial &</span>
             <span>Commercial</span>
-            <span>General</span>
             <span>Contractor</span>
           </div>
         </Link>
