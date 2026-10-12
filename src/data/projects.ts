@@ -1,3 +1,4 @@
+import unityLaundry from "../assets/unity-finished-aisle.jpeg";
 import recentOffice from "../assets/office-buildout-open-area.jpg";
 const recentConcrete = "/assets/polished-concrete-brp.jpg";
 import recentBathroom from "../assets/bathroom-reno-main-vanity.jpg";
@@ -19,6 +20,14 @@ export type Project = {
 };
 
 export const projects: readonly Project[] = [
+    {
+    title: "Unity Laundry — Complete Commercial Build-Out",
+    type: "Commercial Renovations",
+    slug: "commercial-renovations",
+    img: unityLaundry,
+    blurb:
+      "Complete commercial build-out transforming an existing shell into a fully operational laundromat. Work included underground plumbing, electrical, HVAC, framing, storefront systems, commercial doors, ceiling installation, tile flooring, and laundry equipment.",
+  },
   {
     title: "BRP Forklift Aisle Concrete Repair",
     type: "Concrete Construction & Floor Repair",
