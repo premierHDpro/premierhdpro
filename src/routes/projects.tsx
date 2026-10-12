@@ -1,3 +1,4 @@
+
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { projects } from "../data/projects";
@@ -33,42 +34,82 @@ function ProjectsPage() {
         eyebrow="Projects"
         title="Recent commercial construction & facility work"
         subtitle="Buildouts, floors, doors, demo, and renovations recently delivered for commercial and industrial clients across Georgia."
-        breadcrumb={[{ label: "Home", to: "/" }, { label: "Projects" }]}
+        breadcrumb={[
+          { label: "Home", to: "/" },
+          { label: "Projects" },
+        ]}
       />
+
       <section className="section-pad">
         <div className="container-pro">
-         <Link
-  key={p.title}
-  to={p.projectPath ? "/projects/unity-laundry" : "/services/$slug"}
-  params={p.projectPath ? {} : { slug: p.slug }}
-  className="group block overflow-hidden border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg"
->
-                <div className="relative h-56 w-full overflow-hidden">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                    width={800}
-                    height={600}
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
-                    {p.type}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {projects.map((p) => {
+              const isUnityLaundry = Boolean(p.projectPath);
+
+              const cardContent = (
+                <>
+                  <div className="relative h-56 w-full overflow-hidden">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      width={800}
+                      height={600}
+                    />
                   </div>
-                  <h3 className="mt-2 text-lg font-bold">{p.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{p.blurb}</p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-  {p.projectPath ? "View Project" : "View Service"}
-  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-</span>
-                </div>
-              </Link>
-            ))}
+
+                  <div className="p-6">
+                    <div className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
+                      {p.type}
+                    </div>
+
+                    <h3 className="mt-2 text-lg font-bold">
+                      {p.title}
+                    </h3>
+
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {p.blurb}
+                    </p>
+
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                      {isUnityLaundry ? "View Project" : "View Service"}
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </>
+              );
+
+              const cardClass =
+                "group block overflow-hidden border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg";
+
+              if (isUnityLaundry) {
+                return (
+                  <Link
+                    key={p.title}
+                    to="/projects/unity-laundry"
+                    className={cardClass}
+                  >
+                    {cardContent}
+                  </Link>
+                );
+              }
+
+              return (
+                <Link
+                  key={p.title}
+                  to="/services/$slug"
+                  params={{ slug: p.slug }}
+                  className={cardClass}
+                >
+                  {cardContent}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
+
       <CtaBand />
     </>
   );
