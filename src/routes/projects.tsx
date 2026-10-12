@@ -37,14 +37,12 @@ function ProjectsPage() {
       />
       <section className="section-pad">
         <div className="container-pro">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((p) => (
-              <Link
-                key={p.title}
-                to="/services/$slug"
-                params={{ slug: p.slug }}
-                className="group block overflow-hidden border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg"
-              >
+         <Link
+  key={p.title}
+  to={p.projectPath ? "/projects/unity-laundry" : "/services/$slug"}
+  params={p.projectPath ? {} : { slug: p.slug }}
+  className="group block overflow-hidden border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+>
                 <div className="relative h-56 w-full overflow-hidden">
                   <img
                     src={p.img}
@@ -62,8 +60,9 @@ function ProjectsPage() {
                   <h3 className="mt-2 text-lg font-bold">{p.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{p.blurb}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                    View service <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
+  {p.projectPath ? "View Project" : "View Service"}
+  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+</span>
                 </div>
               </Link>
             ))}
